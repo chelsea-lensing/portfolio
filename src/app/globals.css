@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@theme {
+  --font-poiret: var(--font-poiret-one), sans-serif;
+  --font-public-sans: var(--font-public-sans-src), sans-serif;
+
+  --color-accent: #ee3124;
+  --color-cream: #f8f6f4;
+  --color-muted: #666666;
+  --color-border: #e5e5e5;
+  --color-dark: #1a1a1a;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #1a1a1a;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-public-sans), sans-serif;
+}
+
+.font-poiret {
+  -webkit-text-stroke: 0.7px currentColor;
+}
