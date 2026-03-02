@@ -1,73 +1,115 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import CaseStudyCard from "./CaseStudyCard";
 
-const FILTERS = ["All", "UX Design", "Product", "Research"];
+const FILTERS = ["All", "Patagonia", "Realift", "Happypillar"];
 
 const CASE_STUDIES = [
   {
     company: "PATAGONIA",
-    title: "Product Discovery Redesign",
-    tags: ["UX Research", "Product", "E-commerce"],
-    category: "UX Design",
+    title: "PDP Redesign Discovery",
+    description: "A comprehensive discovery process spanning taxonomy audit, funnel analysis, user journey mapping, and friction point analysis to reshape product discovery on Patagonia.com.",
+    tags: ["User Research", "Strategy"],
   },
   {
     company: "PATAGONIA",
-    title: "Circularity Commerce Platform",
-    tags: ["Strategy", "Product", "Sustainability"],
-    category: "Product",
+    title: "Provisions Integration",
+    description: "Defining the information architecture and UX strategy for integrating Patagonia Provisions into Patagonia.com, with a goal of growing Provisions revenue from $2M to $5–8M annually.",
+    tags: ["Systems Design", "Commerce"],
   },
   {
     company: "PATAGONIA",
-    title: "Mobile Cart Experience",
-    tags: ["Mobile", "UX Design", "Commerce"],
-    category: "UX Design",
+    title: "Navigation Redesign",
+    description: "Redesigning global navigation and taxonomy, driving a 27.5% lift in menu engagement and generating $6.6M in attributable revenue with projected annual impact of up to $13.7M.",
+    tags: ["Info Architecture", "End-to-End Design"],
   },
   {
-    company: "RISEUP",
-    title: "User Onboarding Flow",
-    tags: ["UX Design", "Mobile"],
-    category: "UX Design",
+    company: "PATAGONIA",
+    title: "Trade In Integration",
+    description: "Led UX design for the Trade-In migration to Patagonia.com, resulting in a 200%+ increase in visitors and the digital rejection rate dropping from 35% to 25%.",
+    tags: ["Circularity", "End-to-End Design"],
   },
   {
-    company: "HAPPYPILLER",
-    title: "Subscription Dashboard",
-    tags: ["Product Design", "Data Viz"],
-    category: "Product",
+    company: "PATAGONIA",
+    title: "Shop Used Integration",
+    description: "Designed the Shop Used PDP component, surfacing used product alternatives on new product pages. 22% of Worn Wear purchasers came through this component, converting 32% higher than other sources.",
+    tags: ["Circularity", "End-to-End Design"],
   },
   {
-    company: "HACK FOR LA",
-    title: "Ballot Design System",
-    tags: ["Design Systems", "Civic Tech"],
-    category: "Research",
+    company: "REALIFT",
+    title: "Levi's Size & Fit Tool",
+    description: "End-to-end UX design for RealSize, a machine-learning fit solution. Designed a fit and style experience for Levi's and presented the product vision directly to their leadership team.",
+    tags: ["Personalization", "UI Design"],
+  },
+  {
+    company: "HAPPYPILLAR",
+    title: "Happypillar Native App",
+    description: "Led end-to-end design for a mental wellness app from beta through Apple App Store launch. The app was subsequently acquired by Manatee, a leading virtual mental health platform.",
+    tags: ["End-to-End Design", "Native App"],
   },
 ];
 
 export default function CaseStudies() {
   const [activeFilter, setActiveFilter] = useState("All");
+  const [fading, setFading] = useState(false);
+  const [showIndicator, setShowIndicator] = useState(true);
+  const [showLeftIndicator, setShowLeftIndicator] = useState(false);
+  const [minHeight, setMinHeight] = useState<number | undefined>(undefined);
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (containerRef.current) {
+      setMinHeight(containerRef.current.offsetHeight);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!scrollRef.current) return;
+    const { scrollWidth, clientWidth } = scrollRef.current;
+    setShowIndicator(scrollWidth > clientWidth + 8);
+  }, [activeFilter]);
+
+  const handleFilterChange = (filter: string) => {
+    if (filter === activeFilter) return;
+    setFading(true);
+    setTimeout(() => {
+      setActiveFilter(filter);
+      setShowLeftIndicator(false);
+      if (scrollRef.current) scrollRef.current.scrollLeft = 0;
+      setFading(false);
+    }, 300);
+  };
+
+  const handleScroll = () => {
+    if (!scrollRef.current) return;
+    const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+    setShowIndicator(scrollLeft < scrollWidth - clientWidth - 8);
+    setShowLeftIndicator(scrollLeft > 8);
+  };
 
   const filtered =
     activeFilter === "All"
       ? CASE_STUDIES
-      : CASE_STUDIES.filter((cs) => cs.category === activeFilter);
+      : CASE_STUDIES.filter((cs) => cs.company.toLowerCase() === activeFilter.toLowerCase());
 
   return (
-    <section className="bg-cream w-full flex flex-col gap-6 items-start overflow-hidden pb-20 pl-12 pt-12">
-      <div className="flex flex-col gap-6 items-start w-full pr-12">
-        <p className="font-poiret text-[24px] text-accent tracking-[1.5px] leading-normal w-full">
-          CASE STUDIES
-        </p>
+    <section className="bg-cream w-full overflow-hidden flex flex-col gap-6 pt-12 pb-14 lg:pb-20">
 
-        {/* Filter chips */}
+      {/* Label + filters */}
+      <div className="flex flex-col gap-6 items-start w-full px-4 lg:px-12">
+        <a href="/case-studies" className="font-poiret text-[24px] text-accent tracking-[1.5px] leading-normal w-full transition-opacity duration-200 hover:opacity-60">
+          CASE STUDIES
+        </a>
         <div className="flex gap-2 items-center">
           {FILTERS.map((filter) => {
             const isActive = activeFilter === filter;
             return (
               <button
                 key={filter}
-                onClick={() => setActiveFilter(filter)}
-                className={`flex h-10 items-center justify-center px-5 py-[11px] rounded-full text-[14px] font-public-sans font-normal leading-[20px] whitespace-nowrap border transition-colors ${
+                onClick={() => handleFilterChange(filter)}
+                className={`flex h-10 items-center justify-center px-5 py-[11px] rounded-full text-[14px] font-public-sans font-normal leading-[20px] whitespace-nowrap border transition-colors cursor-pointer ${
                   isActive
                     ? "bg-[#3c3c3c] border-[#3c3c3c] text-white"
                     : "bg-[rgba(237,234,226,0.2)] border-[rgba(60,60,60,0.1)] text-dark"
@@ -80,16 +122,59 @@ export default function CaseStudies() {
         </div>
       </div>
 
-      {/* Scrollable cards row */}
-      <div className="flex gap-4 items-stretch overflow-x-auto pb-4 pr-12 scrollbar-hide">
-        {filtered.map((cs) => (
-          <CaseStudyCard
-            key={`${cs.company}-${cs.title}`}
-            company={cs.company}
-            title={cs.title}
-            tags={cs.tags}
-          />
-        ))}
+      {/* Horizontal scroll carousel — same on mobile and desktop */}
+      <div
+        ref={containerRef}
+        className={`relative transition-opacity duration-300 ${fading ? "opacity-50" : "opacity-100"}`}
+        style={minHeight ? { minHeight } : undefined}
+      >
+        <div
+          ref={scrollRef}
+          onScroll={handleScroll}
+          className="flex gap-4 items-stretch overflow-x-auto pb-2 scrollbar-hide pl-4 pr-4 lg:pl-12 lg:pr-12"
+        >
+          {filtered.map((cs) => (
+            <CaseStudyCard
+              key={`${cs.company}-${cs.title}`}
+              company={cs.company}
+              title={cs.title}
+              description={cs.description}
+              tags={cs.tags}
+            />
+          ))}
+        </div>
+
+        {/* Left scroll indicator */}
+        {showLeftIndicator && (
+          <div className="absolute left-0 top-0 bottom-2 flex items-center pointer-events-none">
+            <div className="w-20 h-full flex items-center justify-start pl-5">
+              <button
+                className="bg-white rounded-full w-9 h-9 flex items-center justify-center shadow-md pointer-events-auto cursor-pointer"
+                onClick={() => scrollRef.current?.scrollBy({ left: -360, behavior: "smooth" })}
+              >
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path d="M10 3L5 8L10 13" stroke="#3c3c3c" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* Right scroll indicator */}
+        {showIndicator && (
+          <div className="absolute right-0 top-0 bottom-2 flex items-center pointer-events-none">
+            <div className="w-20 h-full flex items-center justify-end pr-5">
+              <button
+                className="bg-white rounded-full w-9 h-9 flex items-center justify-center shadow-md pointer-events-auto cursor-pointer"
+                onClick={() => scrollRef.current?.scrollBy({ left: 360, behavior: "smooth" })}
+              >
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path d="M6 3L11 8L6 13" stroke="#3c3c3c" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
