@@ -37,11 +37,11 @@ const CASE_STUDIES = [
   },
   {
     company: "PATAGONIA",
-    title: "Navigation Redesign",
+    title: "Global Navigation Redesign",
     description:
       "Redesigning global navigation and taxonomy, driving a 27.5% lift in menu engagement and generating $6.6M in attributable revenue with projected annual impact of up to $13.7M.",
     tags: ["Info Architecture", "End-to-End Design"],
-    href: "#",
+    href: "/case-studies/navigation-redesign",
     year: 2023,
   },
   {
