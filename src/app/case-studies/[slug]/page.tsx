@@ -101,7 +101,7 @@ export default function CaseStudyPage() {
         <div>
           <a
             href="#"
-            className="inline-flex items-center gap-1 border border-black text-black font-public-sans font-medium text-[14px] leading-[20px] px-6 py-[10px] rounded-full transition-colors hover:bg-black hover:text-white"
+            className="inline-flex items-center gap-1 bg-black text-white font-public-sans font-medium text-[14px] leading-[20px] px-6 py-[10px] rounded-full transition-colors hover:opacity-80"
           >
             View Live Experience
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
