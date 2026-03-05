@@ -353,9 +353,14 @@ export default function NavigationRedesignPage() {
           {/* 03 Hypothesis */}
           <section id="hypothesis" className="flex flex-col gap-6 lg:gap-8 scroll-mt-[145px] lg:scroll-mt-[120px]">
             <SectionHeader number="03" title="HYPOTHESIS" />
-            <Card eyebrow="DESIGN HYPOTHESIS" heading="What did we believe would solve it?">
-              State your hypothesis clearly: &ldquo;If we [design intervention], then [expected user behavior change], which will result in [business outcome].&rdquo; Describe how you framed the opportunity for stakeholders and secured buy-in. Reference the strategic brief presented to leadership.
-            </Card>
+            <div className="flex flex-col gap-4 lg:gap-6">
+              <Card eyebrow="PROBLEM STATEMENT">
+                Patagonia&apos;s current navigation reflects internal catalog logic rather than how customers actually think about shopping. Overly siloed categories, inconsistent taxonomy, and a lack of flexible entry points prevent customers from confidently exploring the catalog — causing them to abandon, default to search, or never discover the full breadth of what Patagonia offers.
+              </Card>
+              <Card eyebrow="DESIGN HYPOTHESIS">
+                If we restructure the global navigation around customer mental models — offering flexible entry points by gender, activity, and product type — customers will be able to find the right products faster and with less friction, resulting in higher navigation engagement, increased category exploration, and improved conversion.
+              </Card>
+            </div>
           </section>
 
           {/* 04 Design */}
