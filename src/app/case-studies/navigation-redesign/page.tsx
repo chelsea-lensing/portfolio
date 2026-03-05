@@ -119,7 +119,13 @@ export default function NavigationRedesignPage() {
       </div>
 
       {/* Hero image */}
-      <div id="hero-image" className="w-full aspect-[667/380] bg-[#d9d9d9]" />
+      <div id="hero-image" className="w-full aspect-[667/380] overflow-hidden">
+        <img
+          src="/images/case-studies/navigation-redesign/Patagonia_Nav_Hero.jpg"
+          alt="Images of the Featured L1 Navigation Menu on desktop and the Women's L2 Navigation menu on mobile."
+          className="w-full h-full object-cover"
+        />
+      </div>
 
       {/* Mobile "Jump to" — floating pill, appears after scrolling past hero */}
       {showJumpTo && (
@@ -288,8 +294,20 @@ export default function NavigationRedesignPage() {
                     href="https://www.figma.com/board/D5M1xSfonTOmjrOQB7YkQI/Patagonia_Nav-Discovery---Research?node-id=9-5291&t=w11TWxhJfdjUPv1M-1"
                   />
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6">
-                    <div className="aspect-[4/3] bg-[#d9d9d9] rounded-lg" />
-                    <div className="aspect-[4/3] bg-[#d9d9d9] rounded-lg" />
+                    <div className="aspect-[4/3] rounded-lg overflow-hidden">
+                      <img
+                        src="/images/case-studies/navigation-redesign/Patagonia_Nav_Persona1.jpg"
+                        alt="Image of Olivia's persona and journey map experience with her user steps that coincide with her activities, mindset, paint points & opportunities."
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="aspect-[4/3] rounded-lg overflow-hidden">
+                      <img
+                        src="/images/case-studies/navigation-redesign/Patagonia_Nav_Persona2.jpg"
+                        alt="Image of Leo's persona and journey map experience with her user steps that coincide with her activities, mindset, paint points & opportunities."
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
                   </div>
                 </div>
               </Card>
@@ -312,6 +330,13 @@ export default function NavigationRedesignPage() {
                     label="View Discovery Exercises in FigJam"
                     href="https://www.figma.com/board/D5M1xSfonTOmjrOQB7YkQI/Patagonia_Nav-Discovery---Research?node-id=0-1&t=w11TWxhJfdjUPv1M-1"
                   />
+                  <div className="aspect-[667/380] w-full rounded-lg overflow-hidden">
+                    <img
+                      src="/images/case-studies/navigation-redesign/Patagonia_Nav_OppSolutionTree.jpg"
+                      alt="Image of the Opportunity Solution Tree exercise mapping customer friction points to solution opportunities, highlighting navigation redesign as the highest-impact intervention."
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
                 </div>
               </Card>
 
@@ -338,7 +363,13 @@ export default function NavigationRedesignPage() {
                     label="View Taxonomy Audit Findings Deck"
                     href="https://www.figma.com/proto/XnYsPROwHKKWMCbcrVYLj1/Product-Discovery-Navigation?node-id=3-62466&p=f&viewport=60%2C194%2C0.07&t=bTXE8XIXYBbu3sYE-1&scaling=min-zoom&content-scaling=fixed&page-id=3%3A7"
                   />
-                  <div className="aspect-[667/380] bg-[#d9d9d9] w-full rounded-lg" />
+                  <div className="aspect-[667/380] w-full rounded-lg overflow-hidden">
+                    <img
+                      src="/images/case-studies/navigation-redesign/Patagonia_Nav_TaxonomyAudit.png"
+                      alt="Image of a section of the Taxonomy Audit done in FigJam showing Women's tops with a diagram of architecture and comments/questions to address issues and takeaways from the audit."
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
                 </div>
               </Card>
 
@@ -383,8 +414,20 @@ export default function NavigationRedesignPage() {
                 <div className="flex flex-col gap-6 font-public-sans font-normal text-[16px] text-black leading-[24px]">
                   <p>The two directions were brought to hi-fi and prototyped for user testing. Below are the final concepts taken into the study.</p>
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6">
-                    <div className="aspect-[4/3] bg-[#d9d9d9] rounded-lg" />
-                    <div className="aspect-[4/3] bg-[#d9d9d9] rounded-lg" />
+                    <div className="aspect-[4/3] rounded-lg overflow-hidden">
+                      <img
+                        src="/images/case-studies/navigation-redesign/Patagonia_Nav_Gender.jpg"
+                        alt="Images of the gender focused navigation on a desktop and mobile screen."
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="aspect-[4/3] rounded-lg overflow-hidden">
+                      <img
+                        src="/images/case-studies/navigation-redesign/Patagonia_Nav_Sport.jpg"
+                        alt="Images of the sport focused navigation on a desktop and mobile screen."
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
                   </div>
                   <OutlineButton
                     label="View Gender vs Sport Wireframes"
@@ -437,7 +480,13 @@ export default function NavigationRedesignPage() {
                 <div className="flex flex-col gap-4 font-public-sans font-normal text-[16px] text-black leading-[24px]">
                   <p>The survey and usability testing data pointed clearly to a hybrid architecture — a gender-first navigation structure that also supports sport and activity as a parallel entry point. This wasn&apos;t a split-the-difference decision. The data showed that customers have genuinely different mental models, and the right system needed to meet all of them.</p>
                   <p>The final navigation leads with Men&apos;s, Women&apos;s, and Kids as primary L1 anchors — the familiar, fast path for customers who know what they want. Sports are elevated as a parallel top-level entry point for customers browsing by what they do. Brand content — Activism, Stories, Guides — moves out of the shopping path entirely and into contextual placements where it earns attention without creating friction.</p>
-                  <div className="aspect-[667/380] bg-[#d9d9d9] w-full rounded-lg" />
+                  <div className="aspect-[667/380] w-full rounded-lg overflow-hidden">
+                    <img
+                      src="/images/case-studies/navigation-redesign/Patagonia_Nav_FinalDirection.jpg"
+                      alt="Image of the final navigation menu direction showing Featured L1 menu expanded with L2s: New Arrivals, Patagonia Favorites, Shop by Category, Web Specials and More"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
                 </div>
               </Card>
             </div>
