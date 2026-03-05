@@ -366,29 +366,78 @@ export default function NavigationRedesignPage() {
           {/* 04 Design */}
           <section id="design" className="flex flex-col gap-6 lg:gap-8 scroll-mt-[145px] lg:scroll-mt-[120px]">
             <SectionHeader number="04" title="DESIGN" />
-            <Card eyebrow="HANDOFF & SPECS" heading="How did we explore the solution space?">
-              <div className="flex flex-col gap-4 font-public-sans font-normal text-[16px] text-black leading-[24px]">
-                <p>Walk through your design process — from early lo-fi wireframes and concept explorations to the rationale behind key decisions. What did you try, what did you discard, and why?</p>
-                <div className="aspect-[667/380] bg-[#d9d9d9] w-full mt-2 rounded-lg" />
-              </div>
-            </Card>
+            <div className="flex flex-col gap-4 lg:gap-6">
+              <Card eyebrow="DESIGN PROCESS" heading="Early Structural Exploration">
+                <div className="flex flex-col gap-4 font-public-sans font-normal text-[16px] text-black leading-[24px]">
+                  <p>With the structural direction roughed out through napkin sketching and early cross-functional working sessions, the next step was to translate the two most promising concepts into something testable. The audit findings, Baymard best practices, and internal alignment with engineering and merchandising had surfaced a core tension that sketches alone couldn&apos;t resolve: should customers enter the catalog through gender — the familiar, convention-aligned pattern — or through sport and activity, which more closely reflected how Patagonia customers actually think about what they buy?</p>
+                  <p>Rather than resolve that tension through internal debate, I brought both directions forward as fully realized concepts.</p>
+                </div>
+              </Card>
+              <Card eyebrow="DESIGN PROCESS" heading="Moving from Lo-Fi to Hi-Fi">
+                <div className="flex flex-col gap-4 font-public-sans font-normal text-[16px] text-black leading-[24px]">
+                  <p>Starting from the napkin sketches, I developed two distinct lo-fi wireframe directions — one gender-focused, one sport-focused — exploring how each would handle the same core navigation challenges: L1 structure, sub-category depth, activity entry points, and the placement of brand content. The lo-fi phase was about stress-testing the logic of each structure before investing in visual execution.</p>
+                  <p>From there, I brought both directions to hi-fi wires and built interactive prototypes for each — giving usability test participants a realistic experience to react to rather than an abstract concept to evaluate.</p>
+                </div>
+              </Card>
+              <Card eyebrow="DESIGN PROCESS" heading="Gender Focused vs Sport Focused Navigation">
+                <div className="flex flex-col gap-6 font-public-sans font-normal text-[16px] text-black leading-[24px]">
+                  <p>The two directions were brought to hi-fi and prototyped for user testing. Below are the final concepts taken into the study.</p>
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6">
+                    <div className="aspect-[4/3] bg-[#d9d9d9] rounded-lg" />
+                    <div className="aspect-[4/3] bg-[#d9d9d9] rounded-lg" />
+                  </div>
+                  <OutlineButton
+                    label="View Gender vs Sport Wireframes"
+                    href="https://www.figma.com/design/XnYsPROwHKKWMCbcrVYLj1/Global-Navigation-Redesign?node-id=3-10&t=UyzvNjptARmAmaD9-1"
+                  />
+                </div>
+              </Card>
+            </div>
           </section>
 
           {/* 05 Test + Iterate */}
           <section id="test-iterate" className="flex flex-col gap-6 lg:gap-8 scroll-mt-[145px] lg:scroll-mt-[120px]">
             <SectionHeader number="05" title="TEST & ITERATE" />
             <div className="flex flex-col gap-4 lg:gap-6">
+              <Card eyebrow="USER TESTING — SURVEY" heading="What did we validate — and what changed?">
+                <div className="flex flex-col gap-4 font-public-sans font-normal text-[16px] text-black leading-[24px]">
+                  <p>Before running full usability testing, I designed a survey to collect quantitative signal on how customers prefer to shop — and which navigation structure would help them find things faster. 42 participants completed the survey.</p>
+                  <p>The data surfaced a revealing tension: 62% said they shop based on a specific activity or sport, yet when presented with the two navigation concepts directly, 60% said the gender-focused menu would help them find things faster. Customers default to familiar patterns even when their actual behavior is activity-driven. This told us that supporting both entry points wasn&apos;t a compromise — it was the right call.</p>
+                  <div>
+                    <p className="font-semibold mb-2">Key findings:</p>
+                    <ul className="list-disc ml-6 leading-[32px]">
+                      <li>40% prefer to start by product type, 29% by gender, 19% by sport or activity</li>
+                      <li>60% chose the gender-focused menu as faster for finding products</li>
+                      <li>62% identify as activity or sport-driven shoppers</li>
+                      <li>92% shop for themselves</li>
+                    </ul>
+                  </div>
+                </div>
+              </Card>
               <Card eyebrow="USABILITY TESTING" heading="What did we validate — and what changed?">
-                Describe your testing approach: moderated sessions, unmoderated testing, A/B experiments. What hypotheses were validated? What surprised you? How did findings directly inform design changes? Reference the testing synthesis report or before/after comparisons.
+                <div className="flex flex-col gap-4 font-public-sans font-normal text-[16px] text-black leading-[24px]">
+                  <p>With survey data in hand, I ran a multi-method usability study to validate the redesigned navigation against real customer behavior before development handoff.</p>
+                  <p>What we tested: a prototype of the redesigned navigation menu for Patagonia.com. Goal: understand how users explore, shop, and interpret the navigation experience.</p>
+                  <div>
+                    <p className="font-semibold mb-2">Study composition:</p>
+                    <ul className="list-disc ml-6 leading-[32px]">
+                      <li>8 unmoderated tests via Usertesting.com (5 new customers, 3 current — Desktop)</li>
+                      <li>6 moderated in-person sessions at the Ventura retail store (all current customers — Desktop)</li>
+                      <li>3 unmoderated mobile tests post-desktop testing (1 new, 2 current customers)</li>
+                    </ul>
+                  </div>
+                  <p>Focus areas: task completion across categories, collections, sports, and brand content; discovery of new products and brand content; label clarity and feature expectations.</p>
+                </div>
               </Card>
               <QuoteCard
-                quote="Insert a quote from testing that led to a meaningful design change — showing your responsiveness to user feedback."
-                source="PARTICIPANT, USABILITY STUDY"
+                quote="I usually shop by activity. That's faster and more relevant to me."
+                source="PARTICIPANT, USABILITY TEST VIA USER TESTING"
               />
               <Card eyebrow="FINAL DIRECTION" heading="The solution we moved forward with">
                 <div className="flex flex-col gap-4 font-public-sans font-normal text-[16px] text-black leading-[24px]">
-                  <p>Describe the final design direction and what made it the right call. How did it balance user needs, business goals, and technical constraints? Link to high-fidelity mockups or the component spec sheet.</p>
-                  <div className="aspect-[667/380] bg-[#d9d9d9] w-full mt-2 rounded-lg" />
+                  <p>The survey and usability testing data pointed clearly to a hybrid architecture — a gender-first navigation structure that also supports sport and activity as a parallel entry point. This wasn&apos;t a split-the-difference decision. The data showed that customers have genuinely different mental models, and the right system needed to meet all of them.</p>
+                  <p>The final navigation leads with Men&apos;s, Women&apos;s, and Kids as primary L1 anchors — the familiar, fast path for customers who know what they want. Sports are elevated as a parallel top-level entry point for customers browsing by what they do. Brand content — Activism, Stories, Guides — moves out of the shopping path entirely and into contextual placements where it earns attention without creating friction.</p>
+                  <div className="aspect-[667/380] bg-[#d9d9d9] w-full rounded-lg" />
                 </div>
               </Card>
             </div>
