@@ -6,7 +6,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import Tag from "@/components/Tag";
 
-const FILTERS = ["All", "Patagonia", "Happypillar"];
+const FILTERS = ["All", "Circularity", "Commerce", "Health & Wellness"];
 
 const CASE_STUDIES = [
   {
@@ -17,6 +17,7 @@ const CASE_STUDIES = [
     tags: ["Systems Design", "Commerce"],
     href: "#",
     year: 2026,
+    category: "Commerce",
   },
   {
     company: "PATAGONIA",
@@ -26,6 +27,7 @@ const CASE_STUDIES = [
     tags: ["Circularity", "End-to-End Design"],
     href: "#",
     year: 2024,
+    category: "Circularity",
   },
   {
     company: "PATAGONIA",
@@ -36,6 +38,7 @@ const CASE_STUDIES = [
     href: "/case-studies/navigation-redesign",
     year: 2023,
     image: "/images/case-studies/navigation-redesign/Patagonia_Nav_Card Image.jpg",
+    category: "Commerce",
   },
   {
     company: "PATAGONIA",
@@ -45,6 +48,7 @@ const CASE_STUDIES = [
     tags: ["Circularity", "End-to-End Design"],
     href: "#",
     year: 2023,
+    category: "Circularity",
   },
   {
     company: "HAPPYPILLAR",
@@ -54,6 +58,7 @@ const CASE_STUDIES = [
     tags: ["End-to-End Design", "Native App"],
     href: "#",
     year: 2022,
+    category: "Health & Wellness",
   },
 ];
 
@@ -85,7 +90,7 @@ export default function CaseStudiesPage() {
   const filtered = CASE_STUDIES.filter(
     (cs) =>
       activeFilter === "All" ||
-      cs.company.toLowerCase() === activeFilter.toLowerCase()
+      cs.category === activeFilter
   ).sort((a, b) =>
     sortOrder === "newest" ? b.year - a.year : a.year - b.year
   );

@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import CaseStudyCard from "./CaseStudyCard";
 
-const FILTERS = ["All", "Patagonia", "Happypillar"];
+const FILTERS = ["All", "Circularity", "Commerce", "Health & Wellness"];
 
 const CASE_STUDIES = [
   {
@@ -11,6 +11,7 @@ const CASE_STUDIES = [
     title: "Provisions Integration",
     description: "Defining the information architecture and UX strategy for integrating Patagonia Provisions into Patagonia.com, with a goal of growing Provisions revenue from $2M to $5–8M annually.",
     tags: ["Systems Design", "Commerce"],
+    category: "Commerce",
   },
   {
     company: "PATAGONIA",
@@ -19,24 +20,28 @@ const CASE_STUDIES = [
     tags: ["Info Architecture", "End-to-End Design"],
     href: "/case-studies/navigation-redesign",
     image: "/images/case-studies/navigation-redesign/Patagonia_Nav_Card Image.jpg",
+    category: "Commerce",
   },
   {
     company: "PATAGONIA",
     title: "Trade In Integration",
     description: "Led UX design for the Trade-In migration to Patagonia.com, resulting in a 200%+ increase in visitors and the digital rejection rate dropping from 35% to 25%.",
     tags: ["Circularity", "End-to-End Design"],
+    category: "Circularity",
   },
   {
     company: "PATAGONIA",
     title: "Shop Used Integration",
     description: "Designed the Shop Used PDP component, surfacing used product alternatives on new product pages. 22% of Worn Wear purchasers came through this component, converting 32% higher than other sources.",
     tags: ["Circularity", "End-to-End Design"],
+    category: "Circularity",
   },
   {
     company: "HAPPYPILLAR",
     title: "Happypillar Native App",
     description: "Led end-to-end design for a mental wellness app from beta through Apple App Store launch. The app was subsequently acquired by Manatee, a leading virtual mental health platform.",
     tags: ["End-to-End Design", "Native App"],
+    category: "Health & Wellness",
   },
 ];
 
@@ -82,7 +87,7 @@ export default function CaseStudies() {
   const filtered =
     activeFilter === "All"
       ? CASE_STUDIES
-      : CASE_STUDIES.filter((cs) => cs.company.toLowerCase() === activeFilter.toLowerCase());
+      : CASE_STUDIES.filter((cs) => cs.category === activeFilter);
 
   return (
     <section className="bg-cream w-full overflow-hidden flex flex-col gap-6 pt-12 pb-14 lg:pb-20">
