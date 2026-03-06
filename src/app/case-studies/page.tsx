@@ -176,7 +176,7 @@ export default function CaseStudiesPage() {
                 className="bg-white flex flex-col gap-4 overflow-hidden cursor-pointer rounded-2xl p-4 lg:rounded-[32px] lg:p-6"
               >
                 {/* Image area */}
-                <div className="group relative w-full aspect-square lg:aspect-auto lg:h-[380px]">
+                <div className="group relative w-full aspect-square lg:aspect-auto lg:h-[380px] overflow-hidden rounded-xl lg:rounded-2xl">
                   {"image" in cs && cs.image ? (
                     <Image
                       src={cs.image as string}
