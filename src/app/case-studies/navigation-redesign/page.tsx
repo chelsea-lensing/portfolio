@@ -532,7 +532,7 @@ export default function NavigationRedesignPage() {
             <div className="flex flex-col gap-4 lg:gap-6">
 
               {/* Metric row */}
-              <div className="flex">
+              <div className="flex flex-col lg:flex-row">
                 {[
                   { value: "+27.5%", label: "Navigation engagement rate vs. baseline" },
                   { value: "2X",     label: "Conversion rate vs. users not engaging with the nav (3.75% vs. 1.6%)" },
@@ -541,7 +541,7 @@ export default function NavigationRedesignPage() {
                   <div
                     key={m.value}
                     className={`flex-1 bg-[#f8f6f4] border border-[#ebebeb] p-4 lg:p-8 flex flex-col gap-4 items-center justify-center ${
-                      i === 0 ? "rounded-l-[16px]" : i === arr.length - 1 ? "rounded-r-[16px]" : ""
+                      i === 0 ? "rounded-t-[16px] lg:rounded-t-none lg:rounded-l-[16px]" : i === arr.length - 1 ? "rounded-b-[16px] lg:rounded-b-none lg:rounded-r-[16px]" : ""
                     }`}
                   >
                     <p className="font-poiret text-[32px] text-accent leading-[20px] whitespace-nowrap">{m.value}</p>
