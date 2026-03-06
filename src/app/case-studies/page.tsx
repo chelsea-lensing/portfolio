@@ -56,8 +56,9 @@ const CASE_STUDIES = [
     description:
       "Led end-to-end design for a mental wellness app from beta through Apple App Store launch. The app was subsequently acquired by Manatee, a leading virtual mental health platform.",
     tags: ["End-to-End Design", "Native App"],
-    href: "#",
+    href: "/case-studies/happypillar",
     year: 2022,
+    image: "/images/case-studies/happypillar/Happypillar_Nav_Card Image.jpg",
     category: "Health & Wellness",
   },
 ];
