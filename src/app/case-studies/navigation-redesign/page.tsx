@@ -293,7 +293,7 @@ export default function NavigationRedesignPage() {
                     </ul>
                   </div>
                   <OutlineButton
-                    label="View Personas & User Journeys in FigJam"
+                    label="View Journey Maps in FigJam"
                     href="https://www.figma.com/board/D5M1xSfonTOmjrOQB7YkQI/Patagonia_Nav-Discovery---Research?node-id=9-5291&t=w11TWxhJfdjUPv1M-1"
                   />
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6">
