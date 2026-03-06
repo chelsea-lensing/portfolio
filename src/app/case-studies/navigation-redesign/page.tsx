@@ -372,10 +372,6 @@ export default function NavigationRedesignPage() {
                 </div>
               </Card>
 
-              {/* Referencing Past Work */}
-              <Card eyebrow="REFERENCING PAST WORK" heading="Build on, don't repeat">
-                Before moving to design, I revisited the navigation redesign A/B test results from 2022. This ensured the new direction built on — rather than repeated — past learning, and gave the team a richer foundation for the structural decisions ahead.
-              </Card>
 
             </div>
           </section>
@@ -554,9 +550,6 @@ export default function NavigationRedesignPage() {
                 Three months post-launch, users interacting with the new navigation converted at more than double the rate of users who weren&apos;t (3.75% vs. 1.6%). This isn&apos;t a launch spike, it&apos;s sustained performance that reflects a fundamentally more intuitive experience. PLP click-through rate increased 12.9%, and users were reaching a product detail page in under 45 seconds on average.
               </Card>
 
-              <Card eyebrow="LEARNINGS" heading="A scalable foundation — not a finished product">
-                The most durable outcome of this project isn&apos;t a nav redesign — it&apos;s a taxonomy framework Patagonia can build on as the catalog and brand continue to evolve. With Provisions and Shop Used coming online, the system is designed to absorb new categories without requiring structural surgery.
-              </Card>
 
             </div>
           </section>
