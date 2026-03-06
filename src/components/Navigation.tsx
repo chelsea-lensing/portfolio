@@ -23,7 +23,7 @@ export default function Navigation() {
 
   return (
     <>
-      <nav className={`bg-white w-full h-[96px] lg:h-[104px] sticky top-0 z-40 flex items-center px-6 lg:px-12 transition-transform duration-300 ease-in-out ${hidden ? "-translate-y-full" : "translate-y-0"}`}>
+      <nav className={`bg-white w-full h-[96px] lg:h-[104px] sticky top-0 z-40 flex items-center px-4 lg:px-12 transition-transform duration-300 ease-in-out ${hidden ? "-translate-y-full" : "translate-y-0"}`}>
         <div className="w-full flex items-center justify-between">
           <a href="/" className="font-poiret text-[24px] lg:text-[36px] text-black leading-normal">
             CHELSEA LENSING
@@ -43,7 +43,7 @@ export default function Navigation() {
       {isOpen && (
         <div className="fixed inset-0 z-50 bg-accent flex flex-col">
           {/* Nav bar — mirrors regular nav but on red bg */}
-          <div className="w-full h-[96px] lg:h-[104px] px-6 lg:px-12 flex items-center justify-between shrink-0">
+          <div className="w-full h-[96px] lg:h-[104px] px-4 lg:px-12 flex items-center justify-between shrink-0">
             <a href="/" className="font-poiret text-[24px] lg:text-[36px] text-white leading-normal">
               CHELSEA LENSING
             </a>
