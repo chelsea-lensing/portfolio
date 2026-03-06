@@ -73,9 +73,9 @@ export default function Navigation() {
               </a>
             </div>
             <div className="flex gap-[24px] lg:gap-[40px] text-[24px] lg:text-[36px]">
-              <a href="#" className="shrink-0">RESUME</a>
-              <a href="#" className="shrink-0">EMAIL</a>
-              <a href="#" className="shrink-0">LINKEDIN</a>
+              <a href="https://drive.google.com/file/d/1jEU7xNL0Y8YESjCYPeD3LlN5FQN1UkFx/view" target="_blank" rel="noopener noreferrer" className="shrink-0">RESUME</a>
+              <a href="mailto:cjlensing@gmail.com" className="shrink-0">EMAIL</a>
+              <a href="https://www.linkedin.com/in/chelsealensing/" target="_blank" rel="noopener noreferrer" className="shrink-0">LINKEDIN</a>
             </div>
           </div>
         </div>
