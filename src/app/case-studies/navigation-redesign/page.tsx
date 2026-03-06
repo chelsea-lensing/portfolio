@@ -570,7 +570,7 @@ export default function NavigationRedesignPage() {
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
             <path d="M9 2L3 6L9 10" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
-          PREVIOUS PROJECT
+          <span className="hidden lg:inline">PREVIOUS PROJECT</span>
         </a>
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
@@ -582,7 +582,7 @@ export default function NavigationRedesignPage() {
           BACK TO TOP
         </button>
         <a href="#" className="flex items-center gap-2 font-poiret text-[12px] tracking-[1.5px] text-black hover:opacity-60 transition-opacity">
-          NEXT PROJECT
+          <span className="hidden lg:inline">NEXT PROJECT</span>
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
             <path d="M3 2L9 6L3 10" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
