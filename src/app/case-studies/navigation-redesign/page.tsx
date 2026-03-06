@@ -540,7 +540,7 @@ export default function NavigationRedesignPage() {
                 ].map((m, i, arr) => (
                   <div
                     key={m.value}
-                    className={`flex-1 bg-[#f8f6f4] border border-[#ebebeb] p-4 lg:p-8 flex flex-col gap-4 items-center justify-center ${
+                    className={`flex-1 bg-[#f8f6f4] border border-[#ebebeb] px-4 py-6 lg:p-8 flex flex-col gap-4 items-center justify-center ${
                       i === 0 ? "rounded-t-[16px] lg:rounded-t-none lg:rounded-l-[16px]" : i === arr.length - 1 ? "rounded-b-[16px] lg:rounded-b-none lg:rounded-r-[16px]" : ""
                     }`}
                   >
