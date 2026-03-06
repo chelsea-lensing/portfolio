@@ -228,7 +228,7 @@ export default function NavigationRedesignPage() {
                 <div className="flex flex-col gap-6 font-public-sans font-normal text-[16px] text-black leading-[32px]">
                   <p className="leading-[24px]">To pressure-test the vision against reality, we anchored the discovery work in three primary sources: Fullstory behavioral data, a Brand Health Report, and a SWOT analysis gathered by the product manager.</p>
                   <div>
-                    <p className="font-semibold mb-1">FULLSTORY DATA:</p>
+                    <p className="font-medium mb-1">Fullstory Data:</p>
                     <ul className="list-disc ml-6 leading-[32px]">
                       <li>Session replays and heatmaps revealed where customers struggled to navigate the catalog</li>
                       <li>Funnel data showed significant drop-off points between homepage and category pages</li>
@@ -237,14 +237,14 @@ export default function NavigationRedesignPage() {
                     </ul>
                   </div>
                   <div>
-                    <p className="font-semibold mb-1">BRAND HEALTH REPORT</p>
+                    <p className="font-medium mb-1">Brand Health Report</p>
                     <ul className="list-disc ml-6 leading-[32px]">
                       <li>Surfaced how customers perceive and emotionally connect with the brand versus how they shop it</li>
                       <li>Revealed gaps between brand affinity and product discoverability — strong loyalty, weak catalog exploration</li>
                     </ul>
                   </div>
                   <div>
-                    <p className="font-semibold mb-1">SWOT ANALYSIS</p>
+                    <p className="font-medium mb-1">SWOT Analysis</p>
                     <ul className="list-disc ml-6 leading-[32px]">
                       <li>Strengths: deep brand loyalty, unique product storytelling, strong sustainability positioning</li>
                       <li>Weaknesses: fragmented taxonomy, outdated navigation structure, poor mobile conversion</li>
@@ -261,7 +261,7 @@ export default function NavigationRedesignPage() {
                   <p>We organized customer friction points into natural groupings, quantifying where pain was most intense across six clusters: Understanding Gaps, Filtering &amp; Sorting, Homepage &amp; Discovery Barriers, Versatility/Longevity Confidence Fatigue, Personalization, and Guided Shopping. Cross-referencing these with funnel data gave us a prioritized view of where to focus.</p>
                   <div className="flex flex-col gap-4">
                     <div>
-                      <p className="font-semibold mb-2">Highest Impact Friction Areas</p>
+                      <p className="font-medium mb-2">Highest Impact Friction Areas</p>
                       <ul className="list-disc ml-6 leading-[32px]">
                         <li>Navigation Structure — 42% don&apos;t consider Patagonia for exercise/training; over-categorization forces siloed paths</li>
                         <li>Filtering &amp; Sorting — only &ldquo;Waterproof&rdquo; appears in top 20 filters at 1% usage; missing multi-select functionality</li>
@@ -270,7 +270,7 @@ export default function NavigationRedesignPage() {
                       </ul>
                     </div>
                     <div>
-                      <p className="font-semibold mb-2">Open Questions Identified</p>
+                      <p className="font-medium mb-2">Open Questions Identified</p>
                       <ul className="list-disc ml-6 leading-[32px]">
                         <li>Where does filtering make more sense than navigation depth?</li>
                         <li>How much category depth actually supports vs. overwhelms product discovery?</li>
@@ -448,7 +448,7 @@ export default function NavigationRedesignPage() {
                   <p>Before running full usability testing, I designed a survey to collect quantitative signal on how customers prefer to shop — and which navigation structure would help them find things faster. 42 participants completed the survey.</p>
                   <p>The data surfaced a revealing tension: 62% said they shop based on a specific activity or sport, yet when presented with the two navigation concepts directly, 60% said the gender-focused menu would help them find things faster. Customers default to familiar patterns even when their actual behavior is activity-driven. This told us that supporting both entry points wasn&apos;t a compromise — it was the right call.</p>
                   <div>
-                    <p className="font-semibold mb-2">Key findings:</p>
+                    <p className="font-medium mb-2">Key findings:</p>
                     <ul className="list-disc ml-6 leading-[32px]">
                       <li>40% prefer to start by product type, 29% by gender, 19% by sport or activity</li>
                       <li>60% chose the gender-focused menu as faster for finding products</li>
@@ -463,7 +463,7 @@ export default function NavigationRedesignPage() {
                   <p>With survey data in hand, I ran a multi-method usability study to validate the redesigned navigation against real customer behavior before development handoff.</p>
                   <p>What we tested: a prototype of the redesigned navigation menu for Patagonia.com. Goal: understand how users explore, shop, and interpret the navigation experience.</p>
                   <div>
-                    <p className="font-semibold mb-2">Study composition:</p>
+                    <p className="font-medium mb-2">Study composition:</p>
                     <ul className="list-disc ml-6 leading-[32px]">
                       <li>8 unmoderated tests via Usertesting.com (5 new customers, 3 current — Desktop)</li>
                       <li>6 moderated in-person sessions at the Ventura retail store (all current customers — Desktop)</li>
@@ -506,7 +506,7 @@ export default function NavigationRedesignPage() {
                 />
                 <div className="flex flex-col lg:flex-row gap-6 leading-[32px]">
                   <div className="flex-1">
-                    <p className="font-semibold mb-1">DELIVERABLES PRODUCED:</p>
+                    <p className="font-medium mb-1">Deliverables Produced:</p>
                     <ul className="list-disc ml-6">
                       <li>Figma component library with all nav states</li>
                       <li>Annotated interaction behavior</li>
@@ -514,7 +514,7 @@ export default function NavigationRedesignPage() {
                     </ul>
                   </div>
                   <div className="flex-1">
-                    <p className="font-semibold mb-1">CROSS-FUNCTIONAL WORK:</p>
+                    <p className="font-medium mb-1">Cross-Functional Work:</p>
                     <ul className="list-disc ml-6">
                       <li>Design QA period — caught critical rendering issues before moving to UAT</li>
                       <li>Weekly syncs with Merchandising to validate taxonomy mapping against backend catalog structure</li>
