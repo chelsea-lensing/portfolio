@@ -24,6 +24,7 @@ const CASE_STUDIES = [
     description: "Redesigning global navigation and taxonomy, driving a 27.5% lift in menu engagement and generating $6.6M in attributable revenue with projected annual impact of up to $13.7M.",
     tags: ["Info Architecture", "End-to-End Design"],
     href: "/case-studies/navigation-redesign",
+    image: "/images/case-studies/navigation-redesign/Patagonia_Nav_Card Image.jpg",
   },
   {
     company: "PATAGONIA",
@@ -142,6 +143,7 @@ export default function CaseStudies() {
               description={cs.description}
               tags={cs.tags}
               href={"href" in cs ? cs.href : undefined}
+              image={"image" in cs ? cs.image : undefined}
             />
           ))}
         </div>

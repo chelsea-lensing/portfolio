@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import Tag from "@/components/Tag";
@@ -43,6 +44,7 @@ const CASE_STUDIES = [
     tags: ["Info Architecture", "End-to-End Design"],
     href: "/case-studies/navigation-redesign",
     year: 2023,
+    image: "/images/case-studies/navigation-redesign/Patagonia_Nav_Card Image.jpg",
   },
   {
     company: "PATAGONIA",
@@ -175,7 +177,16 @@ export default function CaseStudiesPage() {
               >
                 {/* Image area */}
                 <div className="group relative w-full aspect-square lg:aspect-auto lg:h-[380px]">
-                  <div className="absolute inset-0 bg-[#d9d9d9] transition-opacity duration-300 lg:group-hover:opacity-0" />
+                  {"image" in cs && cs.image ? (
+                    <Image
+                      src={cs.image as string}
+                      alt={cs.title}
+                      fill
+                      className="object-cover transition-opacity duration-300 lg:group-hover:opacity-0"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 bg-[#d9d9d9] transition-opacity duration-300 lg:group-hover:opacity-0" />
+                  )}
                   <div className="absolute inset-0 bg-cream flex items-center justify-center p-6 opacity-0 transition-opacity duration-300 lg:group-hover:opacity-100">
                     <p className="font-public-sans font-normal text-[12px] text-black text-center leading-[20px]">
                       {cs.description}
