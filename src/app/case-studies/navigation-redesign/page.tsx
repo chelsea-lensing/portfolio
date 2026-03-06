@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import type { ReactNode } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import ImageLightbox from "@/components/ImageLightbox";
 
 const SECTIONS = [
   { id: "discovery",    number: "01", label: "Discovery" },
@@ -21,6 +22,7 @@ export default function NavigationRedesignPage() {
   const [showPrevNext, setShowPrevNext] = useState(true);
   const [showJumpTo, setShowJumpTo] = useState(false);
   const [navHidden, setNavHidden] = useState(false);
+  const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null);
   const lastScrollY = useRef(0);
 
   useEffect(() => {
@@ -123,7 +125,8 @@ export default function NavigationRedesignPage() {
         <img
           src="/images/case-studies/navigation-redesign/Patagonia_Nav_Hero.jpg"
           alt="Images of the Featured L1 Navigation Menu on desktop and the Women's L2 Navigation menu on mobile."
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover cursor-zoom-in"
+          onClick={() => setLightbox({ src: "/images/case-studies/navigation-redesign/Patagonia_Nav_Hero.jpg", alt: "Images of the Featured L1 Navigation Menu on desktop and the Women's L2 Navigation menu on mobile." })}
         />
       </div>
 
@@ -297,12 +300,14 @@ export default function NavigationRedesignPage() {
                     <img
                       src="/images/case-studies/navigation-redesign/Patagonia_Nav_Persona1.jpg"
                       alt="Image of Olivia's persona and journey map experience with her user steps that coincide with her activities, mindset, paint points & opportunities."
-                      className="w-full h-auto rounded-lg"
+                      className="w-full h-auto rounded-lg cursor-zoom-in"
+                      onClick={() => setLightbox({ src: "/images/case-studies/navigation-redesign/Patagonia_Nav_Persona1.jpg", alt: "Image of Olivia's persona and journey map." })}
                     />
                     <img
                       src="/images/case-studies/navigation-redesign/Patagonia_Nav_Persona2.jpg"
                       alt="Image of Leo's persona and journey map experience with her user steps that coincide with her activities, mindset, paint points & opportunities."
-                      className="w-full h-auto rounded-lg"
+                      className="w-full h-auto rounded-lg cursor-zoom-in"
+                      onClick={() => setLightbox({ src: "/images/case-studies/navigation-redesign/Patagonia_Nav_Persona2.jpg", alt: "Image of Leo's persona and journey map." })}
                     />
                   </div>
                 </div>
@@ -329,7 +334,8 @@ export default function NavigationRedesignPage() {
                   <img
                     src="/images/case-studies/navigation-redesign/Patagonia_Nav_OppSolutionTree.jpg"
                     alt="Image of the Opportunity Solution Tree exercise mapping customer friction points to solution opportunities, highlighting navigation redesign as the highest-impact intervention."
-                    className="w-full h-auto rounded-lg"
+                    className="w-full h-auto rounded-lg cursor-zoom-in"
+                    onClick={() => setLightbox({ src: "/images/case-studies/navigation-redesign/Patagonia_Nav_OppSolutionTree.jpg", alt: "Opportunity Solution Tree exercise." })}
                   />
                 </div>
               </Card>
@@ -360,7 +366,8 @@ export default function NavigationRedesignPage() {
                   <img
                     src="/images/case-studies/navigation-redesign/Patagonia_Nav_TaxonomyAudit.png"
                     alt="Image of a section of the Taxonomy Audit done in FigJam showing Women's tops with a diagram of architecture and comments/questions to address issues and takeaways from the audit."
-                    className="w-full h-auto rounded-lg"
+                    className="w-full h-auto rounded-lg cursor-zoom-in"
+                    onClick={() => setLightbox({ src: "/images/case-studies/navigation-redesign/Patagonia_Nav_TaxonomyAudit.png", alt: "Taxonomy Audit in FigJam." })}
                   />
                 </div>
               </Card>
@@ -410,14 +417,16 @@ export default function NavigationRedesignPage() {
                       <img
                         src="/images/case-studies/navigation-redesign/Patagonia_Nav_Gender.jpg"
                         alt="Images of the gender focused navigation on a desktop and mobile screen."
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover cursor-zoom-in"
+                        onClick={() => setLightbox({ src: "/images/case-studies/navigation-redesign/Patagonia_Nav_Gender.jpg", alt: "Gender focused navigation on desktop and mobile." })}
                       />
                     </div>
                     <div className="aspect-[4/3] rounded-lg overflow-hidden">
                       <img
                         src="/images/case-studies/navigation-redesign/Patagonia_Nav_Sport.jpg"
                         alt="Images of the sport focused navigation on a desktop and mobile screen."
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover cursor-zoom-in"
+                        onClick={() => setLightbox({ src: "/images/case-studies/navigation-redesign/Patagonia_Nav_Sport.jpg", alt: "Sport focused navigation on desktop and mobile." })}
                       />
                     </div>
                   </div>
@@ -476,7 +485,8 @@ export default function NavigationRedesignPage() {
                     <img
                       src="/images/case-studies/navigation-redesign/Patagonia_Nav_FinalDirection.jpg"
                       alt="Image of the final navigation menu direction showing Featured L1 menu expanded with L2s: New Arrivals, Patagonia Favorites, Shop by Category, Web Specials and More"
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover cursor-zoom-in"
+                      onClick={() => setLightbox({ src: "/images/case-studies/navigation-redesign/Patagonia_Nav_FinalDirection.jpg", alt: "Final navigation menu direction." })}
                     />
                   </div>
                 </div>
@@ -580,6 +590,14 @@ export default function NavigationRedesignPage() {
       </div>
 
       <Footer />
+
+      {lightbox && (
+        <ImageLightbox
+          src={lightbox.src}
+          alt={lightbox.alt}
+          onClose={() => setLightbox(null)}
+        />
+      )}
     </main>
   );
 }
