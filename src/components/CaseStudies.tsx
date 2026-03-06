@@ -104,14 +104,14 @@ export default function CaseStudies() {
         <a href="/case-studies" className="font-poiret text-[24px] text-accent tracking-[1.5px] leading-normal w-full transition-opacity duration-200 hover:opacity-60">
           CASE STUDIES
         </a>
-        <div className="flex gap-2 items-center">
+        <div className="flex gap-2 items-center overflow-x-auto scrollbar-hide">
           {FILTERS.map((filter) => {
             const isActive = activeFilter === filter;
             return (
               <button
                 key={filter}
                 onClick={() => handleFilterChange(filter)}
-                className={`flex h-10 items-center justify-center px-5 py-[11px] rounded-full text-[14px] font-public-sans font-normal leading-[20px] whitespace-nowrap border transition-colors cursor-pointer ${
+                className={`shrink-0 flex h-10 items-center justify-center px-5 py-[11px] rounded-full text-[14px] font-public-sans font-normal leading-[20px] whitespace-nowrap border transition-colors cursor-pointer ${
                   isActive
                     ? "bg-[#3c3c3c] border-[#3c3c3c] text-white"
                     : "bg-[rgba(237,234,226,0.2)] border-[rgba(60,60,60,0.1)] text-dark"
