@@ -294,20 +294,16 @@ export default function NavigationRedesignPage() {
                     href="https://www.figma.com/board/D5M1xSfonTOmjrOQB7YkQI/Patagonia_Nav-Discovery---Research?node-id=9-5291&t=w11TWxhJfdjUPv1M-1"
                   />
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6">
-                    <div className="aspect-[4/3] rounded-lg overflow-hidden">
-                      <img
-                        src="/images/case-studies/navigation-redesign/Patagonia_Nav_Persona1.jpg"
-                        alt="Image of Olivia's persona and journey map experience with her user steps that coincide with her activities, mindset, paint points & opportunities."
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div className="aspect-[4/3] rounded-lg overflow-hidden">
-                      <img
-                        src="/images/case-studies/navigation-redesign/Patagonia_Nav_Persona2.jpg"
-                        alt="Image of Leo's persona and journey map experience with her user steps that coincide with her activities, mindset, paint points & opportunities."
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
+                    <img
+                      src="/images/case-studies/navigation-redesign/Patagonia_Nav_Persona1.jpg"
+                      alt="Image of Olivia's persona and journey map experience with her user steps that coincide with her activities, mindset, paint points & opportunities."
+                      className="w-full h-auto rounded-lg"
+                    />
+                    <img
+                      src="/images/case-studies/navigation-redesign/Patagonia_Nav_Persona2.jpg"
+                      alt="Image of Leo's persona and journey map experience with her user steps that coincide with her activities, mindset, paint points & opportunities."
+                      className="w-full h-auto rounded-lg"
+                    />
                   </div>
                 </div>
               </Card>
@@ -330,13 +326,11 @@ export default function NavigationRedesignPage() {
                     label="View Discovery Exercises in FigJam"
                     href="https://www.figma.com/board/D5M1xSfonTOmjrOQB7YkQI/Patagonia_Nav-Discovery---Research?node-id=0-1&t=w11TWxhJfdjUPv1M-1"
                   />
-                  <div className="aspect-[667/380] w-full rounded-lg overflow-hidden">
-                    <img
-                      src="/images/case-studies/navigation-redesign/Patagonia_Nav_OppSolutionTree.jpg"
-                      alt="Image of the Opportunity Solution Tree exercise mapping customer friction points to solution opportunities, highlighting navigation redesign as the highest-impact intervention."
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
+                  <img
+                    src="/images/case-studies/navigation-redesign/Patagonia_Nav_OppSolutionTree.jpg"
+                    alt="Image of the Opportunity Solution Tree exercise mapping customer friction points to solution opportunities, highlighting navigation redesign as the highest-impact intervention."
+                    className="w-full h-auto rounded-lg"
+                  />
                 </div>
               </Card>
 
@@ -363,13 +357,11 @@ export default function NavigationRedesignPage() {
                     label="View Taxonomy Audit Findings Deck"
                     href="https://www.figma.com/proto/XnYsPROwHKKWMCbcrVYLj1/Product-Discovery-Navigation?node-id=3-62466&p=f&viewport=60%2C194%2C0.07&t=bTXE8XIXYBbu3sYE-1&scaling=min-zoom&content-scaling=fixed&page-id=3%3A7"
                   />
-                  <div className="aspect-[667/380] w-full rounded-lg overflow-hidden">
-                    <img
-                      src="/images/case-studies/navigation-redesign/Patagonia_Nav_TaxonomyAudit.png"
-                      alt="Image of a section of the Taxonomy Audit done in FigJam showing Women's tops with a diagram of architecture and comments/questions to address issues and takeaways from the audit."
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
+                  <img
+                    src="/images/case-studies/navigation-redesign/Patagonia_Nav_TaxonomyAudit.png"
+                    alt="Image of a section of the Taxonomy Audit done in FigJam showing Women's tops with a diagram of architecture and comments/questions to address issues and takeaways from the audit."
+                    className="w-full h-auto rounded-lg"
+                  />
                 </div>
               </Card>
 
