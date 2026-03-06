@@ -3,15 +3,9 @@
 import { useState, useRef, useEffect } from "react";
 import CaseStudyCard from "./CaseStudyCard";
 
-const FILTERS = ["All", "Patagonia", "Realift", "Happypillar"];
+const FILTERS = ["All", "Patagonia", "Happypillar"];
 
 const CASE_STUDIES = [
-  {
-    company: "PATAGONIA",
-    title: "PDP Redesign Discovery",
-    description: "A comprehensive discovery process spanning taxonomy audit, funnel analysis, user journey mapping, and friction point analysis to reshape product discovery on Patagonia.com.",
-    tags: ["User Research", "Strategy"],
-  },
   {
     company: "PATAGONIA",
     title: "Provisions Integration",
@@ -37,12 +31,6 @@ const CASE_STUDIES = [
     title: "Shop Used Integration",
     description: "Designed the Shop Used PDP component, surfacing used product alternatives on new product pages. 22% of Worn Wear purchasers came through this component, converting 32% higher than other sources.",
     tags: ["Circularity", "End-to-End Design"],
-  },
-  {
-    company: "REALIFT",
-    title: "Levi's Size & Fit Tool",
-    description: "End-to-end UX design for RealSize, a machine-learning fit solution. Designed a fit and style experience for Levi's and presented the product vision directly to their leadership team.",
-    tags: ["Personalization", "UI Design"],
   },
   {
     company: "HAPPYPILLAR",

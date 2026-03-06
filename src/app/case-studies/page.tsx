@@ -6,7 +6,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import Tag from "@/components/Tag";
 
-const FILTERS = ["All", "Patagonia", "Realift", "Happypillar"];
+const FILTERS = ["All", "Patagonia", "Happypillar"];
 
 const CASE_STUDIES = [
   {
@@ -17,15 +17,6 @@ const CASE_STUDIES = [
     tags: ["Systems Design", "Commerce"],
     href: "#",
     year: 2026,
-  },
-  {
-    company: "PATAGONIA",
-    title: "PDP Redesign Discovery",
-    description:
-      "A comprehensive discovery process spanning taxonomy audit, funnel analysis, user journey mapping, and friction point analysis to reshape product discovery on Patagonia.com.",
-    tags: ["User Research", "Strategy"],
-    href: "#",
-    year: 2025,
   },
   {
     company: "PATAGONIA",
@@ -54,15 +45,6 @@ const CASE_STUDIES = [
     tags: ["Circularity", "End-to-End Design"],
     href: "#",
     year: 2023,
-  },
-  {
-    company: "REALIFT",
-    title: "Levi's Size & Fit Tool",
-    description:
-      "End-to-end UX design for RealSize, a machine-learning fit solution. Designed a fit and style experience for Levi's and presented the product vision directly to their leadership team.",
-    tags: ["Personalization", "UI Design"],
-    href: "#",
-    year: 2022,
   },
   {
     company: "HAPPYPILLAR",
