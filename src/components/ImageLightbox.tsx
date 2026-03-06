@@ -100,8 +100,31 @@ export default function ImageLightbox({ src, alt, onClose }: ImageLightboxProps)
       onMouseUp={handleMouseUp}
       onMouseLeave={handleMouseUp}
     >
-      {/* Controls */}
-      <div className="absolute top-4 right-4 flex items-center gap-2 z-10">
+      {/* Image container — sized to fit, used for bounds calculation */}
+      <div
+        ref={containerRef}
+        className="p-4 lg:p-12 w-full h-full flex items-center justify-center overflow-hidden"
+        onClick={(e) => e.stopPropagation()}
+        onWheel={handleWheel}
+      >
+        <img
+          ref={imgRef}
+          src={src}
+          alt={alt}
+          draggable={false}
+          onMouseDown={handleMouseDown}
+          onDoubleClick={handleDoubleClick}
+          className="max-w-full max-h-full object-contain rounded-lg shadow-2xl select-none"
+          style={{
+            transform: `scale(${scale}) translate(${offset.x / scale}px, ${offset.y / scale}px)`,
+            cursor,
+            transition: dragging.current ? "none" : "transform 0.1s ease",
+          }}
+        />
+      </div>
+
+      {/* Controls — rendered after image so they're always on top */}
+      <div className="absolute top-4 right-4 flex items-center gap-2">
         <button
           onClick={(e) => { e.stopPropagation(); applyScale(scale - 0.5); }}
           className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors cursor-pointer"
@@ -141,29 +164,6 @@ export default function ImageLightbox({ src, alt, onClose }: ImageLightboxProps)
           {Math.round(scale * 100)}%
         </div>
       )}
-
-      {/* Image container — sized to fit, used for bounds calculation */}
-      <div
-        ref={containerRef}
-        className="p-4 lg:p-12 w-full h-full flex items-center justify-center overflow-hidden"
-        onClick={(e) => e.stopPropagation()}
-        onWheel={handleWheel}
-      >
-        <img
-          ref={imgRef}
-          src={src}
-          alt={alt}
-          draggable={false}
-          onMouseDown={handleMouseDown}
-          onDoubleClick={handleDoubleClick}
-          className="max-w-full max-h-full object-contain rounded-lg shadow-2xl select-none"
-          style={{
-            transform: `scale(${scale}) translate(${offset.x / scale}px, ${offset.y / scale}px)`,
-            cursor,
-            transition: dragging.current ? "none" : "transform 0.1s ease",
-          }}
-        />
-      </div>
 
       {scale === 1 && (
         <p className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white/50 text-[12px] font-public-sans pointer-events-none whitespace-nowrap">
