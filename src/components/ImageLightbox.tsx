@@ -14,6 +14,8 @@ const MAX_SCALE = 4;
 export default function ImageLightbox({ src, alt, onClose }: ImageLightboxProps) {
   const [scale, setScale] = useState(1);
   const [offset, setOffset] = useState({ x: 0, y: 0 });
+  const imgRef = useRef<HTMLImageElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const dragging = useRef(false);
   const dragStart = useRef({ x: 0, y: 0 });
   const offsetAtDragStart = useRef({ x: 0, y: 0 });
@@ -31,27 +33,29 @@ export default function ImageLightbox({ src, alt, onClose }: ImageLightboxProps)
     };
   }, [onClose]);
 
-  // Reset pan when scale returns to 1
-  useEffect(() => {
-    if (scale === 1) setOffset({ x: 0, y: 0 });
-  }, [scale]);
-
-  const clampOffset = (x: number, y: number, s: number) => {
-    // Allow panning only within the scaled image bounds
-    const maxX = (s - 1) * 50; // percent-based approximation
-    const maxY = (s - 1) * 50;
+  const getClampedOffset = (x: number, y: number, s: number) => {
+    if (!imgRef.current || !containerRef.current) return { x, y };
+    const img = imgRef.current.getBoundingClientRect();
+    const container = containerRef.current.getBoundingClientRect();
+    // How far the scaled image extends beyond the container on each side
+    const maxX = Math.max(0, (img.width * s - container.width) / 2);
+    const maxY = Math.max(0, (img.height * s - container.height) / 2);
     return {
       x: Math.max(-maxX, Math.min(maxX, x)),
       y: Math.max(-maxY, Math.min(maxY, y)),
     };
   };
 
+  const applyScale = (next: number) => {
+    const clamped = Math.min(MAX_SCALE, Math.max(MIN_SCALE, next));
+    setScale(clamped);
+    if (clamped === 1) setOffset({ x: 0, y: 0 });
+    else setOffset((prev) => getClampedOffset(prev.x, prev.y, clamped));
+  };
+
   const handleWheel = (e: React.WheelEvent) => {
     e.preventDefault();
-    setScale((prev) => {
-      const next = Math.min(MAX_SCALE, Math.max(MIN_SCALE, prev - e.deltaY * 0.002));
-      return next;
-    });
+    applyScale(scale - e.deltaY * 0.003);
   };
 
   const handleMouseDown = (e: React.MouseEvent) => {
@@ -68,24 +72,18 @@ export default function ImageLightbox({ src, alt, onClose }: ImageLightboxProps)
     const dx = e.clientX - dragStart.current.x;
     const dy = e.clientY - dragStart.current.y;
     if (Math.abs(dx) > 2 || Math.abs(dy) > 2) hasDragged.current = true;
-    setOffset(clampOffset(
+    setOffset(getClampedOffset(
       offsetAtDragStart.current.x + dx,
       offsetAtDragStart.current.y + dy,
       scale
     ));
   };
 
-  const handleMouseUp = () => {
-    dragging.current = false;
-  };
+  const handleMouseUp = () => { dragging.current = false; };
 
   const handleDoubleClick = () => {
-    if (scale > 1) {
-      setScale(1);
-      setOffset({ x: 0, y: 0 });
-    } else {
-      setScale(2.5);
-    }
+    if (scale > 1) { setScale(1); setOffset({ x: 0, y: 0 }); }
+    else applyScale(2.5);
   };
 
   const handleBackdropClick = () => {
@@ -104,9 +102,8 @@ export default function ImageLightbox({ src, alt, onClose }: ImageLightboxProps)
     >
       {/* Controls */}
       <div className="absolute top-4 right-4 flex items-center gap-2 z-10">
-        {/* Zoom out */}
         <button
-          onClick={(e) => { e.stopPropagation(); setScale((s) => Math.max(MIN_SCALE, s - 0.5)); }}
+          onClick={(e) => { e.stopPropagation(); applyScale(scale - 0.5); }}
           className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors cursor-pointer"
           aria-label="Zoom out"
         >
@@ -116,9 +113,8 @@ export default function ImageLightbox({ src, alt, onClose }: ImageLightboxProps)
             <path d="M11 11L14 14" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
           </svg>
         </button>
-        {/* Zoom in */}
         <button
-          onClick={(e) => { e.stopPropagation(); setScale((s) => Math.min(MAX_SCALE, s + 0.5)); }}
+          onClick={(e) => { e.stopPropagation(); applyScale(scale + 0.5); }}
           className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors cursor-pointer"
           aria-label="Zoom in"
         >
@@ -128,7 +124,6 @@ export default function ImageLightbox({ src, alt, onClose }: ImageLightboxProps)
             <path d="M11 11L14 14" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
           </svg>
         </button>
-        {/* Close */}
         <button
           onClick={(e) => { e.stopPropagation(); onClose(); }}
           className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors cursor-pointer"
@@ -140,34 +135,36 @@ export default function ImageLightbox({ src, alt, onClose }: ImageLightboxProps)
         </button>
       </div>
 
-      {/* Zoom level badge */}
+      {/* Zoom badge */}
       {scale > 1 && (
         <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/50 text-white text-[12px] font-public-sans px-3 py-1 rounded-full pointer-events-none">
           {Math.round(scale * 100)}%
         </div>
       )}
 
-      {/* Image */}
+      {/* Image container — sized to fit, used for bounds calculation */}
       <div
+        ref={containerRef}
         className="p-4 lg:p-12 w-full h-full flex items-center justify-center overflow-hidden"
         onClick={(e) => e.stopPropagation()}
         onWheel={handleWheel}
       >
         <img
+          ref={imgRef}
           src={src}
           alt={alt}
           draggable={false}
           onMouseDown={handleMouseDown}
           onDoubleClick={handleDoubleClick}
-          className="max-w-full max-h-full object-contain rounded-lg shadow-2xl select-none transition-transform duration-100"
+          className="max-w-full max-h-full object-contain rounded-lg shadow-2xl select-none"
           style={{
             transform: `scale(${scale}) translate(${offset.x / scale}px, ${offset.y / scale}px)`,
             cursor,
+            transition: dragging.current ? "none" : "transform 0.1s ease",
           }}
         />
       </div>
 
-      {/* Hint */}
       {scale === 1 && (
         <p className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white/50 text-[12px] font-public-sans pointer-events-none whitespace-nowrap">
           Scroll or double-click to zoom
