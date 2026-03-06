@@ -629,7 +629,7 @@ function Card({
     <div className="bg-[#f8f6f4] border border-[#ebebeb] rounded-[16px] p-4 lg:p-8 flex flex-col gap-6">
       <div className="flex flex-col gap-4 font-poiret not-italic">
         <p className="text-[14px] text-accent tracking-[1.5px] leading-normal">{eyebrow}</p>
-        {heading && <h2 className="text-[24px] text-black leading-[32px] tracking-tight">{heading}</h2>}
+        {heading && <h2 className="text-[24px] font-[550] text-black leading-[32px] tracking-wide [word-spacing:-2px]">{heading}</h2>}
       </div>
       {typeof children === "string" ? (
         <p className="font-public-sans font-normal text-[16px] text-black leading-[24px]">{children}</p>
