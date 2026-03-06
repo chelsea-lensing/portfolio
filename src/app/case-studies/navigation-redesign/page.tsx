@@ -132,23 +132,23 @@ export default function NavigationRedesignPage() {
 
       {/* Mobile "Jump to" — floating pill, appears after scrolling past hero */}
       {showJumpTo && (
-        <div className="lg:hidden fixed bottom-4 left-0 right-0 z-40 flex justify-center">
-          <div className="w-[300px] flex flex-col gap-1.5">
+        <div className="lg:hidden fixed bottom-6 left-0 right-0 z-40 flex justify-center">
+          <div className="w-[300px] flex flex-col gap-2">
             {jumpToOpen && (
-              <div className="flex flex-col font-public-sans font-normal text-[13px] leading-[18px]">
+              <div className="flex flex-col font-public-sans font-normal text-[14px] leading-[20px]">
                 {SECTIONS.map(({ id, number, label }, i) => (
                   <button
                     key={id}
                     onClick={() => scrollTo(id)}
-                    className={`flex items-center gap-3 px-4 py-1.5 bg-[#f8f6f4] text-left cursor-pointer w-full border-[#e2e0dc] ${
+                    className={`flex items-center gap-4 px-6 py-2 bg-[#f8f6f4] text-left cursor-pointer w-full border-[#e2e0dc] ${
                       i === 0
-                        ? "border rounded-t-[12px]"
+                        ? "border rounded-t-[16px]"
                         : i === SECTIONS.length - 1
-                        ? "border-b border-l border-r rounded-b-[12px]"
+                        ? "border-b border-l border-r rounded-b-[16px]"
                         : "border-b border-l border-r"
                     } ${activeSection === id ? "text-accent" : "text-black"}`}
                   >
-                    <span className="shrink-0 w-5">{number}</span>
+                    <span className="shrink-0 w-6">{number}</span>
                     <span>{label}</span>
                   </button>
                 ))}
@@ -156,9 +156,9 @@ export default function NavigationRedesignPage() {
             )}
             <button
               onClick={() => setJumpToOpen(!jumpToOpen)}
-              className="bg-[#1a1a1a] text-white px-5 py-2 rounded-full flex items-center justify-between w-full cursor-pointer"
+              className="bg-[#1a1a1a] text-white px-6 py-[10px] rounded-full flex items-center justify-between w-full cursor-pointer"
             >
-              <span className="font-public-sans font-medium text-[13px] leading-[18px]">Jump to</span>
+              <span className="font-public-sans font-medium text-[14px] leading-[20px]">Jump to</span>
               <svg
                 width="16" height="16" viewBox="0 0 16 16" fill="none"
                 className={`transition-transform duration-200 ${jumpToOpen ? "" : "rotate-180"}`}
