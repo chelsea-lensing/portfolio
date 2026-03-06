@@ -16,7 +16,7 @@ export default function CaseStudyCard({ company, title, description, tags, href 
       href={href}
       className="bg-white flex flex-col gap-4 overflow-hidden cursor-pointer shrink-0
         w-[240px] p-4 rounded-2xl
-        lg:w-[343px] lg:p-6 lg:rounded-[32px]"
+        lg:w-[343px] lg:rounded-[32px] xl:p-6"
     >
 
       {/* Image area: hover scoped to this div only */}

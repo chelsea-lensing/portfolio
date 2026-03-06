@@ -173,7 +173,7 @@ export default function CaseStudiesPage() {
               <a
                 key={`${cs.company}-${cs.title}`}
                 href={cs.href}
-                className="bg-white flex flex-col gap-4 overflow-hidden cursor-pointer rounded-2xl p-4 lg:rounded-[32px] lg:p-6"
+                className="bg-white flex flex-col gap-4 overflow-hidden cursor-pointer rounded-2xl p-4 lg:rounded-[32px] xl:p-6"
               >
                 {/* Image area */}
                 <div className="group relative w-full aspect-square lg:aspect-auto lg:h-[380px] overflow-hidden rounded-xl lg:rounded-2xl">
