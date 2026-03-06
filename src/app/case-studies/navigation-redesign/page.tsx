@@ -540,7 +540,7 @@ export default function NavigationRedesignPage() {
                 ].map((m, i, arr) => (
                   <div
                     key={m.value}
-                    className={`flex-1 bg-[#f8f6f4] border border-[#ebebeb] p-8 flex flex-col gap-4 items-center justify-center ${
+                    className={`flex-1 bg-[#f8f6f4] border border-[#ebebeb] p-4 lg:p-8 flex flex-col gap-4 items-center justify-center ${
                       i === 0 ? "rounded-l-[16px]" : i === arr.length - 1 ? "rounded-r-[16px]" : ""
                     }`}
                   >
@@ -626,7 +626,7 @@ function Card({
   children: ReactNode;
 }) {
   return (
-    <div className="bg-[#f8f6f4] border border-[#ebebeb] rounded-[16px] p-8 flex flex-col gap-6">
+    <div className="bg-[#f8f6f4] border border-[#ebebeb] rounded-[16px] p-4 lg:p-8 flex flex-col gap-6">
       <div className="flex flex-col gap-4 font-poiret not-italic">
         <p className="text-[14px] text-accent tracking-[1.5px] leading-normal">{eyebrow}</p>
         {heading && <h2 className="text-[24px] text-black leading-[20px]">{heading}</h2>}
@@ -642,7 +642,7 @@ function Card({
 
 function QuoteCard({ quote, source }: { quote: string; source: string }) {
   return (
-    <div className="bg-[#f8f6f4] border border-[#ebebeb] rounded-[16px] p-8">
+    <div className="bg-[#f8f6f4] border border-[#ebebeb] rounded-[16px] p-4 lg:p-8">
       <div className="flex gap-6 items-center">
         <div className="w-px self-stretch bg-[#ebebeb] shrink-0" />
         <div className="flex flex-col gap-4">
