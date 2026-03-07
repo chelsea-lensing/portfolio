@@ -11,6 +11,8 @@ const CASE_STUDIES = [
     title: "Provisions Integration",
     description: "Defining the information architecture and UX strategy for integrating Patagonia Provisions into Patagonia.com, with a goal of growing Provisions revenue from $2M to $5–8M annually.",
     tags: ["Systems Design", "Commerce"],
+    href: "/case-studies/patagonia-provisions",
+    image: "/images/case-studies/patagonia-provisions/Patagonia_Provisions_Card Image.jpg",
     category: "Commerce",
   },
   {

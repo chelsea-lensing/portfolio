@@ -94,7 +94,7 @@ export default function ImageLightbox({ src, alt, onClose }: ImageLightboxProps)
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/80"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 cursor-pointer"
       onClick={handleBackdropClick}
       onMouseMove={handleMouseMove}
       onMouseUp={handleMouseUp}
@@ -104,7 +104,6 @@ export default function ImageLightbox({ src, alt, onClose }: ImageLightboxProps)
       <div
         ref={containerRef}
         className="p-4 lg:p-12 w-full h-full flex items-center justify-center overflow-hidden"
-        onClick={(e) => e.stopPropagation()}
         onWheel={handleWheel}
       >
         <img
@@ -114,6 +113,7 @@ export default function ImageLightbox({ src, alt, onClose }: ImageLightboxProps)
           draggable={false}
           onMouseDown={handleMouseDown}
           onDoubleClick={handleDoubleClick}
+          onClick={(e) => e.stopPropagation()}
           className="max-w-full max-h-full object-contain rounded-lg shadow-2xl select-none"
           style={{
             transform: `scale(${scale}) translate(${offset.x / scale}px, ${offset.y / scale}px)`,
