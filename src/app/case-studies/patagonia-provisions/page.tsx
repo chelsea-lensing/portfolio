@@ -352,17 +352,6 @@ export default function PatagoniaProvisionsPage() {
                     <p>Provisions had to live meaningfully within Patagonia.com&apos;s existing taxonomy while establishing its own browsable identity. The IA covered Provisions&apos; integration across the full site — navigation entry points, landing page structure, PLP hierarchy, PDP content architecture, search behavior, store locator, cart/checkout flows, account/order history and added stories and recipes.</p>
                     <p>Key structural decisions: Provisions would live under a dedicated &ldquo;Food &amp; Beer&rdquo; category within Patagonia.com&apos;s primary navigation, with the Provisions landing page serving as the brand entry point. PLPs would use Patagonia&apos;s existing product listing infrastructure with Provisions-tailored filter logic. PDPs required a new content model to support recipe content, sourcing story, and multi-pack variants.</p>
                   </div>
-                  <div className="rounded-lg overflow-hidden w-full">
-                    <img
-                      src="/images/case-studies/patagonia-provisions/Patagonia_Provisions_IA.jpg"
-                      alt="Information architecture diagram showing Provisions integration across the full Patagonia.com site — navigation entry points, landing page structure, PLP hierarchy, PDP content architecture, and more."
-                      className="w-full h-auto cursor-zoom-in"
-                      onClick={() => setLightbox({
-                        src: "/images/case-studies/patagonia-provisions/Patagonia_Provisions_IA.jpg",
-                        alt: "Information architecture diagram showing Provisions integration across the full Patagonia.com site — navigation entry points, landing page structure, PLP hierarchy, PDP content architecture, and more."
-                      })}
-                    />
-                  </div>
                   <OutlineButton
                     label="View Provisions IA"
                     href="https://www.figma.com/design/zStWb8SIf53O5xl973ltmf/Provisions-Integration?node-id=3-2"
