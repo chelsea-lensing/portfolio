@@ -27,6 +27,8 @@ const CASE_STUDIES = [
     title: "Trade In Integration",
     description: "Led UX design for the Trade-In migration to Patagonia.com, resulting in a 200%+ increase in visitors and the digital rejection rate dropping from 35% to 25%.",
     tags: ["Circularity", "End-to-End Design"],
+    href: "/case-studies/trade-in-integration",
+    image: "/images/case-studies/patagonia-tradein/Patagonia_Trade In_Card Image.jpg",
     category: "Circularity",
   },
   {
