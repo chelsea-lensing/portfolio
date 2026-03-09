@@ -115,7 +115,8 @@ export default function PortfolioCaseStudyPage() {
         <img
           src="/images/case-studies/portfolio/Portfolio_Hero.jpg"
           alt="Chelsea Lensing portfolio site shown on desktop and mobile devices — desktop displays the homepage with case study grid and filter tabs, mobile shows the open navigation menu with red background."
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover cursor-zoom-in"
+          onClick={() => openLightbox("/images/case-studies/portfolio/Portfolio_Hero.jpg", "Chelsea Lensing portfolio site shown on desktop and mobile devices — desktop displays the homepage with case study grid and filter tabs, mobile shows the open navigation menu with red background.")}
         />
       </div>
 
