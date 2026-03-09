@@ -5,7 +5,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import Tag from "@/components/Tag";
 
-const FILTERS = ["All", "Patagonia", "Realift", "Happypillar"];
+const FILTERS = ["All", "Circularity", "Commerce", "Health & Wellness"];
 
 const CASE_STUDIES = [
   {
@@ -15,16 +15,20 @@ const CASE_STUDIES = [
       "Defining the information architecture and UX strategy for integrating Patagonia Provisions into Patagonia.com, with a goal of growing Provisions revenue from $2M to $5–8M annually.",
     tags: ["Systems Design", "Commerce"],
     href: "#",
+    image: "/images/case-studies/patagonia-provisions/Patagonia_Provisions_Card Image.jpg",
+    category: "Commerce",
     year: 2026,
   },
   {
-    company: "PATAGONIA",
-    title: "PDP Redesign Discovery",
+    company: "PERSONAL",
+    title: "Designing with AI",
     description:
-      "A comprehensive discovery process spanning taxonomy audit, funnel analysis, user journey mapping, and friction point analysis to reshape product discovery on Patagonia.com.",
-    tags: ["User Research", "Strategy"],
-    href: "#",
-    year: 2025,
+      "From napkin sketch to deployed portfolio site — a design-to-code workflow using Figma, Claude Code, and MCP.",
+    tags: ["Design Portfolio", "AI Workflow"],
+    href: "/case-studies/portfolio",
+    image: "/images/case-studies/portfolio/Portfolio_Card Image.jpg",
+    category: "Personal",
+    year: 2026,
   },
   {
     company: "PATAGONIA",
@@ -33,6 +37,8 @@ const CASE_STUDIES = [
       "Led UX design for the Trade-In migration to Patagonia.com, resulting in a 200%+ increase in visitors and the digital rejection rate dropping from 35% to 25%.",
     tags: ["Circularity", "End-to-End Design"],
     href: "#",
+    image: "/images/case-studies/patagonia-tradein/Patagonia_Trade In_Card Image.jpg",
+    category: "Circularity",
     year: 2024,
   },
   {
@@ -42,6 +48,8 @@ const CASE_STUDIES = [
       "Redesigning global navigation and taxonomy, driving a 27.5% lift in menu engagement and generating $6.6M in attributable revenue with projected annual impact of up to $13.7M.",
     tags: ["Info Architecture", "End-to-End Design"],
     href: "/case-studies/navigation-redesign",
+    image: "/images/case-studies/navigation-redesign/Patagonia_Nav_Card Image.jpg",
+    category: "Commerce",
     year: 2023,
   },
   {
@@ -51,16 +59,9 @@ const CASE_STUDIES = [
       "Surfacing used product alternatives on new product pages — connecting Patagonia's Worn Wear resale business directly into the core commerce experience, leading to Worn Wear's most successful Q1 to date.",
     tags: ["Circularity", "End-to-End Design"],
     href: "/case-studies/shop-used-integration",
+    image: "/images/case-studies/patagonia-usedcomponent/Patagonia_Used Component_Card Image.jpg",
+    category: "Circularity",
     year: 2023,
-  },
-  {
-    company: "REALIFT",
-    title: "Levi's Size & Fit Tool",
-    description:
-      "End-to-end UX design for RealSize, a machine-learning fit solution. Designed a fit and style experience for Levi's and presented the product vision directly to their leadership team.",
-    tags: ["Personalization", "UI Design"],
-    href: "#",
-    year: 2022,
   },
   {
     company: "HAPPYPILLAR",
@@ -69,6 +70,8 @@ const CASE_STUDIES = [
       "Led end-to-end design for a mental wellness app from beta through Apple App Store launch. The app was subsequently acquired by Manatee, a leading virtual mental health platform.",
     tags: ["End-to-End Design", "Native App"],
     href: "#",
+    image: "/images/case-studies/happypillar/Happypillar_Nav_Card Image.jpg",
+    category: "Health & Wellness",
     year: 2022,
   },
 ];
@@ -101,7 +104,7 @@ export default function CaseStudiesPage() {
   const filtered = CASE_STUDIES.filter(
     (cs) =>
       activeFilter === "All" ||
-      cs.company.toLowerCase() === activeFilter.toLowerCase()
+      cs.category === activeFilter
   ).sort((a, b) =>
     sortOrder === "newest" ? b.year - a.year : a.year - b.year
   );
@@ -166,7 +169,7 @@ export default function CaseStudiesPage() {
         <div
           className={`transition-opacity duration-300 ${fading ? "opacity-50" : "opacity-100"}`}
         >
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6">
             {filtered.map((cs) => (
               <a
                 key={`${cs.company}-${cs.title}`}
@@ -174,8 +177,16 @@ export default function CaseStudiesPage() {
                 className="bg-white flex flex-col gap-4 overflow-hidden cursor-pointer rounded-2xl p-4 lg:rounded-[32px] lg:p-6"
               >
                 {/* Image area */}
-                <div className="group relative w-full aspect-square lg:aspect-auto lg:h-[380px]">
-                  <div className="absolute inset-0 bg-[#d9d9d9] transition-opacity duration-300 lg:group-hover:opacity-0" />
+                <div className="group relative w-full aspect-square lg:aspect-auto lg:h-[400px]">
+                  {"image" in cs && cs.image ? (
+                    <img
+                      src={cs.image as string}
+                      alt={cs.title}
+                      className="absolute inset-0 w-full h-full object-cover transition-opacity duration-300 lg:group-hover:opacity-0"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 bg-[#d9d9d9] transition-opacity duration-300 lg:group-hover:opacity-0" />
+                  )}
                   <div className="absolute inset-0 bg-cream flex items-center justify-center p-6 opacity-0 transition-opacity duration-300 lg:group-hover:opacity-100">
                     <p className="font-public-sans font-normal text-[12px] text-black text-center leading-[20px]">
                       {cs.description}

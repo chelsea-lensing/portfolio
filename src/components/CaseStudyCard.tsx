@@ -6,9 +6,10 @@ interface CaseStudyCardProps {
   description: string;
   tags: string[];
   href?: string;
+  image?: string;
 }
 
-export default function CaseStudyCard({ company, title, description, tags, href = "#" }: CaseStudyCardProps) {
+export default function CaseStudyCard({ company, title, description, tags, href = "#", image }: CaseStudyCardProps) {
   return (
     <a
       href={href}
@@ -18,8 +19,12 @@ export default function CaseStudyCard({ company, title, description, tags, href 
     >
 
       {/* Image area: hover scoped to this div only */}
-      <div className="group relative shrink-0 w-full h-[208px] lg:h-[343px]">
-        <div className="absolute inset-0 bg-[#d9d9d9] transition-opacity duration-300 lg:group-hover:opacity-0" />
+      <div className="group relative shrink-0 w-full h-[208px] lg:h-[400px]">
+        {image ? (
+          <img src={image} alt={title} className="absolute inset-0 w-full h-full object-cover transition-opacity duration-300 lg:group-hover:opacity-0" />
+        ) : (
+          <div className="absolute inset-0 bg-[#d9d9d9] transition-opacity duration-300 lg:group-hover:opacity-0" />
+        )}
         <div className="absolute inset-0 bg-cream flex items-center justify-center p-6
           opacity-0 transition-opacity duration-300 lg:group-hover:opacity-100">
           <p className="font-public-sans font-normal text-[12px] text-black text-center leading-[20px]">
