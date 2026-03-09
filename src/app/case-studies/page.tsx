@@ -48,9 +48,9 @@ const CASE_STUDIES = [
     company: "PATAGONIA",
     title: "Shop Used Integration",
     description:
-      "Designed the Shop Used PDP component, surfacing used product alternatives on new product pages. 22% of Worn Wear purchasers came through this component, converting 32% higher than other sources.",
+      "Surfacing used product alternatives on new product pages — connecting Patagonia's Worn Wear resale business directly into the core commerce experience, leading to Worn Wear's most successful Q1 to date.",
     tags: ["Circularity", "End-to-End Design"],
-    href: "#",
+    href: "/case-studies/shop-used-integration",
     year: 2023,
   },
   {
