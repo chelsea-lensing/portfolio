@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import type { ReactNode } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import ImageLightbox from "@/components/ImageLightbox";
 
 const SECTIONS = [
   { id: "discovery",    number: "01", label: "Discovery" },
@@ -21,6 +22,7 @@ export default function NavigationRedesignPage() {
   const [showPrevNext, setShowPrevNext] = useState(true);
   const [showJumpTo, setShowJumpTo] = useState(false);
   const [navHidden, setNavHidden] = useState(false);
+  const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null);
   const lastScrollY = useRef(0);
 
   useEffect(() => {
@@ -123,14 +125,15 @@ export default function NavigationRedesignPage() {
         <img
           src="/images/case-studies/navigation-redesign/Patagonia_Nav_Hero.jpg"
           alt="Images of the Featured L1 Navigation Menu on desktop and the Women's L2 Navigation menu on mobile."
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover cursor-zoom-in"
+          onClick={() => setLightbox({ src: "/images/case-studies/navigation-redesign/Patagonia_Nav_Hero.jpg", alt: "Images of the Featured L1 Navigation Menu on desktop and the Women's L2 Navigation menu on mobile." })}
         />
       </div>
 
       {/* Mobile "Jump to" — floating pill, appears after scrolling past hero */}
       {showJumpTo && (
         <div className="lg:hidden fixed bottom-6 left-0 right-0 z-40 flex justify-center">
-          <div className="w-[360px] flex flex-col gap-2">
+          <div className="w-[300px] flex flex-col gap-2">
             {jumpToOpen && (
               <div className="flex flex-col font-public-sans font-normal text-[14px] leading-[20px]">
                 {SECTIONS.map(({ id, number, label }, i) => (
@@ -225,7 +228,7 @@ export default function NavigationRedesignPage() {
                 <div className="flex flex-col gap-6 font-public-sans font-normal text-[16px] text-black leading-[32px]">
                   <p className="leading-[24px]">To pressure-test the vision against reality, we anchored the discovery work in three primary sources: Fullstory behavioral data, a Brand Health Report, and a SWOT analysis gathered by the product manager.</p>
                   <div>
-                    <p className="font-semibold mb-1">FULLSTORY DATA:</p>
+                    <p className="font-medium mb-1">Fullstory Data:</p>
                     <ul className="list-disc ml-6 leading-[32px]">
                       <li>Session replays and heatmaps revealed where customers struggled to navigate the catalog</li>
                       <li>Funnel data showed significant drop-off points between homepage and category pages</li>
@@ -234,14 +237,14 @@ export default function NavigationRedesignPage() {
                     </ul>
                   </div>
                   <div>
-                    <p className="font-semibold mb-1">BRAND HEALTH REPORT</p>
+                    <p className="font-medium mb-1">Brand Health Report</p>
                     <ul className="list-disc ml-6 leading-[32px]">
                       <li>Surfaced how customers perceive and emotionally connect with the brand versus how they shop it</li>
                       <li>Revealed gaps between brand affinity and product discoverability — strong loyalty, weak catalog exploration</li>
                     </ul>
                   </div>
                   <div>
-                    <p className="font-semibold mb-1">SWOT ANALYSIS</p>
+                    <p className="font-medium mb-1">SWOT Analysis</p>
                     <ul className="list-disc ml-6 leading-[32px]">
                       <li>Strengths: deep brand loyalty, unique product storytelling, strong sustainability positioning</li>
                       <li>Weaknesses: fragmented taxonomy, outdated navigation structure, poor mobile conversion</li>
@@ -258,7 +261,7 @@ export default function NavigationRedesignPage() {
                   <p>We organized customer friction points into natural groupings, quantifying where pain was most intense across six clusters: Understanding Gaps, Filtering &amp; Sorting, Homepage &amp; Discovery Barriers, Versatility/Longevity Confidence Fatigue, Personalization, and Guided Shopping. Cross-referencing these with funnel data gave us a prioritized view of where to focus.</p>
                   <div className="flex flex-col gap-4">
                     <div>
-                      <p className="font-semibold mb-2">Highest Impact Friction Areas</p>
+                      <p className="font-medium mb-2">Highest Impact Friction Areas</p>
                       <ul className="list-disc ml-6 leading-[32px]">
                         <li>Navigation Structure — 42% don&apos;t consider Patagonia for exercise/training; over-categorization forces siloed paths</li>
                         <li>Filtering &amp; Sorting — only &ldquo;Waterproof&rdquo; appears in top 20 filters at 1% usage; missing multi-select functionality</li>
@@ -267,7 +270,7 @@ export default function NavigationRedesignPage() {
                       </ul>
                     </div>
                     <div>
-                      <p className="font-semibold mb-2">Open Questions Identified</p>
+                      <p className="font-medium mb-2">Open Questions Identified</p>
                       <ul className="list-disc ml-6 leading-[32px]">
                         <li>Where does filtering make more sense than navigation depth?</li>
                         <li>How much category depth actually supports vs. overwhelms product discovery?</li>
@@ -290,24 +293,22 @@ export default function NavigationRedesignPage() {
                     </ul>
                   </div>
                   <OutlineButton
-                    label="View Personas & User Journeys in FigJam"
+                    label="View Journey Maps in FigJam"
                     href="https://www.figma.com/board/D5M1xSfonTOmjrOQB7YkQI/Patagonia_Nav-Discovery---Research?node-id=9-5291&t=w11TWxhJfdjUPv1M-1"
                   />
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6">
-                    <div className="aspect-[4/3] rounded-lg overflow-hidden">
-                      <img
-                        src="/images/case-studies/navigation-redesign/Patagonia_Nav_Persona1.jpg"
-                        alt="Image of Olivia's persona and journey map experience with her user steps that coincide with her activities, mindset, paint points & opportunities."
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div className="aspect-[4/3] rounded-lg overflow-hidden">
-                      <img
-                        src="/images/case-studies/navigation-redesign/Patagonia_Nav_Persona2.jpg"
-                        alt="Image of Leo's persona and journey map experience with her user steps that coincide with her activities, mindset, paint points & opportunities."
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
+                    <img
+                      src="/images/case-studies/navigation-redesign/Patagonia_Nav_Persona1.jpg"
+                      alt="Image of Olivia's persona and journey map experience with her user steps that coincide with her activities, mindset, paint points & opportunities."
+                      className="w-full h-auto rounded-lg cursor-zoom-in"
+                      onClick={() => setLightbox({ src: "/images/case-studies/navigation-redesign/Patagonia_Nav_Persona1.jpg", alt: "Image of Olivia's persona and journey map experience with her user steps that coincide with her activities, mindset, paint points & opportunities." })}
+                    />
+                    <img
+                      src="/images/case-studies/navigation-redesign/Patagonia_Nav_Persona2.jpg"
+                      alt="Image of Leo's persona and journey map experience with her user steps that coincide with her activities, mindset, paint points & opportunities."
+                      className="w-full h-auto rounded-lg cursor-zoom-in"
+                      onClick={() => setLightbox({ src: "/images/case-studies/navigation-redesign/Patagonia_Nav_Persona2.jpg", alt: "Image of Leo's persona and journey map experience with her user steps that coincide with her activities, mindset, paint points & opportunities." })}
+                    />
                   </div>
                 </div>
               </Card>
@@ -330,13 +331,12 @@ export default function NavigationRedesignPage() {
                     label="View Discovery Exercises in FigJam"
                     href="https://www.figma.com/board/D5M1xSfonTOmjrOQB7YkQI/Patagonia_Nav-Discovery---Research?node-id=0-1&t=w11TWxhJfdjUPv1M-1"
                   />
-                  <div className="aspect-[667/380] w-full rounded-lg overflow-hidden">
-                    <img
-                      src="/images/case-studies/navigation-redesign/Patagonia_Nav_OppSolutionTree.jpg"
-                      alt="Image of the Opportunity Solution Tree exercise mapping customer friction points to solution opportunities, highlighting navigation redesign as the highest-impact intervention."
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
+                  <img
+                    src="/images/case-studies/navigation-redesign/Patagonia_Nav_OppSolutionTree.jpg"
+                    alt="Image of the Opportunity Solution Tree exercise mapping customer friction points to solution opportunities, highlighting navigation redesign as the highest-impact intervention."
+                    className="w-full h-auto rounded-lg cursor-zoom-in"
+                    onClick={() => setLightbox({ src: "/images/case-studies/navigation-redesign/Patagonia_Nav_OppSolutionTree.jpg", alt: "Image of the Opportunity Solution Tree exercise mapping customer friction points to solution opportunities, highlighting navigation redesign as the highest-impact intervention." })}
+                  />
                 </div>
               </Card>
 
@@ -363,20 +363,15 @@ export default function NavigationRedesignPage() {
                     label="View Taxonomy Audit Findings Deck"
                     href="https://www.figma.com/proto/XnYsPROwHKKWMCbcrVYLj1/Product-Discovery-Navigation?node-id=3-62466&p=f&viewport=60%2C194%2C0.07&t=bTXE8XIXYBbu3sYE-1&scaling=min-zoom&content-scaling=fixed&page-id=3%3A7"
                   />
-                  <div className="aspect-[667/380] w-full rounded-lg overflow-hidden">
-                    <img
-                      src="/images/case-studies/navigation-redesign/Patagonia_Nav_TaxonomyAudit.png"
-                      alt="Image of a section of the Taxonomy Audit done in FigJam showing Women's tops with a diagram of architecture and comments/questions to address issues and takeaways from the audit."
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
+                  <img
+                    src="/images/case-studies/navigation-redesign/Patagonia_Nav_TaxonomyAudit.png"
+                    alt="Image of a section of the Taxonomy Audit done in FigJam showing Women's tops with a diagram of architecture and comments/questions to address issues and takeaways from the audit."
+                    className="w-full h-auto rounded-lg cursor-zoom-in"
+                    onClick={() => setLightbox({ src: "/images/case-studies/navigation-redesign/Patagonia_Nav_TaxonomyAudit.png", alt: "Image of a section of the Taxonomy Audit done in FigJam showing Women's tops with a diagram of architecture and comments/questions to address issues and takeaways from the audit." })}
+                  />
                 </div>
               </Card>
 
-              {/* Referencing Past Work */}
-              <Card eyebrow="REFERENCING PAST WORK" heading="Build on, don't repeat">
-                Before moving to design, I revisited the navigation redesign A/B test results from 2022. This ensured the new direction built on — rather than repeated — past learning, and gave the team a richer foundation for the structural decisions ahead.
-              </Card>
 
             </div>
           </section>
@@ -418,14 +413,16 @@ export default function NavigationRedesignPage() {
                       <img
                         src="/images/case-studies/navigation-redesign/Patagonia_Nav_Gender.jpg"
                         alt="Images of the gender focused navigation on a desktop and mobile screen."
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover cursor-zoom-in"
+                        onClick={() => setLightbox({ src: "/images/case-studies/navigation-redesign/Patagonia_Nav_Gender.jpg", alt: "Images of the gender focused navigation on a desktop and mobile screen." })}
                       />
                     </div>
                     <div className="aspect-[4/3] rounded-lg overflow-hidden">
                       <img
                         src="/images/case-studies/navigation-redesign/Patagonia_Nav_Sport.jpg"
                         alt="Images of the sport focused navigation on a desktop and mobile screen."
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover cursor-zoom-in"
+                        onClick={() => setLightbox({ src: "/images/case-studies/navigation-redesign/Patagonia_Nav_Sport.jpg", alt: "Images of the sport focused navigation on a desktop and mobile screen." })}
                       />
                     </div>
                   </div>
@@ -447,7 +444,7 @@ export default function NavigationRedesignPage() {
                   <p>Before running full usability testing, I designed a survey to collect quantitative signal on how customers prefer to shop — and which navigation structure would help them find things faster. 42 participants completed the survey.</p>
                   <p>The data surfaced a revealing tension: 62% said they shop based on a specific activity or sport, yet when presented with the two navigation concepts directly, 60% said the gender-focused menu would help them find things faster. Customers default to familiar patterns even when their actual behavior is activity-driven. This told us that supporting both entry points wasn&apos;t a compromise — it was the right call.</p>
                   <div>
-                    <p className="font-semibold mb-2">Key findings:</p>
+                    <p className="font-medium mb-2">Key findings:</p>
                     <ul className="list-disc ml-6 leading-[32px]">
                       <li>40% prefer to start by product type, 29% by gender, 19% by sport or activity</li>
                       <li>60% chose the gender-focused menu as faster for finding products</li>
@@ -462,7 +459,7 @@ export default function NavigationRedesignPage() {
                   <p>With survey data in hand, I ran a multi-method usability study to validate the redesigned navigation against real customer behavior before development handoff.</p>
                   <p>What we tested: a prototype of the redesigned navigation menu for Patagonia.com. Goal: understand how users explore, shop, and interpret the navigation experience.</p>
                   <div>
-                    <p className="font-semibold mb-2">Study composition:</p>
+                    <p className="font-medium mb-2">Study composition:</p>
                     <ul className="list-disc ml-6 leading-[32px]">
                       <li>8 unmoderated tests via Usertesting.com (5 new customers, 3 current — Desktop)</li>
                       <li>6 moderated in-person sessions at the Ventura retail store (all current customers — Desktop)</li>
@@ -484,7 +481,8 @@ export default function NavigationRedesignPage() {
                     <img
                       src="/images/case-studies/navigation-redesign/Patagonia_Nav_FinalDirection.jpg"
                       alt="Image of the final navigation menu direction showing Featured L1 menu expanded with L2s: New Arrivals, Patagonia Favorites, Shop by Category, Web Specials and More"
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover cursor-zoom-in"
+                      onClick={() => setLightbox({ src: "/images/case-studies/navigation-redesign/Patagonia_Nav_FinalDirection.jpg", alt: "Image of the final navigation menu direction showing Featured L1 menu expanded with L2s: New Arrivals, Patagonia Favorites, Shop by Category, Web Specials and More." })}
                     />
                   </div>
                 </div>
@@ -504,7 +502,7 @@ export default function NavigationRedesignPage() {
                 />
                 <div className="flex flex-col lg:flex-row gap-6 leading-[32px]">
                   <div className="flex-1">
-                    <p className="font-semibold mb-1">DELIVERABLES PRODUCED:</p>
+                    <p className="font-medium mb-1">Deliverables Produced:</p>
                     <ul className="list-disc ml-6">
                       <li>Figma component library with all nav states</li>
                       <li>Annotated interaction behavior</li>
@@ -512,7 +510,7 @@ export default function NavigationRedesignPage() {
                     </ul>
                   </div>
                   <div className="flex-1">
-                    <p className="font-semibold mb-1">CROSS-FUNCTIONAL WORK:</p>
+                    <p className="font-medium mb-1">Cross-Functional Work:</p>
                     <ul className="list-disc ml-6">
                       <li>Design QA period — caught critical rendering issues before moving to UAT</li>
                       <li>Weekly syncs with Merchandising to validate taxonomy mapping against backend catalog structure</li>
@@ -530,7 +528,7 @@ export default function NavigationRedesignPage() {
             <div className="flex flex-col gap-4 lg:gap-6">
 
               {/* Metric row */}
-              <div className="flex">
+              <div className="flex flex-col lg:flex-row">
                 {[
                   { value: "+27.5%", label: "Navigation engagement rate vs. baseline" },
                   { value: "2X",     label: "Conversion rate vs. users not engaging with the nav (3.75% vs. 1.6%)" },
@@ -538,8 +536,8 @@ export default function NavigationRedesignPage() {
                 ].map((m, i, arr) => (
                   <div
                     key={m.value}
-                    className={`flex-1 bg-[#f8f6f4] border border-[#ebebeb] p-8 flex flex-col gap-4 items-center justify-center ${
-                      i === 0 ? "rounded-l-[16px]" : i === arr.length - 1 ? "rounded-r-[16px]" : ""
+                    className={`flex-1 bg-[#f8f6f4] border border-[#ebebeb] px-4 py-6 lg:p-8 flex flex-col gap-4 items-center justify-center ${
+                      i === 0 ? "rounded-t-[16px] lg:rounded-t-none lg:rounded-l-[16px]" : i === arr.length - 1 ? "rounded-b-[16px] lg:rounded-b-none lg:rounded-r-[16px]" : ""
                     }`}
                   >
                     <p className="font-poiret text-[32px] text-accent leading-[20px] whitespace-nowrap">{m.value}</p>
@@ -552,9 +550,6 @@ export default function NavigationRedesignPage() {
                 Three months post-launch, users interacting with the new navigation converted at more than double the rate of users who weren&apos;t (3.75% vs. 1.6%). This isn&apos;t a launch spike, it&apos;s sustained performance that reflects a fundamentally more intuitive experience. PLP click-through rate increased 12.9%, and users were reaching a product detail page in under 45 seconds on average.
               </Card>
 
-              <Card eyebrow="LEARNINGS" heading="A scalable foundation — not a finished product">
-                The most durable outcome of this project isn&apos;t a nav redesign — it&apos;s a taxonomy framework Patagonia can build on as the catalog and brand continue to evolve. With Provisions and Shop Used coming online, the system is designed to absorb new categories without requiring structural surgery.
-              </Card>
 
             </div>
           </section>
@@ -568,19 +563,19 @@ export default function NavigationRedesignPage() {
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
             <path d="M9 2L3 6L9 10" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
-          PREVIOUS PROJECT
+          <span className="hidden lg:inline">PREVIOUS PROJECT</span>
         </a>
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           className="flex items-center gap-2 font-poiret text-[12px] tracking-[1.5px] text-black cursor-pointer hover:opacity-60 transition-opacity"
         >
+          BACK TO TOP
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
             <path d="M6 10V2M6 2L2 6M6 2L10 6" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
-          BACK TO TOP
         </button>
         <a href="#" className="flex items-center gap-2 font-poiret text-[12px] tracking-[1.5px] text-black hover:opacity-60 transition-opacity">
-          NEXT PROJECT
+          <span className="hidden lg:inline">NEXT PROJECT</span>
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
             <path d="M3 2L9 6L3 10" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
@@ -588,6 +583,14 @@ export default function NavigationRedesignPage() {
       </div>
 
       <Footer />
+
+      {lightbox && (
+        <ImageLightbox
+          src={lightbox.src}
+          alt={lightbox.alt}
+          onClose={() => setLightbox(null)}
+        />
+      )}
     </main>
   );
 }
@@ -599,7 +602,7 @@ function SectionHeader({ number, title }: { number: string; title: string }) {
     <div className="flex flex-col gap-4">
       <div className="flex items-center gap-4 font-poiret text-black leading-[20px]">
         <span className="text-[16px] tracking-[2px]">{number}</span>
-        <span className="text-[40px]">{title}</span>
+        <span className="text-[28px] lg:text-[40px]">{title}</span>
       </div>
       <div className="h-px w-full bg-[#ebebeb]" />
     </div>
@@ -616,10 +619,10 @@ function Card({
   children: ReactNode;
 }) {
   return (
-    <div className="bg-[#f8f6f4] border border-[#ebebeb] rounded-[16px] p-8 flex flex-col gap-6">
+    <div className="bg-[#f8f6f4] border border-[#ebebeb] rounded-[16px] p-4 lg:p-8 flex flex-col gap-6">
       <div className="flex flex-col gap-4 font-poiret not-italic">
         <p className="text-[14px] text-accent tracking-[1.5px] leading-normal">{eyebrow}</p>
-        {heading && <h2 className="text-[24px] text-black leading-[20px]">{heading}</h2>}
+        {heading && <h2 className="text-[24px] font-[550] text-black leading-[32px] tracking-wide [word-spacing:-2px]">{heading}</h2>}
       </div>
       {typeof children === "string" ? (
         <p className="font-public-sans font-normal text-[16px] text-black leading-[24px]">{children}</p>
@@ -632,7 +635,7 @@ function Card({
 
 function QuoteCard({ quote, source }: { quote: string; source: string }) {
   return (
-    <div className="bg-[#f8f6f4] border border-[#ebebeb] rounded-[16px] p-8">
+    <div className="bg-[#f8f6f4] border border-[#ebebeb] rounded-[16px] p-4 lg:p-8">
       <div className="flex gap-6 items-center">
         <div className="w-px self-stretch bg-[#ebebeb] shrink-0" />
         <div className="flex flex-col gap-4">

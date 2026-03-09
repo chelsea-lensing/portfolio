@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Tag from "./Tag";
 
 interface CaseStudyCardProps {
@@ -15,13 +16,18 @@ export default function CaseStudyCard({ company, title, description, tags, href 
       href={href}
       className="bg-white flex flex-col gap-4 overflow-hidden cursor-pointer shrink-0
         w-[240px] p-4 rounded-2xl
-        lg:w-[343px] lg:p-6 lg:rounded-[32px]"
+        lg:w-[343px] lg:rounded-[32px] xl:p-6"
     >
 
       {/* Image area: hover scoped to this div only */}
-      <div className="group relative shrink-0 w-full h-[208px] lg:h-[400px]">
+      <div className="group relative shrink-0 w-full h-[208px] lg:h-[400px] overflow-hidden rounded-xl lg:rounded-2xl">
         {image ? (
-          <img src={image} alt={title} className="absolute inset-0 w-full h-full object-cover transition-opacity duration-300 lg:group-hover:opacity-0" />
+          <Image
+            src={image}
+            alt={title}
+            fill
+            className="object-cover transition-opacity duration-300 lg:group-hover:opacity-0"
+          />
         ) : (
           <div className="absolute inset-0 bg-[#d9d9d9] transition-opacity duration-300 lg:group-hover:opacity-0" />
         )}
