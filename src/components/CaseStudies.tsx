@@ -16,6 +16,15 @@ const CASE_STUDIES = [
     category: "Commerce",
   },
   {
+    company: "PERSONAL",
+    title: "Designing with AI",
+    description: "From napkin sketch to deployed portfolio site — a design-to-code workflow using Figma, Claude Code, and MCP.",
+    tags: ["Design Portfolio", "AI Workflow"],
+    href: "/case-studies/portfolio",
+    image: "/images/case-studies/portfolio/Portfolio_Card Image.jpg",
+    category: "Personal",
+  },
+  {
     company: "PATAGONIA",
     title: "Global Navigation Redesign",
     description: "Redesigning global navigation and taxonomy, driving a 27.5% lift in menu engagement and generating $6.6M in attributable revenue with projected annual impact of up to $13.7M.",

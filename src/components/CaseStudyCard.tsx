@@ -21,7 +21,7 @@ export default function CaseStudyCard({ company, title, description, tags, href 
     >
 
       {/* Image area: hover scoped to this div only */}
-      <div className="group relative shrink-0 w-full h-[208px] lg:h-[343px] overflow-hidden rounded-xl lg:rounded-2xl">
+      <div className="group relative shrink-0 w-full h-[208px] lg:h-[400px] overflow-hidden rounded-xl lg:rounded-2xl">
         {image ? (
           <Image
             src={image}
