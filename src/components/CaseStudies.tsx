@@ -3,20 +3,17 @@
 import { useState, useRef, useEffect } from "react";
 import CaseStudyCard from "./CaseStudyCard";
 
-const FILTERS = ["All", "Patagonia", "Realift", "Happypillar"];
+const FILTERS = ["All", "Circularity", "Commerce", "Health & Wellness"];
 
 const CASE_STUDIES = [
-  {
-    company: "PATAGONIA",
-    title: "PDP Redesign Discovery",
-    description: "A comprehensive discovery process spanning taxonomy audit, funnel analysis, user journey mapping, and friction point analysis to reshape product discovery on Patagonia.com.",
-    tags: ["User Research", "Strategy"],
-  },
   {
     company: "PATAGONIA",
     title: "Provisions Integration",
     description: "Defining the information architecture and UX strategy for integrating Patagonia Provisions into Patagonia.com, with a goal of growing Provisions revenue from $2M to $5–8M annually.",
     tags: ["Systems Design", "Commerce"],
+    href: "/case-studies/patagonia-provisions",
+    image: "/images/case-studies/patagonia-provisions/Patagonia_Provisions_Card Image.jpg",
+    category: "Commerce",
   },
   {
     company: "PATAGONIA",
@@ -24,12 +21,17 @@ const CASE_STUDIES = [
     description: "Redesigning global navigation and taxonomy, driving a 27.5% lift in menu engagement and generating $6.6M in attributable revenue with projected annual impact of up to $13.7M.",
     tags: ["Info Architecture", "End-to-End Design"],
     href: "/case-studies/navigation-redesign",
+    image: "/images/case-studies/navigation-redesign/Patagonia_Nav_Card Image.jpg",
+    category: "Commerce",
   },
   {
     company: "PATAGONIA",
     title: "Trade In Integration",
     description: "Led UX design for the Trade-In migration to Patagonia.com, resulting in a 200%+ increase in visitors and the digital rejection rate dropping from 35% to 25%.",
     tags: ["Circularity", "End-to-End Design"],
+    href: "/case-studies/trade-in-integration",
+    image: "/images/case-studies/patagonia-tradein/Patagonia_Trade In_Card Image.jpg",
+    category: "Circularity",
   },
   {
     company: "PATAGONIA",
@@ -41,16 +43,13 @@ const CASE_STUDIES = [
     category: "Circularity",
   },
   {
-    company: "REALIFT",
-    title: "Levi's Size & Fit Tool",
-    description: "End-to-end UX design for RealSize, a machine-learning fit solution. Designed a fit and style experience for Levi's and presented the product vision directly to their leadership team.",
-    tags: ["Personalization", "UI Design"],
-  },
-  {
     company: "HAPPYPILLAR",
-    title: "Happypillar Native App",
+    title: "Native iOS App",
     description: "Led end-to-end design for a mental wellness app from beta through Apple App Store launch. The app was subsequently acquired by Manatee, a leading virtual mental health platform.",
-    tags: ["End-to-End Design", "Native App"],
+    tags: ["Native App", "End-to-End Design"],
+    href: "/case-studies/happypillar",
+    image: "/images/case-studies/happypillar/Happypillar_Nav_Card Image.jpg",
+    category: "Health & Wellness",
   },
 ];
 
@@ -96,7 +95,7 @@ export default function CaseStudies() {
   const filtered =
     activeFilter === "All"
       ? CASE_STUDIES
-      : CASE_STUDIES.filter((cs) => cs.company.toLowerCase() === activeFilter.toLowerCase());
+      : CASE_STUDIES.filter((cs) => cs.category === activeFilter);
 
   return (
     <section className="bg-cream w-full overflow-hidden flex flex-col gap-6 pt-12 pb-14 lg:pb-20">
@@ -106,14 +105,14 @@ export default function CaseStudies() {
         <a href="/case-studies" className="font-poiret text-[24px] text-accent tracking-[1.5px] leading-normal w-full transition-opacity duration-200 hover:opacity-60">
           CASE STUDIES
         </a>
-        <div className="flex gap-2 items-center">
+        <div className="flex gap-2 items-center overflow-x-auto scrollbar-hide">
           {FILTERS.map((filter) => {
             const isActive = activeFilter === filter;
             return (
               <button
                 key={filter}
                 onClick={() => handleFilterChange(filter)}
-                className={`flex h-10 items-center justify-center px-5 py-[11px] rounded-full text-[14px] font-public-sans font-normal leading-[20px] whitespace-nowrap border transition-colors cursor-pointer ${
+                className={`shrink-0 flex h-10 items-center justify-center px-5 py-[11px] rounded-full text-[14px] font-public-sans font-normal leading-[20px] whitespace-nowrap border transition-colors cursor-pointer ${
                   isActive
                     ? "bg-[#3c3c3c] border-[#3c3c3c] text-white"
                     : "bg-[rgba(237,234,226,0.2)] border-[rgba(60,60,60,0.1)] text-dark"
@@ -145,6 +144,7 @@ export default function CaseStudies() {
               description={cs.description}
               tags={cs.tags}
               href={"href" in cs ? cs.href : undefined}
+              image={"image" in cs ? cs.image : undefined}
             />
           ))}
         </div>
