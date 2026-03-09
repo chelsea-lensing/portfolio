@@ -15,7 +15,7 @@ const CASE_STUDIES = [
     description:
       "Defining the information architecture and UX strategy for integrating Patagonia Provisions into Patagonia.com, with a goal of growing Provisions revenue from $2M to $5–8M annually.",
     tags: ["Systems Design", "Commerce"],
-    href: "#",
+    href: "/case-studies/patagonia-provisions",
     image: "/images/case-studies/patagonia-provisions/Patagonia_Provisions_Card Image.jpg",
     category: "Commerce",
   },
@@ -35,7 +35,7 @@ const CASE_STUDIES = [
     description:
       "Led UX design for the Trade-In migration to Patagonia.com, resulting in a 200%+ increase in visitors and the digital rejection rate dropping from 35% to 25%.",
     tags: ["Circularity", "End-to-End Design"],
-    href: "#",
+    href: "/case-studies/trade-in-integration",
     image: "/images/case-studies/patagonia-tradein/Patagonia_Trade In_Card Image.jpg",
     category: "Circularity",
   },

@@ -14,8 +14,9 @@ export default function CaseStudyCard({ company, title, description, tags, href 
   return (
     <a
       href={href}
+      aria-label={`${company} — ${title}: ${description}`}
       className="bg-white flex flex-col gap-4 overflow-hidden cursor-pointer shrink-0
-        w-[240px] p-4 rounded-2xl
+        w-[240px] p-4 rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent
         lg:w-[343px] lg:rounded-[32px] xl:p-6"
     >
 
