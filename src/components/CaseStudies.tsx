@@ -9,7 +9,7 @@ const CASE_STUDIES = [
   {
     company: "PATAGONIA",
     title: "Provisions Integration",
-    description: "Defining the information architecture and UX strategy for integrating Patagonia Provisions into Patagonia.com, with a goal of growing Provisions revenue from $2M to $5–8M annually.",
+    description: "Defining the information architecture and UX strategy for integrating Patagonia Provisions onto Patagonia.com, with a goal of growing Provisions revenue from $2M to $5–$8M annually.",
     tags: ["Systems Design", "Commerce"],
     href: "/case-studies/patagonia-provisions",
     image: "/images/case-studies/patagonia-provisions/Patagonia_Provisions_Card Image.jpg",
@@ -18,7 +18,7 @@ const CASE_STUDIES = [
   {
     company: "PERSONAL",
     title: "Designing with AI",
-    description: "From napkin sketch to deployed portfolio site — a design-to-code workflow using Figma, Claude Code, and MCP.",
+    description: "Designing and building a personal portfolio site from napkin sketch to deployed product, using Figma, Claude Code, and MCP to close the gap between design and code.",
     tags: ["Design Portfolio", "AI Workflow"],
     href: "/case-studies/portfolio",
     image: "/images/case-studies/portfolio/Portfolio_Card Image.jpg",
@@ -27,7 +27,7 @@ const CASE_STUDIES = [
   {
     company: "PATAGONIA",
     title: "Global Navigation Redesign",
-    description: "Redesigning global navigation and taxonomy, driving a 27.5% lift in menu engagement and generating $6.6M in attributable revenue with projected annual impact of up to $13.7M.",
+    description: "A redesign of the global navigation menu, driving a 25.7% lift in menu engagement and generating $6.6M in attributable revenue with a projected annual impact of up to $13.7M.",
     tags: ["Info Architecture", "End-to-End Design"],
     href: "/case-studies/navigation-redesign",
     image: "/images/case-studies/navigation-redesign/Patagonia_Nav_Card Image.jpg",
@@ -36,7 +36,7 @@ const CASE_STUDIES = [
   {
     company: "PATAGONIA",
     title: "Trade In Integration",
-    description: "Led UX design for the Trade-In migration to Patagonia.com, resulting in a 200%+ increase in visitors and the digital rejection rate dropping from 35% to 25%.",
+    description: "Migrating Patagonia's Trade-In program from a standalone WornWear.com experience to the main Patagonia.com shopping ecosystem — leading to a 1.5x increase in overall trade-in orders submitted, setting up the brand for future used product integration on the website.",
     tags: ["Circularity", "End-to-End Design"],
     href: "/case-studies/trade-in-integration",
     image: "/images/case-studies/patagonia-tradein/Patagonia_Trade In_Card Image.jpg",
@@ -54,7 +54,7 @@ const CASE_STUDIES = [
   {
     company: "HAPPYPILLAR",
     title: "Native iOS App",
-    description: "Led end-to-end design for a mental wellness app from beta through Apple App Store launch. The app was subsequently acquired by Manatee, a leading virtual mental health platform.",
+    description: "End to end design for a native mobile iOS application that provides practical, evidence-based therapy skills to parents and gives feedback through machine learning technology. The app was subsequently acquired by Manatee, a leading virtual mental health platform.",
     tags: ["Native App", "End-to-End Design"],
     href: "/case-studies/happypillar",
     image: "/images/case-studies/happypillar/Happypillar_Nav_Card Image.jpg",

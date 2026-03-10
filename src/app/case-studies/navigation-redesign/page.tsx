@@ -639,7 +639,7 @@ function QuoteCard({ quote, source }: { quote: string; source: string }) {
       <div className="flex gap-6 items-center">
         <div className="w-px self-stretch bg-[#ebebeb] shrink-0" />
         <div className="flex flex-col gap-4">
-          <p className="font-poiret text-[24px] text-black leading-[32px]">
+          <p className="font-public-sans font-extralight italic text-[16px] lg:text-[20px] text-black leading-[28px]">
             &ldquo;{quote}&rdquo;
           </p>
           <p className="font-poiret text-[14px] text-accent tracking-[1.5px] leading-normal">

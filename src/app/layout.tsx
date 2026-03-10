@@ -19,6 +19,9 @@ export const metadata: Metadata = {
   description:
     "Senior Product Designer at Patagonia with over a decade of experience across apparel and digital product design.",
   metadataBase: new URL("https://portfolio-xi-nine-44.vercel.app"),
+  icons: {
+    icon: "/CL_Favicon.svg",
+  },
   openGraph: {
     images: [{ url: "/about-professional.jpg" }],
   },

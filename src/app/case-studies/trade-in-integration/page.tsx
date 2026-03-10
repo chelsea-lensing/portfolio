@@ -89,7 +89,7 @@ export default function TradeInIntegrationPage() {
       {/* Hero */}
       <div className="px-4 lg:px-12 pb-8 lg:pb-10 flex flex-col gap-5 lg:gap-6">
         <h1 className="font-poiret text-[28px] lg:text-[36px] text-black leading-normal">
-          Trade In Integration
+          TRADE IN INTEGRATION
         </h1>
         <p className="font-public-sans font-light text-[14px] lg:text-[16px] text-[#666] leading-[26px] tracking-[0.4px] max-w-[800px]">
           Migrating Patagonia&apos;s Trade-In program from a standalone WornWear.com experience to the main Patagonia.com shopping ecosystem — leading to a 1.5x increase in overall trade-in orders submitted, setting up the brand for future used product integration on the website.
@@ -231,8 +231,8 @@ export default function TradeInIntegrationPage() {
                 This project sat within a broader strategic shift: building a brand ecosystem where circular services — repair, resale, trade-in — aren&apos;t peripheral programs but core to how customers engage with the brand over time. Trade-in integration was identified as a key differentiator for driving retention, with data showing that customers who redeem trade-in credits spend roughly double the value of the gift card — the highest redemption lift of any type of merch credit.
               </Card>
 
-              <div className="bg-[#f8f6f4] border border-[#ebebeb] rounded-[16px] overflow-hidden flex flex-col">
-                <div className="px-4 pt-6 lg:px-8 lg:pt-8 flex flex-col gap-6">
+              <div className="bg-[#f8f6f4] border border-[#ebebeb] rounded-[16px] overflow-hidden">
+                <div className="p-4 lg:p-8 flex flex-col gap-4 lg:gap-6">
                   <div className="flex flex-col gap-4 font-poiret not-italic">
                     <p className="text-[14px] text-accent tracking-[1.5px] leading-normal">UNDERSTANDING THE BEFORE STATE</p>
                     <h2 className="text-[24px] font-[550] text-black leading-[32px] tracking-wide [word-spacing:-2px]">What the WornWear.com experience revealed</h2>
@@ -248,8 +248,6 @@ export default function TradeInIntegrationPage() {
                       <li>Shipping label printing was a recurring friction point</li>
                     </ul>
                   </div>
-                </div>
-                <div className="px-4 py-4 lg:p-8">
                   <img
                     src="/images/case-studies/patagonia-tradein/Patagonia_Trade In_Current Exp.jpg"
                     alt="Screenshots of the Trade In experience on wornwear.com before integration"
@@ -383,15 +381,13 @@ export default function TradeInIntegrationPage() {
                 </div>
               </Card>
 
-              <div className="bg-[#f8f6f4] border border-[#ebebeb] rounded-[16px] overflow-hidden flex flex-col">
-                <div className="px-4 pt-6 lg:px-8 lg:pt-8 flex flex-col gap-6">
+              <div className="bg-[#f8f6f4] border border-[#ebebeb] rounded-[16px] overflow-hidden">
+                <div className="p-4 lg:p-8 flex flex-col gap-4 lg:gap-6">
                   <div className="flex flex-col gap-4 font-poiret not-italic">
                     <p className="text-[14px] text-accent tracking-[1.5px] leading-normal">MID-FI WIRES &amp; PROTOTYPE</p>
                     <h2 className="text-[24px] font-[550] text-black leading-[32px] tracking-wide [word-spacing:-2px]">Building fidelity for testing</h2>
                   </div>
                   <p className="font-public-sans font-normal text-[16px] text-black leading-[24px]">With the lo-fi structure validated internally, I developed mid-fi wireframes and an interactive prototype across the full trade-in flow — landing page, eligibility quiz (all paths), trade-in bag, checkout, confirmation, and account trade-in history. The prototype was built to the fidelity needed to surface real usability issues: enough detail to feel like a real product, without the overhead of full visual design. This became the artifact used for usability testing.</p>
-                </div>
-                <div className="px-4 py-4 lg:p-8">
                   <img
                     src="/images/case-studies/patagonia-tradein/Patagonia_Trade In_Wireframes.jpg"
                     alt="Screenshot of a section of the mid fidelity wireframes."
@@ -469,6 +465,7 @@ export default function TradeInIntegrationPage() {
                   src: "/images/case-studies/patagonia-tradein/Patagonia_Trade In_StyleNum.jpg",
                   alt: "An image of two screens: 1. Trade In step 1 page where the user can either look up their style number or search from their order history. 2. Order status page where eligible items have a 'Start a Trade In' text link next to them.",
                   aspect: "aspect-square",
+                  objectFit: "object-contain",
                 }}
                 onImageClick={(src, alt) => setLightbox({ src, alt })}
               >
@@ -490,8 +487,8 @@ export default function TradeInIntegrationPage() {
             <SectionHeader number="06" title="DELIVER" />
             <div className="flex flex-col gap-4 lg:gap-6">
 
-              <div className="bg-[#f8f6f4] border border-[#ebebeb] rounded-[16px] overflow-hidden flex flex-col">
-                <div className="px-4 pt-6 lg:px-8 lg:pt-8 flex flex-col gap-6">
+              <div className="bg-[#f8f6f4] border border-[#ebebeb] rounded-[16px] overflow-hidden">
+                <div className="p-4 lg:p-8 flex flex-col gap-4 lg:gap-6">
                   <div className="flex flex-col gap-4 font-poiret not-italic">
                     <p className="text-[14px] text-accent tracking-[1.5px] leading-normal">DELIVERABLES</p>
                     <h2 className="text-[24px] font-[550] text-black leading-[32px] tracking-wide [word-spacing:-2px]">What I produced for handoff and launch</h2>
@@ -515,17 +512,15 @@ export default function TradeInIntegrationPage() {
                       />
                     </div>
                   </div>
-                </div>
-                <div className="px-4 py-6 lg:p-8">
-                <img
-                  src="/images/case-studies/patagonia-tradein/Patagonia_Trade In_Handoff.jpg"
-                  alt="Image of 4 screens of the mobile trade-in experience: 1. Navigation Menu with 'Trade In. Get Credit' added. 2. Trade In landing page. 3. Step 2 of the Trade In eligibility quiz. 4. Order History page in account tabbed to new 'Trade-in Orders' tab showing past trade-ins submitted."
-                  className="w-full h-auto rounded-lg cursor-zoom-in"
-                  onClick={() => setLightbox({
-                    src: "/images/case-studies/patagonia-tradein/Patagonia_Trade In_Handoff.jpg",
-                    alt: "Image of 4 screens of the mobile trade-in experience: 1. Navigation Menu with 'Trade In. Get Credit' added. 2. Trade In landing page. 3. Step 2 of the Trade In eligibility quiz. 4. Order History page in account tabbed to new 'Trade-in Orders' tab showing past trade-ins submitted."
-                  })}
-                />
+                  <img
+                    src="/images/case-studies/patagonia-tradein/Patagonia_Trade In_Handoff.jpg"
+                    alt="Image of 4 screens of the mobile trade-in experience: 1. Navigation Menu with 'Trade In. Get Credit' added. 2. Trade In landing page. 3. Step 2 of the Trade In eligibility quiz. 4. Order History page in account tabbed to new 'Trade-in Orders' tab showing past trade-ins submitted."
+                    className="w-full h-auto rounded-lg cursor-zoom-in"
+                    onClick={() => setLightbox({
+                      src: "/images/case-studies/patagonia-tradein/Patagonia_Trade In_Handoff.jpg",
+                      alt: "Image of 4 screens of the mobile trade-in experience: 1. Navigation Menu with 'Trade In. Get Credit' added. 2. Trade In landing page. 3. Step 2 of the Trade In eligibility quiz. 4. Order History page in account tabbed to new 'Trade-in Orders' tab showing past trade-ins submitted."
+                    })}
+                  />
                 </div>
               </div>
 
@@ -658,7 +653,7 @@ function SideBySideCard({
 }: {
   eyebrow: string;
   heading: string;
-  image: { src: string; alt: string; aspect: string };
+  image: { src: string; alt: string; aspect: string; objectFit?: string };
   children: ReactNode;
   onImageClick: (src: string, alt: string) => void;
 }) {
@@ -678,7 +673,7 @@ function SideBySideCard({
           <img
             src={image.src}
             alt={image.alt}
-            className="w-full h-full object-cover cursor-zoom-in"
+            className={`w-full h-full ${image.objectFit ?? "object-cover"} cursor-zoom-in`}
             onClick={() => onImageClick(image.src, image.alt)}
           />
         </div>
