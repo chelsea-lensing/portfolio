@@ -83,13 +83,13 @@ export default function NavigationRedesignPage() {
       <div className="px-4 lg:px-12 pt-6 pb-4 flex items-center gap-2 font-poiret text-[16px] text-black leading-normal">
         <a href="/case-studies" className="hover:opacity-60 transition-opacity">CASE STUDIES</a>
         <span>›</span>
-        <span>PATAGONIA</span>
+        <span>COMMERCE</span>
       </div>
 
       {/* Hero */}
       <div className="px-4 lg:px-12 pb-8 lg:pb-10 flex flex-col gap-5 lg:gap-6">
         <h1 className="font-poiret text-[28px] lg:text-[36px] text-black leading-normal">
-          Global Navigation Redesign
+          GLOBAL NAVIGATION REDESIGN
         </h1>
         <p className="font-public-sans font-light text-[14px] lg:text-[16px] text-[#666] leading-[26px] tracking-[0.4px] max-w-[800px]">
           A full overhaul of Patagonia.com&apos;s global navigation and category taxonomy, making it easier for customers to find what they&apos;re looking for, faster, while keeping Patagonia&apos;s mission visible throughout the journey.
@@ -639,7 +639,7 @@ function QuoteCard({ quote, source }: { quote: string; source: string }) {
       <div className="flex gap-6 items-center">
         <div className="w-px self-stretch bg-[#ebebeb] shrink-0" />
         <div className="flex flex-col gap-4">
-          <p className="font-poiret text-[24px] text-black leading-[32px]">
+          <p className="font-public-sans font-extralight italic text-[16px] lg:text-[20px] text-black leading-[28px]">
             &ldquo;{quote}&rdquo;
           </p>
           <p className="font-poiret text-[14px] text-accent tracking-[1.5px] leading-normal">

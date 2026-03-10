@@ -115,7 +115,8 @@ export default function PortfolioCaseStudyPage() {
         <img
           src="/images/case-studies/portfolio/Portfolio_Hero.jpg"
           alt="Chelsea Lensing portfolio site shown on desktop and mobile devices — desktop displays the homepage with case study grid and filter tabs, mobile shows the open navigation menu with red background."
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover cursor-zoom-in"
+          onClick={() => openLightbox("/images/case-studies/portfolio/Portfolio_Hero.jpg", "Chelsea Lensing portfolio site shown on desktop and mobile devices — desktop displays the homepage with case study grid and filter tabs, mobile shows the open navigation menu with red background.")}
         />
       </div>
 
@@ -421,7 +422,7 @@ function SectionHeader({ number, title }: { number: string; title: string }) {
     <div className="flex flex-col gap-4">
       <div className="flex items-center gap-3 lg:gap-4 font-poiret text-black leading-[20px]">
         <span className="text-[14px] lg:text-[16px] tracking-[2px]">{number}</span>
-        <span className="text-[24px] lg:text-[40px]">{title}</span>
+        <span className="text-[28px] lg:text-[40px]">{title}</span>
       </div>
       <div className="h-px w-full bg-[#ebebeb]" />
     </div>
