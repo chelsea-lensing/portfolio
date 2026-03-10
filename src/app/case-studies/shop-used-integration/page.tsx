@@ -320,18 +320,18 @@ export default function ShopUsedIntegrationPage() {
                     <p>The matching hierarchy was built on a working assumption — that customers would prioritize size over color — which shaped the cascade: the component always attempts the most specific match first, stepping down to broader alternatives rather than disappearing when inventory isn&apos;t ideal. The usability study later confirmed this assumption and solidified the logic before development handoff.</p>
                     <p>The matching logic for each state was defined precisely:</p>
                   </div>
-                  <div className="flex flex-col gap-8 lg:gap-10">
+                  <div className="flex flex-col gap-6">
                     {/* Row 1: States 1 & 2 */}
-                    <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 items-start">
+                    <div className="flex flex-col lg:flex-row gap-6 lg:items-stretch">
                       {/* State 1 */}
-                      <div className="flex-1 flex flex-col gap-4">
+                      <div className="flex-1 bg-cream border border-[#ebebeb] rounded-2xl p-5 lg:p-8 flex flex-col gap-4">
                         <div className="flex flex-col gap-2 text-[16px] text-black">
-                          <ol className="list-decimal font-medium" start={1}>
+                          <ol className="list-decimal font-semibold font-public-sans" start={1}>
                             <li className="ml-6">New Tab State</li>
                           </ol>
-                          <p>Customer lands on a PDP and sees the addition of the Shop Used tab in the buying cluster.</p>
+                          <p className="font-normal">Customer lands on a PDP and sees a new tabbed buying cluster for Shop New and Shop Used. Shop New is selected by default.</p>
                         </div>
-                        <div className="w-full max-w-[230px] overflow-hidden">
+                        <div className="flex-1 flex items-center justify-center">
                           <img
                             src="/images/case-studies/patagonia-usedcomponent/Patagonia_Used Component_New Tab State.jpg"
                             alt="Mobile mockup of the Men's Retro Pile Jacket product detail page showing the new tab state — the 'Shop New' tab is selected by default in the buying cluster, with the 'Shop Used' tab visible alongside it."
@@ -344,14 +344,14 @@ export default function ShopUsedIntegrationPage() {
                         </div>
                       </div>
                       {/* State 2 */}
-                      <div className="flex-1 flex flex-col gap-4">
+                      <div className="flex-1 bg-cream border border-[#ebebeb] rounded-2xl p-5 lg:p-8 flex flex-col gap-4">
                         <div className="flex flex-col gap-2 text-[16px] text-black">
-                          <ol className="list-decimal font-medium" start={2}>
+                          <ol className="list-decimal font-semibold font-public-sans" start={2}>
                             <li className="ml-6">Exact 1:1 Match</li>
                           </ol>
-                          <p>Customer selects a size and a used item matching gender, SKU, and size is available. Surfaces the item with condition grade, price, available colors, and a direct path to Worn Wear.</p>
+                          <p className="font-normal">A used item matching gender, SKU, and size is available. The used tab surfaces the item with condition grade, price, available colors, and a direct path to Worn Wear.</p>
                         </div>
-                        <div className="w-full max-w-[230px] overflow-hidden">
+                        <div className="flex-1 flex items-center justify-center">
                           <img
                             src="/images/case-studies/patagonia-usedcomponent/Patagonia_Used Component_Perfect Match.jpg"
                             alt="Mobile mockup of the Shop Used component in the exact 1:1 match state. The 'Shop Used' tab is selected in the buying cluster, displaying 'Matching Used Options' with condition grade, pricing, and a Browse Used button. A Worn Wear marketing tile describes the Ironclad Guarantee."
@@ -365,16 +365,16 @@ export default function ShopUsedIntegrationPage() {
                       </div>
                     </div>
                     {/* Row 2: States 3 & 4 */}
-                    <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 items-start">
+                    <div className="flex flex-col lg:flex-row gap-6 lg:items-stretch">
                       {/* State 3 */}
-                      <div className="flex-1 flex flex-col gap-4">
+                      <div className="flex-1 bg-cream border border-[#ebebeb] rounded-2xl p-5 lg:p-8 flex flex-col gap-4">
                         <div className="flex flex-col gap-2 text-[16px] text-black">
-                          <ol className="list-decimal font-medium" start={3}>
+                          <ol className="list-decimal font-semibold font-public-sans" start={3}>
                             <li className="ml-6">Similar Match</li>
                           </ol>
-                          <p>Size is selected but no 1:1 match exists. Shows used options matching gender, product sub-category, and category — labeled &lsquo;Similar Used Options&rsquo; and framed as a curated recommendation, not a consolation.</p>
+                          <p className="font-normal">Size is selected but no 1:1 match exists. Shows used options matching gender, product sub-category, and category — labeled &lsquo;Similar Used Options&rsquo; and framed as a curated recommendation, not a consolation.</p>
                         </div>
-                        <div className="w-full max-w-[230px] overflow-hidden">
+                        <div className="flex-1 flex items-center justify-center">
                           <img
                             src="/images/case-studies/patagonia-usedcomponent/Patagonia_Used Component_Similar Match.jpg"
                             alt="Mobile mockup of the Shop Used component in the similar match state. The 'Shop Used' tab is selected, displaying 'Similar Used Options' with two used product tiles side by side, each with a product name, strikethrough price, discounted price, and condition label."
@@ -387,14 +387,14 @@ export default function ShopUsedIntegrationPage() {
                         </div>
                       </div>
                       {/* State 4 */}
-                      <div className="flex-1 flex flex-col gap-4">
+                      <div className="flex-1 bg-cream border border-[#ebebeb] rounded-2xl p-5 lg:p-8 flex flex-col gap-4">
                         <div className="flex flex-col gap-2 text-[16px] text-black">
-                          <ol className="list-decimal font-medium" start={4}>
+                          <ol className="list-decimal font-semibold font-public-sans" start={4}>
                             <li className="ml-6">No Used Results</li>
                           </ol>
-                          <p>For ineligible categories or zero inventory across all tiers, the component surfaces &lsquo;Why Buy Used?&rsquo; copy — maintaining program awareness and using an empty moment to educate rather than abandon.</p>
+                          <p className="font-normal">For ineligible categories or zero inventory across all tiers, the component surfaces &lsquo;Why Buy Used?&rsquo; copy — maintaining program awareness and using an empty moment to educate rather than abandon.</p>
                         </div>
-                        <div className="w-full max-w-[230px] overflow-hidden">
+                        <div className="flex-1 flex items-center justify-center">
                           <img
                             src="/images/case-studies/patagonia-usedcomponent/Patagonia_Used Component_No Match.jpg"
                             alt="Mobile mockup of the Shop Used component in the no used results state. The 'Shop Used' tab is selected, displaying 'Why Buy Used?' copy with a Worn Wear logo badge and a Browse Used button."
