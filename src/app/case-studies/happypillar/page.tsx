@@ -200,18 +200,18 @@ export default function HappypillarPage() {
           </div>
           {showPrevNext && (
             <div className="flex flex-col gap-4">
-              <a href="#" className="flex items-center gap-2 font-poiret text-[12px] tracking-[1.5px] text-black hover:opacity-60 transition-opacity">
+              <a href="/case-studies/shop-used-integration" className="flex items-center gap-2 font-poiret text-[12px] tracking-[1.5px] text-black hover:opacity-60 transition-opacity">
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
                   <path d="M9 2L3 6L9 10" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
                 PREVIOUS PROJECT
               </a>
-              <a href="#" className="flex items-center gap-2 font-poiret text-[12px] tracking-[1.5px] text-black hover:opacity-60 transition-opacity">
+              <span className="invisible flex items-center gap-2 font-poiret text-[12px] tracking-[1.5px]">
                 NEXT PROJECT
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
                   <path d="M3 2L9 6L3 10" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
-              </a>
+              </span>
             </div>
           )}
         </aside>
@@ -498,7 +498,7 @@ export default function HappypillarPage() {
 
       {/* Footer nav */}
       <div id="footer-nav" className="border-t border-[#ebebeb] px-4 lg:px-12 py-8 lg:py-12 flex items-center justify-between">
-        <a href="#" className="flex items-center gap-2 font-poiret text-[12px] tracking-[1.5px] text-black hover:opacity-60 transition-opacity">
+        <a href="/case-studies/shop-used-integration" className="flex items-center gap-2 font-poiret text-[12px] tracking-[1.5px] text-black hover:opacity-60 transition-opacity">
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
             <path d="M9 2L3 6L9 10" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
@@ -513,12 +513,12 @@ export default function HappypillarPage() {
             <path d="M6 10V2M6 2L2 6M6 2L10 6" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </button>
-        <a href="#" className="flex items-center gap-2 font-poiret text-[12px] tracking-[1.5px] text-black hover:opacity-60 transition-opacity">
+        <span className="invisible flex items-center gap-2 font-poiret text-[12px] tracking-[1.5px]">
           <span className="hidden lg:inline">NEXT PROJECT</span>
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
             <path d="M3 2L9 6L3 10" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
-        </a>
+        </span>
       </div>
 
       <Footer />

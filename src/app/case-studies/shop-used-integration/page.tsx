@@ -197,7 +197,7 @@ export default function ShopUsedIntegrationPage() {
           </div>
           {showPrevNext && (
             <div className="flex flex-col gap-4">
-              <a href="/case-studies/navigation-redesign" className="flex items-center gap-2 font-poiret text-[12px] tracking-[1.5px] text-black hover:opacity-60 transition-opacity">
+              <a href="/case-studies/trade-in-integration" className="flex items-center gap-2 font-poiret text-[12px] tracking-[1.5px] text-black hover:opacity-60 transition-opacity">
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
                   <path d="M9 2L3 6L9 10" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
@@ -627,7 +627,7 @@ export default function ShopUsedIntegrationPage() {
 
       {/* Footer nav */}
       <div id="footer-nav" className="border-t border-[#ebebeb] px-4 lg:px-12 py-12 flex items-center justify-between">
-        <a href="/case-studies/navigation-redesign" className="flex items-center gap-2 font-poiret text-[12px] tracking-[1.5px] text-black hover:opacity-60 transition-opacity">
+        <a href="/case-studies/trade-in-integration" className="flex items-center gap-2 font-poiret text-[12px] tracking-[1.5px] text-black hover:opacity-60 transition-opacity">
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
             <path d="M9 2L3 6L9 10" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
