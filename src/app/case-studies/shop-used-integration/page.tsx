@@ -493,7 +493,7 @@ export default function ShopUsedIntegrationPage() {
               <Card eyebrow="ITERATE" heading="One design change, driven by a clear insight">
                 <div className="flex flex-col gap-6 font-public-sans font-normal text-[16px] text-black leading-[24px]">
                   <div className="flex flex-col gap-4">
-                    <p><span className="font-semibold">Adding &lsquo;Select Your Size&rsquo; to Used Tab:</span> When a customer lands on the Used Tab in the PDP without selecting a size, the component was updated to actively prompt size selection. Because size is the most critical factor in surfacing a relevant used result, nudging customers to select their size earlier improves the quality of the used recommendation they see and reduces time spent in the lower-fidelity Similar Products state.</p>
+                    <p><span className="font-medium">Adding &lsquo;Select Your Size&rsquo; to Used Tab:</span> When a customer lands on the Used Tab in the PDP without selecting a size, the component was updated to actively prompt size selection. Because size is the most critical factor in surfacing a relevant used result, nudging customers to select their size earlier improves the quality of the used recommendation they see and reduces time spent in the lower-fidelity Similar Products state.</p>
                     <p>This change reflected the core insight directly: customers are open to similar items, but only if size is available. Getting size selection to happen earlier in the browsing flow meant more customers would see a higher-quality match — or know sooner that one wasn&apos;t available.</p>
                   </div>
                   <div className="rounded-lg overflow-hidden w-full">
