@@ -79,7 +79,11 @@ export default function ImageLightbox({ src, alt, onClose }: ImageLightboxProps)
     ));
   };
 
-  const handleMouseUp = () => { dragging.current = false; };
+  const handleMouseUp = () => {
+    dragging.current = false;
+    // Reset after a tick so handleBackdropClick can still read the value for this click
+    setTimeout(() => { hasDragged.current = false; }, 0);
+  };
 
   const handleDoubleClick = () => {
     if (scale > 1) { setScale(1); setOffset({ x: 0, y: 0 }); }
@@ -90,11 +94,13 @@ export default function ImageLightbox({ src, alt, onClose }: ImageLightboxProps)
     if (!hasDragged.current) onClose();
   };
 
-  const cursor = scale > 1 ? (dragging.current ? "grabbing" : "grab") : "zoom-in";
+  const imgCursor = scale > 1 ? (dragging.current ? "grabbing" : "grab") : "default";
+  const closeCursorUrl = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M5 5L19 19M19 5L5 19' stroke='white' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") 12 12, pointer`;
 
   return (
     <div
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/80"
+      style={{ cursor: closeCursorUrl }}
       onClick={handleBackdropClick}
       onMouseMove={handleMouseMove}
       onMouseUp={handleMouseUp}
@@ -117,7 +123,7 @@ export default function ImageLightbox({ src, alt, onClose }: ImageLightboxProps)
           className="max-w-full max-h-full object-contain rounded-lg shadow-2xl select-none"
           style={{
             transform: `scale(${scale}) translate(${offset.x / scale}px, ${offset.y / scale}px)`,
-            cursor,
+            cursor: imgCursor,
             transition: dragging.current ? "none" : "transform 0.1s ease",
           }}
         />

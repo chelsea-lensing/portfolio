@@ -53,7 +53,7 @@ const CASE_STUDIES = [
   },
   {
     company: "HAPPYPILLAR",
-    title: "Native iOS App",
+    title: "iOS Native App",
     description: "End to end design for a native mobile iOS application that provides practical, evidence-based therapy skills to parents and gives feedback through machine learning technology. The app was subsequently acquired by Manatee, a leading virtual mental health platform.",
     tags: ["Native App", "End-to-End Design"],
     href: "/case-studies/happypillar",
