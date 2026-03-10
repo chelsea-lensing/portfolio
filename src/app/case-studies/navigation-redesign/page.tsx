@@ -83,7 +83,7 @@ export default function NavigationRedesignPage() {
       <div className="px-4 lg:px-12 pt-6 pb-4 flex items-center gap-2 font-poiret text-[16px] text-black leading-normal">
         <a href="/case-studies" className="hover:opacity-60 transition-opacity">CASE STUDIES</a>
         <span>›</span>
-        <span>PATAGONIA</span>
+        <span>COMMERCE</span>
       </div>
 
       {/* Hero */}
