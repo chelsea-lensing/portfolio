@@ -94,7 +94,7 @@ export default function CaseStudiesPage() {
     <main className="bg-white min-h-screen flex flex-col">
       <Navigation />
 
-      <section className="bg-cream w-full flex flex-col gap-8 pt-12 pb-14 lg:pb-20 px-4 lg:px-12">
+      <section className="bg-cream w-full flex flex-col gap-8 pt-12 pb-14 lg:pb-12 px-4 lg:px-12">
         {/* Label + filters */}
         <div className="flex flex-col gap-6 items-start">
           <p className="font-poiret text-[24px] text-accent tracking-[1.5px] leading-normal">
