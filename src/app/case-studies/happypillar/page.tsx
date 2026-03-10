@@ -359,12 +359,12 @@ export default function HappypillarPage() {
               </Card>
 
               <Card eyebrow="ONBOARDING THE USER" heading="Building trust through a therapist-informed onboarding flow">
-                <div className="flex flex-col gap-6 font-public-sans font-normal text-[16px] text-black leading-[24px]">
+                <div className="flex flex-col gap-3 font-public-sans font-normal text-[16px] text-black leading-[24px]">
                   <p>We worked with Happypillar&apos;s therapist-in-residence to create an onboarding experience that mimicked the in-person process — establishing trust and gathering the appropriate information to ensure the best possible experience for the user and their child/children while using Happypillar.</p>
                   <img
                     src="/images/case-studies/happypillar/Happypillar_onboarding.jpg"
                     alt="Screenshot of low fidelity wireframes for the onboarding flow for the app."
-                    className="w-full h-auto rounded-lg cursor-zoom"
+                    className="w-full h-auto rounded-lg cursor-zoom -mb-4 lg:-mb-8"
                     onClick={() => setLightbox({
                       src: "/images/case-studies/happypillar/Happypillar_onboarding.jpg",
                       alt: "Screenshot of low fidelity wireframes for the onboarding flow for the app."
