@@ -5,10 +5,11 @@ import Image from "next/image";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import Tag from "@/components/Tag";
+import { SHOW_PROVISIONS } from "@/lib/flags";
 
 const FILTERS = ["All", "Circularity", "Commerce", "Health & Wellness"];
 
-const CASE_STUDIES = [
+const ALL_CASE_STUDIES = [
   {
     company: "PATAGONIA",
     title: "Provisions Integration",
@@ -70,6 +71,10 @@ const CASE_STUDIES = [
     category: "Health & Wellness",
   },
 ];
+
+const CASE_STUDIES = ALL_CASE_STUDIES.filter(
+  (cs) => cs.href !== "/case-studies/patagonia-provisions" || SHOW_PROVISIONS
+);
 
 export default function CaseStudiesPage() {
   const [activeFilter, setActiveFilter] = useState("All");

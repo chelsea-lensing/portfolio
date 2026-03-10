@@ -2,10 +2,11 @@
 
 import { useState, useRef, useEffect } from "react";
 import CaseStudyCard from "./CaseStudyCard";
+import { SHOW_PROVISIONS } from "@/lib/flags";
 
 const FILTERS = ["All", "Circularity", "Commerce", "Health & Wellness"];
 
-const CASE_STUDIES = [
+const ALL_CASE_STUDIES = [
   {
     company: "PATAGONIA",
     title: "Provisions Integration",
@@ -61,6 +62,10 @@ const CASE_STUDIES = [
     category: "Health & Wellness",
   },
 ];
+
+const CASE_STUDIES = ALL_CASE_STUDIES.filter(
+  (cs) => cs.href !== "/case-studies/patagonia-provisions" || SHOW_PROVISIONS
+);
 
 export default function CaseStudies() {
   const [activeFilter, setActiveFilter] = useState("All");
