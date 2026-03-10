@@ -96,7 +96,9 @@ export default function NavigationRedesignPage() {
         </p>
         <div>
           <a
-            href="#"
+            href="https://www.patagonia.com"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-1 bg-black text-white font-public-sans font-medium text-[14px] leading-[20px] px-6 py-[10px] rounded-full transition-colors hover:opacity-80"
           >
             View Live Experience

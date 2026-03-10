@@ -10,7 +10,7 @@ const JOBS = [
     bullets: [
       "Lead end-to-end UX for Patagonia's full used integration onto Patagonia.com, defining a distinct resale shopping pathway that balances circular commerce goals with the mainline business",
       "Own end-to-end UX for the integration of Patagonia Provisions into Patagonia.com for the first time, with a goal of growing Provisions revenue from $2M to $5–8M annually",
-      "Partner cross-functionally with Engineering, Product, Brand, Merchandising, and external vendors (Trove) to align on technical requirements, content strategy, and launch readiness",
+      "Partner cross-functionally with Engineering, Product, Brand, Merchandising, and external vendors to align on technical requirements, content strategy, and launch readiness",
       "Present strategic UX recommendations to senior leadership to drive alignment, secure budget, and balance business objectives with user needs",
     ],
   },
