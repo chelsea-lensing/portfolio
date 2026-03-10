@@ -125,7 +125,7 @@ export default function NavigationRedesignPage() {
         <img
           src="/images/case-studies/navigation-redesign/Patagonia_Nav_Hero.jpg"
           alt="Images of the Featured L1 Navigation Menu on desktop and the Women's L2 Navigation menu on mobile."
-          className="w-full h-full object-cover cursor-zoom-in"
+          className="w-full h-full object-cover cursor-zoom"
           onClick={() => setLightbox({ src: "/images/case-studies/navigation-redesign/Patagonia_Nav_Hero.jpg", alt: "Images of the Featured L1 Navigation Menu on desktop and the Women's L2 Navigation menu on mobile." })}
         />
       </div>
@@ -300,13 +300,13 @@ export default function NavigationRedesignPage() {
                     <img
                       src="/images/case-studies/navigation-redesign/Patagonia_Nav_Persona1.jpg"
                       alt="Image of Olivia's persona and journey map experience with her user steps that coincide with her activities, mindset, paint points & opportunities."
-                      className="w-full h-auto rounded-lg cursor-zoom-in"
+                      className="w-full h-auto rounded-lg cursor-zoom"
                       onClick={() => setLightbox({ src: "/images/case-studies/navigation-redesign/Patagonia_Nav_Persona1.jpg", alt: "Image of Olivia's persona and journey map experience with her user steps that coincide with her activities, mindset, paint points & opportunities." })}
                     />
                     <img
                       src="/images/case-studies/navigation-redesign/Patagonia_Nav_Persona2.jpg"
                       alt="Image of Leo's persona and journey map experience with her user steps that coincide with her activities, mindset, paint points & opportunities."
-                      className="w-full h-auto rounded-lg cursor-zoom-in"
+                      className="w-full h-auto rounded-lg cursor-zoom"
                       onClick={() => setLightbox({ src: "/images/case-studies/navigation-redesign/Patagonia_Nav_Persona2.jpg", alt: "Image of Leo's persona and journey map experience with her user steps that coincide with her activities, mindset, paint points & opportunities." })}
                     />
                   </div>
@@ -334,7 +334,7 @@ export default function NavigationRedesignPage() {
                   <img
                     src="/images/case-studies/navigation-redesign/Patagonia_Nav_OppSolutionTree.jpg"
                     alt="Image of the Opportunity Solution Tree exercise mapping customer friction points to solution opportunities, highlighting navigation redesign as the highest-impact intervention."
-                    className="w-full h-auto rounded-lg cursor-zoom-in"
+                    className="w-full h-auto rounded-lg cursor-zoom"
                     onClick={() => setLightbox({ src: "/images/case-studies/navigation-redesign/Patagonia_Nav_OppSolutionTree.jpg", alt: "Image of the Opportunity Solution Tree exercise mapping customer friction points to solution opportunities, highlighting navigation redesign as the highest-impact intervention." })}
                   />
                 </div>
@@ -366,7 +366,7 @@ export default function NavigationRedesignPage() {
                   <img
                     src="/images/case-studies/navigation-redesign/Patagonia_Nav_TaxonomyAudit.png"
                     alt="Image of a section of the Taxonomy Audit done in FigJam showing Women's tops with a diagram of architecture and comments/questions to address issues and takeaways from the audit."
-                    className="w-full h-auto rounded-lg cursor-zoom-in"
+                    className="w-full h-auto rounded-lg cursor-zoom"
                     onClick={() => setLightbox({ src: "/images/case-studies/navigation-redesign/Patagonia_Nav_TaxonomyAudit.png", alt: "Image of a section of the Taxonomy Audit done in FigJam showing Women's tops with a diagram of architecture and comments/questions to address issues and takeaways from the audit." })}
                   />
                 </div>
@@ -413,7 +413,7 @@ export default function NavigationRedesignPage() {
                       <img
                         src="/images/case-studies/navigation-redesign/Patagonia_Nav_Gender.jpg"
                         alt="Images of the gender focused navigation on a desktop and mobile screen."
-                        className="w-full h-full object-cover cursor-zoom-in"
+                        className="w-full h-full object-cover cursor-zoom"
                         onClick={() => setLightbox({ src: "/images/case-studies/navigation-redesign/Patagonia_Nav_Gender.jpg", alt: "Images of the gender focused navigation on a desktop and mobile screen." })}
                       />
                     </div>
@@ -421,7 +421,7 @@ export default function NavigationRedesignPage() {
                       <img
                         src="/images/case-studies/navigation-redesign/Patagonia_Nav_Sport.jpg"
                         alt="Images of the sport focused navigation on a desktop and mobile screen."
-                        className="w-full h-full object-cover cursor-zoom-in"
+                        className="w-full h-full object-cover cursor-zoom"
                         onClick={() => setLightbox({ src: "/images/case-studies/navigation-redesign/Patagonia_Nav_Sport.jpg", alt: "Images of the sport focused navigation on a desktop and mobile screen." })}
                       />
                     </div>
@@ -481,7 +481,7 @@ export default function NavigationRedesignPage() {
                     <img
                       src="/images/case-studies/navigation-redesign/Patagonia_Nav_FinalDirection.jpg"
                       alt="Image of the final navigation menu direction showing Featured L1 menu expanded with L2s: New Arrivals, Patagonia Favorites, Shop by Category, Web Specials and More"
-                      className="w-full h-full object-cover cursor-zoom-in"
+                      className="w-full h-full object-cover cursor-zoom"
                       onClick={() => setLightbox({ src: "/images/case-studies/navigation-redesign/Patagonia_Nav_FinalDirection.jpg", alt: "Image of the final navigation menu direction showing Featured L1 menu expanded with L2s: New Arrivals, Patagonia Favorites, Shop by Category, Web Specials and More." })}
                     />
                   </div>

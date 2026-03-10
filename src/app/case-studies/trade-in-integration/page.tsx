@@ -127,7 +127,7 @@ export default function TradeInIntegrationPage() {
         <img
           src="/images/case-studies/patagonia-tradein/Patagonia_Trade In_Hero.jpg"
           alt="Image of a desktop and mobile mockup within the trade in flow. The desktop image is of the trade in landing page, showing three tabs under the Heading: Trade in your used Patagonia gear and Subheading: We'll buy back gently used Patagonia clothing and packs so they stay in play and out of the landfill. The three tabs below that are: 'Online', 'In Store' and 'Your Trade-In'. The 'Online' tab is selected and below that it says 'Trade in by mail. Take our quiz to see if your gear is eligible. If it's a go, print the $7 shipping label and mail your item(s) back to us. Every eligible item earns you credit to use in-store or at Wornwear.com or Patagonia.com.' Below that there is a button that says 'Start Your Trade-In'. The mobile image is an image of a mock up of Step 2 in the Trade In eligibility quiz."
-          className="w-full h-full object-cover cursor-zoom-in"
+          className="w-full h-full object-cover cursor-zoom"
           onClick={() => setLightbox({
             src: "/images/case-studies/patagonia-tradein/Patagonia_Trade In_Hero.jpg",
             alt: "Image of a desktop and mobile mockup within the trade in flow. The desktop image is of the trade in landing page, showing three tabs under the Heading: Trade in your used Patagonia gear and Subheading: We'll buy back gently used Patagonia clothing and packs so they stay in play and out of the landfill. The three tabs below that are: 'Online', 'In Store' and 'Your Trade-In'. The 'Online' tab is selected and below that it says 'Trade in by mail. Take our quiz to see if your gear is eligible. If it's a go, print the $7 shipping label and mail your item(s) back to us. Every eligible item earns you credit to use in-store or at Wornwear.com or Patagonia.com.' Below that there is a button that says 'Start Your Trade-In'. The mobile image is an image of a mock up of Step 2 in the Trade In eligibility quiz."
@@ -251,7 +251,7 @@ export default function TradeInIntegrationPage() {
                   <img
                     src="/images/case-studies/patagonia-tradein/Patagonia_Trade In_Current Exp.jpg"
                     alt="Screenshots of the Trade In experience on wornwear.com before integration"
-                    className="w-full h-auto rounded-lg cursor-zoom-in"
+                    className="w-full h-auto rounded-lg cursor-zoom"
                     onClick={() => setLightbox({
                       src: "/images/case-studies/patagonia-tradein/Patagonia_Trade In_Current Exp.jpg",
                       alt: "Screenshots of the Trade In experience on wornwear.com before integration"
@@ -391,7 +391,7 @@ export default function TradeInIntegrationPage() {
                   <img
                     src="/images/case-studies/patagonia-tradein/Patagonia_Trade In_Wireframes.jpg"
                     alt="Screenshot of a section of the mid fidelity wireframes."
-                    className="w-full h-auto rounded-lg cursor-zoom-in"
+                    className="w-full h-auto rounded-lg cursor-zoom"
                     onClick={() => setLightbox({
                       src: "/images/case-studies/patagonia-tradein/Patagonia_Trade In_Wireframes.jpg",
                       alt: "Screenshot of a section of the mid fidelity wireframes."
@@ -515,7 +515,7 @@ export default function TradeInIntegrationPage() {
                   <img
                     src="/images/case-studies/patagonia-tradein/Patagonia_Trade In_Handoff.jpg"
                     alt="Image of 4 screens of the mobile trade-in experience: 1. Navigation Menu with 'Trade In. Get Credit' added. 2. Trade In landing page. 3. Step 2 of the Trade In eligibility quiz. 4. Order History page in account tabbed to new 'Trade-in Orders' tab showing past trade-ins submitted."
-                    className="w-full h-auto rounded-lg cursor-zoom-in"
+                    className="w-full h-auto rounded-lg cursor-zoom"
                     onClick={() => setLightbox({
                       src: "/images/case-studies/patagonia-tradein/Patagonia_Trade In_Handoff.jpg",
                       alt: "Image of 4 screens of the mobile trade-in experience: 1. Navigation Menu with 'Trade In. Get Credit' added. 2. Trade In landing page. 3. Step 2 of the Trade In eligibility quiz. 4. Order History page in account tabbed to new 'Trade-in Orders' tab showing past trade-ins submitted."
@@ -673,7 +673,7 @@ function SideBySideCard({
           <img
             src={image.src}
             alt={image.alt}
-            className={`w-full h-full ${image.objectFit ?? "object-cover"} cursor-zoom-in`}
+            className={`w-full h-full ${image.objectFit ?? "object-cover"} cursor-zoom`}
             onClick={() => onImageClick(image.src, image.alt)}
           />
         </div>

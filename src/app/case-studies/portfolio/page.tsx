@@ -115,7 +115,7 @@ export default function PortfolioCaseStudyPage() {
         <img
           src="/images/case-studies/portfolio/Portfolio_Hero.jpg"
           alt="Chelsea Lensing portfolio site shown on desktop and mobile devices — desktop displays the homepage with case study grid and filter tabs, mobile shows the open navigation menu with red background."
-          className="w-full h-full object-cover cursor-zoom-in"
+          className="w-full h-full object-cover cursor-zoom"
           onClick={() => openLightbox("/images/case-studies/portfolio/Portfolio_Hero.jpg", "Chelsea Lensing portfolio site shown on desktop and mobile devices — desktop displays the homepage with case study grid and filter tabs, mobile shows the open navigation menu with red background.")}
         />
       </div>
@@ -210,7 +210,7 @@ export default function PortfolioCaseStudyPage() {
                 <img
                   src="/images/case-studies/portfolio/Portfolio_Terminal.jpg"
                   alt="Terminal window titled 'Portfolio — Claude Code' showing a diff of React component code alongside a Claude Code summary of changes made to match the Figma design."
-                  className="w-full h-auto rounded-lg cursor-zoom-in"
+                  className="w-full h-auto rounded-lg cursor-zoom"
                   onClick={() => openLightbox("/images/case-studies/portfolio/Portfolio_Terminal.jpg", "Terminal window titled 'Portfolio — Claude Code' showing a diff of React component code alongside a Claude Code summary of changes made to match the Figma design.")}
                 />
               </div>
@@ -227,7 +227,7 @@ export default function PortfolioCaseStudyPage() {
                   <img
                     src="/images/case-studies/portfolio/Portfolio_Napkin Sketches.jpg"
                     alt="Two open sketchbooks showing hand-drawn napkin sketches for the portfolio case study template — left page shows early layout explorations, right page shows further iteration including card structures and navigation patterns."
-                    className="w-full h-auto rounded-lg cursor-zoom-in"
+                    className="w-full h-auto rounded-lg cursor-zoom"
                     onClick={() => openLightbox("/images/case-studies/portfolio/Portfolio_Napkin Sketches.jpg", "Two open sketchbooks showing hand-drawn napkin sketches for the portfolio case study template.")}
                   />
                 </div>
@@ -238,7 +238,7 @@ export default function PortfolioCaseStudyPage() {
                   <img
                     src="/images/case-studies/portfolio/Portfolio_Inspiration.jpg"
                     alt="Design inspiration moodboard showing Poiret One typeface specimen, a minimalist grid drawing by Agnes Martin, architecture book covers, art deco building facade, and a red geometric graphic design."
-                    className="w-full h-auto rounded-lg cursor-zoom-in"
+                    className="w-full h-auto rounded-lg cursor-zoom"
                     onClick={() => openLightbox("/images/case-studies/portfolio/Portfolio_Inspiration.jpg", "Design inspiration moodboard.")}
                   />
                 </div>
@@ -257,7 +257,7 @@ export default function PortfolioCaseStudyPage() {
                   <img
                     src="/images/case-studies/portfolio/Portfolio_Components.jpg"
                     alt="Figma file showing the Components page with the layer panel, canvas displays the component library with navigation bar variants, footer variants, case study card designs, and a case study carousel preview."
-                    className="w-full h-auto rounded-lg cursor-zoom-in"
+                    className="w-full h-auto rounded-lg cursor-zoom"
                     onClick={() => openLightbox("/images/case-studies/portfolio/Portfolio_Components.jpg", "Figma component library.")}
                   />
                 </div>
@@ -268,7 +268,7 @@ export default function PortfolioCaseStudyPage() {
                   <img
                     src="/images/case-studies/portfolio/Portfolio_Layout.jpg"
                     alt="Figma file showing the Specs page with the full page list, canvas displays annotated wireframe layouts for the homepage, navigation menu, and case study landing page."
-                    className="w-full h-auto rounded-lg cursor-zoom-in"
+                    className="w-full h-auto rounded-lg cursor-zoom"
                     onClick={() => openLightbox("/images/case-studies/portfolio/Portfolio_Layout.jpg", "Figma page layouts.")}
                   />
                 </div>
@@ -281,13 +281,13 @@ export default function PortfolioCaseStudyPage() {
                     <img
                       src="/images/case-studies/portfolio/Portfolio_Case Study Template.jpg"
                       alt="Figma file showing the Case Study Template page with the layer panel expanded to reveal the full template structure including numbered sections."
-                      className="w-full h-auto rounded-lg cursor-zoom-in"
+                      className="w-full h-auto rounded-lg cursor-zoom"
                       onClick={() => openLightbox("/images/case-studies/portfolio/Portfolio_Case Study Template.jpg", "Figma case study template.")}
                     />
                     <img
                       src="/images/case-studies/portfolio/Portfolio_Case Studies.jpg"
                       alt="Figma file showing all individual case study pages visible side by side, demonstrating how the reusable template was applied consistently across all six projects."
-                      className="w-full h-auto rounded-lg cursor-zoom-in"
+                      className="w-full h-auto rounded-lg cursor-zoom"
                       onClick={() => openLightbox("/images/case-studies/portfolio/Portfolio_Case Studies.jpg", "All case studies in Figma.")}
                     />
                   </div>
@@ -331,7 +331,7 @@ export default function PortfolioCaseStudyPage() {
                 <img
                   src="/images/case-studies/portfolio/Patagonia_Github.jpg"
                   alt="GitHub repository page for the portfolio showing the public Next.js codebase with commits, deployments linked to Vercel, and two contributors — chelsea-lensing and claude."
-                  className="w-full h-auto rounded-lg cursor-zoom-in"
+                  className="w-full h-auto rounded-lg cursor-zoom"
                   onClick={() => openLightbox("/images/case-studies/portfolio/Patagonia_Github.jpg", "GitHub repository for the portfolio.")}
                 />
               </div>
@@ -347,7 +347,7 @@ export default function PortfolioCaseStudyPage() {
                 <img
                   src="/images/case-studies/portfolio/Portfolio_Vercel.jpg"
                   alt="Vercel project dashboard for the portfolio site showing a successful Production Deployment, custom domain chelsealensing.design, and a live preview of the homepage."
-                  className="w-full h-auto rounded-lg cursor-zoom-in"
+                  className="w-full h-auto rounded-lg cursor-zoom"
                   onClick={() => openLightbox("/images/case-studies/portfolio/Portfolio_Vercel.jpg", "Vercel deployment dashboard for the portfolio.")}
                 />
               </div>

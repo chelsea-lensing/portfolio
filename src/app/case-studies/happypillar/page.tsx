@@ -131,7 +131,7 @@ export default function HappypillarPage() {
         <img
           src="/images/case-studies/happypillar/Happypillar_hero.jpg"
           alt="Image of 3 screens of the mobile application. The first one with an image of a sun and clouds and text stating 'How does Happypillar work? Parents spend one-on-one time with their kids - we call this Happy Time - and use several of the same skills play therapists do for just five minutes per day.' Second screen is of the login screen on the app - showing the logo in 'Happypillar green' and input boxes to enter email and password to login. There is also the ability to sign up, log in with Google or Apple. The last screen is of the home screen in the app which has an illustration of 'Petey', the Happypillar mascot and says 'Good morning, Natalie & Isabelle!'. There are 4 modules in view: Happy Time module with the ability to start a session, Happy Time Reminders module, Daily Report module, and Weekly Check-in module. There is also a navigation bar at the bottom with a home icon, progress icon, record icon, learn icon and profile icon."
-          className="w-full h-full object-cover cursor-zoom-in"
+          className="w-full h-full object-cover cursor-zoom"
           onClick={() => setLightbox({
             src: "/images/case-studies/happypillar/Happypillar_hero.jpg",
             alt: "Image of 3 screens of the mobile application. The first one with an image of a sun and clouds and text stating 'How does Happypillar work? Parents spend one-on-one time with their kids - we call this Happy Time - and use several of the same skills play therapists do for just five minutes per day.' Second screen is of the login screen on the app - showing the logo in 'Happypillar green' and input boxes to enter email and password to login. There is also the ability to sign up, log in with Google or Apple. The last screen is of the home screen in the app which has an illustration of 'Petey', the Happypillar mascot and says 'Good morning, Natalie & Isabelle!'. There are 4 modules in view: Happy Time module with the ability to start a session, Happy Time Reminders module, Daily Report module, and Weekly Check-in module. There is also a navigation bar at the bottom with a home icon, progress icon, record icon, learn icon and profile icon."
@@ -345,7 +345,7 @@ export default function HappypillarPage() {
                   <img
                     src="/images/case-studies/happypillar/Happypillar_app_map.jpg"
                     alt="Screenshot of a portion of the app map starting from the splash screen of the app and going through every user interaction and page. A key for the map is on the left."
-                    className="w-full h-auto rounded-lg cursor-zoom-in"
+                    className="w-full h-auto rounded-lg cursor-zoom"
                     onClick={() => setLightbox({
                       src: "/images/case-studies/happypillar/Happypillar_app_map.jpg",
                       alt: "Screenshot of a portion of the app map starting from the splash screen of the app and going through every user interaction and page. A key for the map is on the left."
@@ -364,7 +364,7 @@ export default function HappypillarPage() {
                   <img
                     src="/images/case-studies/happypillar/Happypillar_onboarding.jpg"
                     alt="Screenshot of low fidelity wireframes for the onboarding flow for the app."
-                    className="w-full h-auto rounded-lg cursor-zoom-in"
+                    className="w-full h-auto rounded-lg cursor-zoom"
                     onClick={() => setLightbox({
                       src: "/images/case-studies/happypillar/Happypillar_onboarding.jpg",
                       alt: "Screenshot of low fidelity wireframes for the onboarding flow for the app."
@@ -619,7 +619,7 @@ function SideBySideCard({
           <img
             src={image.src}
             alt={image.alt}
-            className="w-full h-full object-cover cursor-zoom-in"
+            className="w-full h-full object-cover cursor-zoom"
             onClick={() => onImageClick(image.src, image.alt)}
           />
         </div>

@@ -128,7 +128,7 @@ export default function ShopUsedIntegrationPage() {
         <img
           src="/images/case-studies/patagonia-usedcomponent/Patagonia_Used Component_Hero.jpg"
           alt="Desktop and mobile mockup showing the Shop Used PDP component on Patagonia.com. The desktop view shows the Men's Retro Pile Jacket product detail page with the Shop Used tab selected, displaying a used match with condition details, pricing ($63–$79), and available colors. The mobile view shows the same component in a compact layout with the Shop Used tab active."
-          className="w-full h-full object-cover cursor-zoom-in"
+          className="w-full h-full object-cover cursor-zoom"
           onClick={() => openLightbox(
             "/images/case-studies/patagonia-usedcomponent/Patagonia_Used Component_Hero.jpg",
             "Desktop and mobile mockup showing the Shop Used PDP component on Patagonia.com."
@@ -235,7 +235,7 @@ export default function ShopUsedIntegrationPage() {
                     <img
                       src="/images/case-studies/patagonia-usedcomponent/Patagonia_Integration phases_1.jpg"
                       alt="Diagram titled 'Integration Phases | User Experience' showing three phases across a horizontal timeline: Test & Learn, Full Integration, and All Circularity. The Test & Learn phase is outlined with a dashed green border indicating the current phase, containing Resale Phase One targeting Fall 2024 completion with the Shop Used PDP component integration."
-                      className="w-full h-auto cursor-zoom-in"
+                      className="w-full h-auto cursor-zoom"
                       onClick={() => openLightbox(
                         "/images/case-studies/patagonia-usedcomponent/Patagonia_Integration phases_1.jpg",
                         "Diagram titled 'Integration Phases | User Experience' showing three phases across a horizontal timeline: Test & Learn, Full Integration, and All Circularity."
@@ -257,7 +257,7 @@ export default function ShopUsedIntegrationPage() {
                       <img
                         src="/images/case-studies/patagonia-usedcomponent/Patagonia_Used Component_Insights.jpg"
                         alt="Grouped bar chart comparing the share of new customers by age group for Worn Wear versus the Patagonia main brand. Worn Wear skews younger, with notably higher representation in the 25–34 age group."
-                        className="w-full h-auto cursor-zoom-in"
+                        className="w-full h-auto cursor-zoom"
                         onClick={() => openLightbox(
                           "/images/case-studies/patagonia-usedcomponent/Patagonia_Used Component_Insights.jpg",
                           "Grouped bar chart comparing the share of new customers by age group for Worn Wear versus the Patagonia main brand."
@@ -275,7 +275,7 @@ export default function ShopUsedIntegrationPage() {
                     <img
                       src="/images/case-studies/patagonia-usedcomponent/Patagonia_Used Component_Personas.jpg"
                       alt="Four customer personas — Kenji, Zoe, Theo, and Cleo — each shown with a profile photo, age, location, archetype label, a representative quote, and columns for motivations, pain points, and opportunity."
-                      className="w-full h-auto cursor-zoom-in"
+                      className="w-full h-auto cursor-zoom"
                       onClick={() => openLightbox(
                         "/images/case-studies/patagonia-usedcomponent/Patagonia_Used Component_Personas.jpg",
                         "Four customer personas — Kenji, Zoe, Theo, and Cleo — each shown with a profile photo, age, location, archetype label, a representative quote, and columns for motivations, pain points, and opportunity."
@@ -335,7 +335,7 @@ export default function ShopUsedIntegrationPage() {
                           <img
                             src="/images/case-studies/patagonia-usedcomponent/Patagonia_Used Component_New Tab State.jpg"
                             alt="Mobile mockup of the Men's Retro Pile Jacket product detail page showing the new tab state — the 'Shop New' tab is selected by default in the buying cluster, with the 'Shop Used' tab visible alongside it."
-                            className="w-full h-auto cursor-zoom-in object-contain"
+                            className="w-full h-auto cursor-zoom object-contain"
                             onClick={() => openLightbox(
                               "/images/case-studies/patagonia-usedcomponent/Patagonia_Used Component_New Tab State.jpg",
                               "Mobile mockup of the Men's Retro Pile Jacket PDP showing the new tab state."
@@ -355,7 +355,7 @@ export default function ShopUsedIntegrationPage() {
                           <img
                             src="/images/case-studies/patagonia-usedcomponent/Patagonia_Used Component_Perfect Match.jpg"
                             alt="Mobile mockup of the Shop Used component in the exact 1:1 match state. The 'Shop Used' tab is selected in the buying cluster, displaying 'Matching Used Options' with condition grade, pricing, and a Browse Used button. A Worn Wear marketing tile describes the Ironclad Guarantee."
-                            className="w-full h-auto cursor-zoom-in object-contain"
+                            className="w-full h-auto cursor-zoom object-contain"
                             onClick={() => openLightbox(
                               "/images/case-studies/patagonia-usedcomponent/Patagonia_Used Component_Perfect Match.jpg",
                               "Mobile mockup of the Shop Used component in the exact 1:1 match state."
@@ -378,7 +378,7 @@ export default function ShopUsedIntegrationPage() {
                           <img
                             src="/images/case-studies/patagonia-usedcomponent/Patagonia_Used Component_Similar Match.jpg"
                             alt="Mobile mockup of the Shop Used component in the similar match state. The 'Shop Used' tab is selected, displaying 'Similar Used Options' with two used product tiles side by side, each with a product name, strikethrough price, discounted price, and condition label."
-                            className="w-full h-auto cursor-zoom-in object-contain"
+                            className="w-full h-auto cursor-zoom object-contain"
                             onClick={() => openLightbox(
                               "/images/case-studies/patagonia-usedcomponent/Patagonia_Used Component_Similar Match.jpg",
                               "Mobile mockup of the Shop Used component in the similar match state."
@@ -398,7 +398,7 @@ export default function ShopUsedIntegrationPage() {
                           <img
                             src="/images/case-studies/patagonia-usedcomponent/Patagonia_Used Component_No Match.jpg"
                             alt="Mobile mockup of the Shop Used component in the no used results state. The 'Shop Used' tab is selected, displaying 'Why Buy Used?' copy with a Worn Wear logo badge and a Browse Used button."
-                            className="w-full h-auto cursor-zoom-in object-contain"
+                            className="w-full h-auto cursor-zoom object-contain"
                             onClick={() => openLightbox(
                               "/images/case-studies/patagonia-usedcomponent/Patagonia_Used Component_No Match.jpg",
                               "Mobile mockup of the Shop Used component in the no used results state."
@@ -500,7 +500,7 @@ export default function ShopUsedIntegrationPage() {
                     <img
                       src="/images/case-studies/patagonia-usedcomponent/Patagonia_Used Component_PDP.jpg"
                       alt="Desktop mockup of the Men's Retro Pile Jacket PDP with the Shop Used tab selected, displaying a used match with a 'Choose your size' prompt to help customers surface the most relevant used result."
-                      className="w-full h-auto cursor-zoom-in"
+                      className="w-full h-auto cursor-zoom"
                       onClick={() => openLightbox(
                         "/images/case-studies/patagonia-usedcomponent/Patagonia_Used Component_PDP.jpg",
                         "Desktop mockup of the Men's Retro Pile Jacket PDP with the Shop Used tab selected and 'Choose your size' prompt."
@@ -549,7 +549,7 @@ export default function ShopUsedIntegrationPage() {
                     <img
                       src="/images/case-studies/patagonia-usedcomponent/Patagonia_Used Component_Specs.jpg"
                       alt="Screenshot of hi-fi component specification documentation in Figma showing color-coded logic scenario flows for the Shop Used PDP component across mobile and desktop screens."
-                      className="w-full h-auto cursor-zoom-in"
+                      className="w-full h-auto cursor-zoom"
                       onClick={() => openLightbox(
                         "/images/case-studies/patagonia-usedcomponent/Patagonia_Used Component_Specs.jpg",
                         "Screenshot of hi-fi component specification documentation in Figma showing color-coded logic scenario flows for the Shop Used PDP component."
@@ -637,10 +637,10 @@ export default function ShopUsedIntegrationPage() {
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           className="flex items-center gap-2 font-poiret text-[12px] tracking-[1.5px] text-black hover:opacity-60 transition-opacity cursor-pointer"
         >
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="-rotate-90">
-            <path d="M3 2L9 6L3 10" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
           BACK TO TOP
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+            <path d="M6 10V2M6 2L2 6M6 2L10 6" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
         </button>
         <a href="/case-studies/happypillar" className="flex items-center gap-2 font-poiret text-[12px] tracking-[1.5px] text-black hover:opacity-60 transition-opacity">
           NEXT PROJECT

@@ -130,7 +130,7 @@ export default function PatagoniaProvisionsPage() {
         <img
           src="/images/case-studies/patagonia-provisions/Patagonia_Provisions_Hero.jpg"
           alt="Desktop and mobile views of the Provisions Smoked Wild Pink Salmon product detail page integrated into Patagonia.com, showing the Food & Beer navigation, multi-pack size selector, and lifestyle photography."
-          className="w-full h-full object-cover cursor-zoom-in"
+          className="w-full h-full object-cover cursor-zoom"
           onClick={() => setLightbox({
             src: "/images/case-studies/patagonia-provisions/Patagonia_Provisions_Hero.jpg",
             alt: "Desktop and mobile views of the Provisions Smoked Wild Pink Salmon product detail page integrated into Patagonia.com, showing the Food & Beer navigation, multi-pack size selector, and lifestyle photography."
@@ -297,7 +297,7 @@ export default function PatagoniaProvisionsPage() {
                     <img
                       src="/images/case-studies/patagonia-provisions/Patagonia_Provisions_Customer1.jpg"
                       alt="Persona diagram for the Growth Consumer — The Organic Outdoor Enthusiast: Start-up Families. Active Millennial parents who prioritize health, wellness, and sustainable food choices for their families."
-                      className="w-full h-full object-cover cursor-zoom-in"
+                      className="w-full h-full object-cover cursor-zoom"
                       onClick={() => setLightbox({
                         src: "/images/case-studies/patagonia-provisions/Patagonia_Provisions_Customer1.jpg",
                         alt: "Persona diagram for the Growth Consumer — The Organic Outdoor Enthusiast: Start-up Families. Active Millennial parents who prioritize health, wellness, and sustainable food choices for their families."
@@ -308,7 +308,7 @@ export default function PatagoniaProvisionsPage() {
                     <img
                       src="/images/case-studies/patagonia-provisions/Patagonia_Provisions_Customer2.jpg"
                       alt="Persona diagram for the Seafood Cohort — The Organic Outdoor Enthusiast: Young Transitionals. Active young adults (18–34) who prioritize health, wellness, and seeking out new food experiences."
-                      className="w-full h-full object-cover cursor-zoom-in"
+                      className="w-full h-full object-cover cursor-zoom"
                       onClick={() => setLightbox({
                         src: "/images/case-studies/patagonia-provisions/Patagonia_Provisions_Customer2.jpg",
                         alt: "Persona diagram for the Seafood Cohort — The Organic Outdoor Enthusiast: Young Transitionals. Active young adults (18–34) who prioritize health, wellness, and seeking out new food experiences."
@@ -328,7 +328,7 @@ export default function PatagoniaProvisionsPage() {
                     <img
                       src="/images/case-studies/patagonia-provisions/Patagonia_Provisions_Landscape.jpg"
                       alt="Competitive landscape analysis across food brands including Graza, Heyday, CABI, and King Arthur — showing annotated screenshots of their PDPs and landing pages with observations on how each brand handles sourcing information, storytelling, and ingredient transparency."
-                      className="w-full h-auto cursor-zoom-in"
+                      className="w-full h-auto cursor-zoom"
                       onClick={() => setLightbox({
                         src: "/images/case-studies/patagonia-provisions/Patagonia_Provisions_Landscape.jpg",
                         alt: "Competitive landscape analysis across food brands including Graza, Heyday, CABI, and King Arthur — showing annotated screenshots of their PDPs and landing pages with observations on how each brand handles sourcing information, storytelling, and ingredient transparency."
@@ -394,7 +394,7 @@ export default function PatagoniaProvisionsPage() {
                         <img
                           src="/images/case-studies/patagonia-provisions/Patagonia_Provisions_Navigation.jpg"
                           alt="Desktop and mobile views of the Food & Beer navigation on Patagonia.com, showing a dedicated 'Learn More' column with links to Why Food?, Our Impact, Sourcing Practices, Stories, and Recipes — alongside an editorial marketing tile asking 'Why is a clothing company making food?' linking to Yvon Chouinard's essay."
-                          className="block w-full h-auto cursor-zoom-in"
+                          className="block w-full h-auto cursor-zoom"
                           onClick={() => setLightbox({
                             src: "/images/case-studies/patagonia-provisions/Patagonia_Provisions_Navigation.jpg",
                             alt: "Desktop and mobile views of the Food & Beer navigation on Patagonia.com, showing a dedicated 'Learn More' column with links to Why Food?, Our Impact, Sourcing Practices, Stories, and Recipes — alongside an editorial marketing tile asking 'Why is a clothing company making food?' linking to Yvon Chouinard's essay."
@@ -409,7 +409,7 @@ export default function PatagoniaProvisionsPage() {
                         <img
                           src="/images/case-studies/patagonia-provisions/Patagonia_Provisions_Landing Page.jpg"
                           alt="Desktop and mobile views of the Provisions landing page featuring the 'Why is a clothing company making food?' editorial module — a full-bleed photo of Yvon Chouinard in his workshop alongside mission-driven copy explaining why Patagonia makes food, with a quote from Chouinard and a call to action to explore."
-                          className="block w-full h-auto cursor-zoom-in"
+                          className="block w-full h-auto cursor-zoom"
                           onClick={() => setLightbox({
                             src: "/images/case-studies/patagonia-provisions/Patagonia_Provisions_Landing Page.jpg",
                             alt: "Desktop and mobile views of the Provisions landing page featuring the 'Why is a clothing company making food?' editorial module — a full-bleed photo of Yvon Chouinard in his workshop alongside mission-driven copy explaining why Patagonia makes food, with a quote from Chouinard and a call to action to explore."
@@ -424,7 +424,7 @@ export default function PatagoniaProvisionsPage() {
                         <img
                           src="/images/case-studies/patagonia-provisions/Patagonia_Provisions_PDP.jpg"
                           alt="Desktop and mobile views of the Spicy Mussels product detail page on Patagonia.com, highlighting the new 'Why Mussels?' content block — a dark full-width module explaining the sourcing story and environmental benefits of mussel farming, with links to read more and watch a mussel story video."
-                          className="block w-full h-auto cursor-zoom-in"
+                          className="block w-full h-auto cursor-zoom"
                           onClick={() => setLightbox({
                             src: "/images/case-studies/patagonia-provisions/Patagonia_Provisions_PDP.jpg",
                             alt: "Desktop and mobile views of the Spicy Mussels product detail page on Patagonia.com, highlighting the new 'Why Mussels?' content block — a dark full-width module explaining the sourcing story and environmental benefits of mussel farming, with links to read more and watch a mussel story video."
@@ -468,7 +468,7 @@ export default function PatagoniaProvisionsPage() {
                     <img
                       src="/images/case-studies/patagonia-provisions/Patagonia_Provisions_Specs.jpg"
                       alt="Annotated Figma spec for the Provisions Food & Beer PLP showing mobile and desktop layouts with detailed callouts for filter logic, product type display names, hover functionality, image guidance, and merch notes for the 'Why is a Clothing Company Making Food?' editorial tile."
-                      className="w-full h-auto cursor-zoom-in"
+                      className="w-full h-auto cursor-zoom"
                       onClick={() => setLightbox({
                         src: "/images/case-studies/patagonia-provisions/Patagonia_Provisions_Specs.jpg",
                         alt: "Annotated Figma spec for the Provisions Food & Beer PLP showing mobile and desktop layouts with detailed callouts for filter logic, product type display names, hover functionality, image guidance, and merch notes for the 'Why is a Clothing Company Making Food?' editorial tile."
