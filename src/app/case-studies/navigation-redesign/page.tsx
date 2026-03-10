@@ -89,7 +89,7 @@ export default function NavigationRedesignPage() {
       {/* Hero */}
       <div className="px-4 lg:px-12 pb-8 lg:pb-10 flex flex-col gap-5 lg:gap-6">
         <h1 className="font-poiret text-[28px] lg:text-[36px] text-black leading-normal">
-          Global Navigation Redesign
+          GLOBAL NAVIGATION REDESIGN
         </h1>
         <p className="font-public-sans font-light text-[14px] lg:text-[16px] text-[#666] leading-[26px] tracking-[0.4px] max-w-[800px]">
           A full overhaul of Patagonia.com&apos;s global navigation and category taxonomy, making it easier for customers to find what they&apos;re looking for, faster, while keeping Patagonia&apos;s mission visible throughout the journey.
