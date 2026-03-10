@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect, useCallback } from "react";
+import { useState, useRef, useEffect } from "react";
 import CaseStudyCard from "./CaseStudyCard";
 
 const FILTERS = ["All", "Circularity", "Commerce", "Health & Wellness"];
@@ -65,201 +65,131 @@ const CASE_STUDIES = [
 export default function CaseStudies() {
   const [activeFilter, setActiveFilter] = useState("All");
   const [fading, setFading] = useState(false);
-  const [extraHeight, setExtraHeight] = useState(0);
-
-  // Mobile scroll indicators
   const [showIndicator, setShowIndicator] = useState(true);
   const [showLeftIndicator, setShowLeftIndicator] = useState(false);
-  const mobileScrollRef = useRef<HTMLDivElement>(null);
+  const [minHeight, setMinHeight] = useState<number | undefined>(undefined);
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
-  // Desktop scroll-jacking refs
-  const wrapperRef = useRef<HTMLDivElement>(null);
-  const trackRef = useRef<HTMLDivElement>(null);
-
-  const filtered =
-    activeFilter === "All"
-      ? CASE_STUDIES
-      : CASE_STUDIES.filter((cs) => cs.category === activeFilter);
-
-  // Compute how much extra vertical scroll space the wrapper needs
-  const computeExtraHeight = useCallback(() => {
-    if (typeof window === "undefined" || window.innerWidth < 1024) return;
-    if (!trackRef.current) return;
-    const maxTranslate = trackRef.current.scrollWidth - window.innerWidth;
-    setExtraHeight(Math.max(0, maxTranslate));
+  useEffect(() => {
+    if (containerRef.current) {
+      setMinHeight(containerRef.current.offsetHeight);
+    }
   }, []);
 
   useEffect(() => {
-    const id = requestAnimationFrame(computeExtraHeight);
-    window.addEventListener("resize", computeExtraHeight);
-    return () => {
-      cancelAnimationFrame(id);
-      window.removeEventListener("resize", computeExtraHeight);
-    };
-  }, [computeExtraHeight, activeFilter]);
-
-  // Drive horizontal translation directly from scroll position (no React state = no lag)
-  useEffect(() => {
-    const onScroll = () => {
-      if (!wrapperRef.current || !trackRef.current || window.innerWidth < 1024) return;
-      const { top } = wrapperRef.current.getBoundingClientRect();
-      const maxTranslate = trackRef.current.scrollWidth - window.innerWidth;
-      const progress = Math.max(0, Math.min(-top, Math.max(0, maxTranslate)));
-      trackRef.current.style.transform = `translateX(-${progress}px)`;
-    };
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+    if (!scrollRef.current) return;
+    const { scrollWidth, clientWidth } = scrollRef.current;
+    setShowIndicator(scrollWidth > clientWidth + 8);
+  }, [activeFilter]);
 
   const handleFilterChange = (filter: string) => {
     if (filter === activeFilter) return;
     setFading(true);
     setTimeout(() => {
       setActiveFilter(filter);
-      setFading(false);
-      // Reset mobile scroll position
-      if (mobileScrollRef.current) mobileScrollRef.current.scrollLeft = 0;
       setShowLeftIndicator(false);
+      if (scrollRef.current) scrollRef.current.scrollLeft = 0;
+      setFading(false);
     }, 300);
   };
 
-  const handleMobileScroll = () => {
-    if (!mobileScrollRef.current) return;
-    const { scrollLeft, scrollWidth, clientWidth } = mobileScrollRef.current;
+  const handleScroll = () => {
+    if (!scrollRef.current) return;
+    const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
     setShowIndicator(scrollLeft < scrollWidth - clientWidth - 8);
     setShowLeftIndicator(scrollLeft > 8);
   };
 
-  const FilterPills = ({ className }: { className?: string }) => (
-    <div className={`flex gap-2 items-center ${className ?? ""}`}>
-      {FILTERS.map((filter) => {
-        const isActive = activeFilter === filter;
-        return (
-          <button
-            key={filter}
-            onClick={() => handleFilterChange(filter)}
-            className={`shrink-0 flex h-10 items-center justify-center px-5 py-[11px] rounded-full text-[14px] font-public-sans font-normal leading-[20px] whitespace-nowrap border transition-colors cursor-pointer ${
-              isActive
-                ? "bg-[#3c3c3c] border-[#3c3c3c] text-white"
-                : "bg-[rgba(237,234,226,0.2)] border-[rgba(60,60,60,0.1)] text-dark"
-            }`}
-          >
-            {filter}
-          </button>
-        );
-      })}
-    </div>
-  );
+  const filtered =
+    activeFilter === "All"
+      ? CASE_STUDIES
+      : CASE_STUDIES.filter((cs) => cs.category === activeFilter);
 
   return (
-    <>
-      {/* ── DESKTOP: scroll-jacked horizontal carousel ── */}
-      <div
-        ref={wrapperRef}
-        className="hidden lg:block relative bg-cream"
-        style={{ height: `calc(100vh + ${extraHeight}px)` }}
-      >
-        <div className="sticky top-0 h-screen overflow-hidden bg-cream flex flex-col gap-6 pt-12 pb-14">
-          {/* Label + filters */}
-          <div className="flex flex-col gap-6 items-start w-full px-12">
-            <a
-              href="/case-studies"
-              className="font-poiret text-[24px] text-accent tracking-[1.5px] leading-normal w-full transition-opacity duration-200 hover:opacity-60"
-            >
-              CASE STUDIES
-            </a>
-            <FilterPills />
-          </div>
+    <section className="bg-cream w-full overflow-hidden flex flex-col gap-6 pt-12 pb-14 lg:pb-20">
 
-          {/* Card track — translated by scroll */}
-          <div
-            ref={trackRef}
-            className={`flex gap-4 items-stretch pl-12 pr-12 transition-opacity duration-300 ${fading ? "opacity-50" : "opacity-100"}`}
-            style={{ willChange: "transform" }}
-          >
-            {filtered.map((cs) => (
-              <CaseStudyCard
-                key={`${cs.company}-${cs.title}`}
-                company={cs.company}
-                title={cs.title}
-                description={cs.description}
-                tags={cs.tags}
-                href={"href" in cs ? cs.href : undefined}
-                image={"image" in cs ? cs.image : undefined}
-              />
-            ))}
-          </div>
+      {/* Label + filters */}
+      <div className="flex flex-col gap-6 items-start w-full px-4 lg:px-12">
+        <a href="/case-studies" className="font-poiret text-[24px] text-accent tracking-[1.5px] leading-normal w-full transition-opacity duration-200 hover:opacity-60">
+          CASE STUDIES
+        </a>
+        <div className="flex gap-2 items-center overflow-x-auto scrollbar-hide">
+          {FILTERS.map((filter) => {
+            const isActive = activeFilter === filter;
+            return (
+              <button
+                key={filter}
+                onClick={() => handleFilterChange(filter)}
+                className={`shrink-0 flex h-10 items-center justify-center px-5 py-[11px] rounded-full text-[14px] font-public-sans font-normal leading-[20px] whitespace-nowrap border transition-colors cursor-pointer ${
+                  isActive
+                    ? "bg-[#3c3c3c] border-[#3c3c3c] text-white"
+                    : "bg-[rgba(237,234,226,0.2)] border-[rgba(60,60,60,0.1)] text-dark"
+                }`}
+              >
+                {filter}
+              </button>
+            );
+          })}
         </div>
       </div>
 
-      {/* ── MOBILE: swipe carousel (unchanged) ── */}
-      <section className="lg:hidden bg-cream w-full overflow-hidden flex flex-col gap-6 pt-12 pb-14">
-        {/* Label + filters */}
-        <div className="flex flex-col gap-6 items-start w-full px-4">
-          <a
-            href="/case-studies"
-            className="font-poiret text-[24px] text-accent tracking-[1.5px] leading-normal w-full transition-opacity duration-200 hover:opacity-60"
-          >
-            CASE STUDIES
-          </a>
-          <FilterPills className="overflow-x-auto scrollbar-hide" />
-        </div>
-
-        {/* Scroll carousel */}
+      {/* Horizontal scroll carousel — same on mobile and desktop */}
+      <div
+        ref={containerRef}
+        className={`relative transition-opacity duration-300 ${fading ? "opacity-50" : "opacity-100"}`}
+        style={minHeight ? { minHeight } : undefined}
+      >
         <div
-          className={`relative transition-opacity duration-300 ${fading ? "opacity-50" : "opacity-100"}`}
+          ref={scrollRef}
+          onScroll={handleScroll}
+          className="flex gap-4 items-stretch overflow-x-auto pb-2 scrollbar-hide pl-4 pr-4 lg:pl-12 lg:pr-12"
         >
-          <div
-            ref={mobileScrollRef}
-            onScroll={handleMobileScroll}
-            className="flex gap-4 items-stretch overflow-x-auto pb-2 scrollbar-hide px-4"
-          >
-            {filtered.map((cs) => (
-              <CaseStudyCard
-                key={`${cs.company}-${cs.title}`}
-                company={cs.company}
-                title={cs.title}
-                description={cs.description}
-                tags={cs.tags}
-                href={"href" in cs ? cs.href : undefined}
-                image={"image" in cs ? cs.image : undefined}
-              />
-            ))}
-          </div>
-
-          {/* Left scroll indicator */}
-          {showLeftIndicator && (
-            <div className="absolute left-0 top-0 bottom-2 flex items-center pointer-events-none">
-              <div className="w-20 h-full flex items-center justify-start pl-5">
-                <button
-                  className="bg-white rounded-full w-9 h-9 flex items-center justify-center shadow-md pointer-events-auto cursor-pointer"
-                  onClick={() => mobileScrollRef.current?.scrollBy({ left: -360, behavior: "smooth" })}
-                >
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                    <path d="M10 3L5 8L10 13" stroke="#3c3c3c" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </button>
-              </div>
-            </div>
-          )}
-
-          {/* Right scroll indicator */}
-          {showIndicator && (
-            <div className="absolute right-0 top-0 bottom-2 flex items-center pointer-events-none">
-              <div className="w-20 h-full flex items-center justify-end pr-5">
-                <button
-                  className="bg-white rounded-full w-9 h-9 flex items-center justify-center shadow-md pointer-events-auto cursor-pointer"
-                  onClick={() => mobileScrollRef.current?.scrollBy({ left: 360, behavior: "smooth" })}
-                >
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                    <path d="M6 3L11 8L6 13" stroke="#3c3c3c" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </button>
-              </div>
-            </div>
-          )}
+          {filtered.map((cs) => (
+            <CaseStudyCard
+              key={`${cs.company}-${cs.title}`}
+              company={cs.company}
+              title={cs.title}
+              description={cs.description}
+              tags={cs.tags}
+              href={"href" in cs ? cs.href : undefined}
+              image={"image" in cs ? cs.image : undefined}
+            />
+          ))}
         </div>
-      </section>
-    </>
+
+        {/* Left scroll indicator */}
+        {showLeftIndicator && (
+          <div className="absolute left-0 top-0 bottom-2 flex items-center pointer-events-none">
+            <div className="w-20 h-full flex items-center justify-start pl-5">
+              <button
+                className="bg-white rounded-full w-9 h-9 flex items-center justify-center shadow-md pointer-events-auto cursor-pointer"
+                onClick={() => scrollRef.current?.scrollBy({ left: -360, behavior: "smooth" })}
+              >
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path d="M10 3L5 8L10 13" stroke="#3c3c3c" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* Right scroll indicator */}
+        {showIndicator && (
+          <div className="absolute right-0 top-0 bottom-2 flex items-center pointer-events-none">
+            <div className="w-20 h-full flex items-center justify-end pr-5">
+              <button
+                className="bg-white rounded-full w-9 h-9 flex items-center justify-center shadow-md pointer-events-auto cursor-pointer"
+                onClick={() => scrollRef.current?.scrollBy({ left: 360, behavior: "smooth" })}
+              >
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path d="M6 3L11 8L6 13" stroke="#3c3c3c" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        )}
+      </div>
+    </section>
   );
 }
