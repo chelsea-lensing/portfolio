@@ -199,13 +199,13 @@ export default function PatagoniaProvisionsPage() {
           </div>
           {showPrevNext && (
             <div className="flex flex-col gap-4">
-              <a href="#" className="flex items-center gap-2 font-poiret text-[12px] tracking-[1.5px] text-black hover:opacity-60 transition-opacity">
+              <span className="invisible flex items-center gap-2 font-poiret text-[12px] tracking-[1.5px]">
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
                   <path d="M9 2L3 6L9 10" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
                 PREVIOUS PROJECT
-              </a>
-              <a href="#" className="flex items-center gap-2 font-poiret text-[12px] tracking-[1.5px] text-black hover:opacity-60 transition-opacity">
+              </span>
+              <a href="/case-studies/portfolio" className="flex items-center gap-2 font-poiret text-[12px] tracking-[1.5px] text-black hover:opacity-60 transition-opacity">
                 NEXT PROJECT
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
                   <path d="M3 2L9 6L3 10" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -513,22 +513,22 @@ export default function PatagoniaProvisionsPage() {
 
       {/* Footer nav */}
       <div id="footer-nav" className="border-t border-[#ebebeb] px-4 lg:px-12 py-12 flex items-center justify-between">
-        <a href="#" className="flex items-center gap-2 font-poiret text-[12px] tracking-[1.5px] text-black hover:opacity-60 transition-opacity">
+        <span className="invisible flex items-center gap-2 font-poiret text-[12px] tracking-[1.5px]">
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
             <path d="M9 2L3 6L9 10" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
           PREVIOUS PROJECT
-        </a>
+        </span>
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           className="flex items-center gap-2 font-poiret text-[12px] tracking-[1.5px] text-black hover:opacity-60 transition-opacity cursor-pointer"
         >
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="rotate-90">
-            <path d="M3 2L9 6L3 10" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
           BACK TO TOP
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+            <path d="M6 10V2M6 2L2 6M6 2L10 6" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
         </button>
-        <a href="#" className="flex items-center gap-2 font-poiret text-[12px] tracking-[1.5px] text-black hover:opacity-60 transition-opacity">
+        <a href="/case-studies/portfolio" className="flex items-center gap-2 font-poiret text-[12px] tracking-[1.5px] text-black hover:opacity-60 transition-opacity">
           NEXT PROJECT
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
             <path d="M3 2L9 6L3 10" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
