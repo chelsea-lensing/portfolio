@@ -119,7 +119,7 @@ export default function CaseStudies() {
         <a href="/case-studies" className="font-poiret text-[24px] text-accent tracking-[1.5px] leading-normal w-full transition-opacity duration-200 hover:opacity-60">
           CASE STUDIES
         </a>
-        <div className="flex gap-2 items-center overflow-x-auto scrollbar-hide">
+        <div className="flex gap-2 items-center overflow-x-auto scrollbar-hide pr-4 lg:pr-0">
           {FILTERS.map((filter) => {
             const isActive = activeFilter === filter;
             return (

@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     icon: "/CL_Favicon.svg",
   },
   openGraph: {
-    images: [{ url: "/about-professional.jpg" }],
+    images: [{ url: "/images/case-studies/portfolio/Portfolio_Hero.jpg" }],
   },
 };
 

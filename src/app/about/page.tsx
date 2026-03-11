@@ -112,7 +112,7 @@ export default function AboutPage() {
       setActiveTab(tab);
       setOpenIndex(null);
       setFading(false);
-    }, 300);
+    }, 150);
   };
 
   /* ── Static header: title + tabs (never fades) ── */
@@ -143,11 +143,14 @@ export default function AboutPage() {
   );
 
   /* ── Bio text (fades) ── */
-  const bio = (
+  const bio = isProfessional ? (
+    <div className="font-public-sans font-normal text-[14px] lg:text-[16px] text-black leading-normal w-full flex flex-col gap-4">
+      <p>My experience spans end-to-end design across consumer health apps, digital commerce, and complex product ecosystems.</p>
+      <p>What I love most about this work is getting into the details — finding the edge cases, the moments where an experience quietly breaks down, and solving them in ways users never have to think about. I enjoy connecting directly with real people: understanding how they actually interact with a product, not just how we assume they do. That combination of close observation and careful craft is what I bring to every project.</p>
+    </div>
+  ) : (
     <p className="font-public-sans font-normal text-[14px] lg:text-[16px] text-black leading-normal w-full">
-      {isProfessional
-        ? "I specialize in turning complex problems into seamless, user-centered designs. With a background in apparel and e-commerce, I bring a systems-thinking approach to circularity and product design. I'm passionate about usability, cross-functional collaboration, and creating experiences that are both impactful and intuitive."
-        : "When I'm not behind a screen you can find me reading, cycling, swimming and spending time with friends, family and dogs."}
+      When I&apos;m not behind a screen you can find me reading, cycling, swimming and spending time with friends, family and dogs.
     </p>
   );
 
@@ -210,7 +213,7 @@ export default function AboutPage() {
       {/* ── Desktop layout: photo left + full text column right ── */}
       <div className="hidden lg:flex gap-10 items-start px-12 pt-10 pb-20">
         {/* Photo */}
-        <div className={`shrink-0 w-[325px] transition-opacity duration-300 ${fading ? "opacity-50" : "opacity-100"}`}>
+        <div className={`shrink-0 w-[325px] transition-opacity duration-150 ${fading ? "opacity-50" : "opacity-100"}`}>
           <img
             src={isProfessional ? "/about-professional.jpg" : "/about-personal.jpeg"}
             alt={isProfessional ? "Chelsea Lensing" : "Chelsea and her dachshund Bambi"}
@@ -221,7 +224,7 @@ export default function AboutPage() {
         {/* Text column: static header + fading content */}
         <div className="flex-1 min-w-0 flex flex-col gap-8">
           {staticHeader}
-          <div className={`flex flex-col gap-20 transition-opacity duration-300 ${fading ? "opacity-50" : "opacity-100"}`}>
+          <div className={`flex flex-col gap-20 transition-opacity duration-150 ${fading ? "opacity-50" : "opacity-100"}`}>
             <div className={isProfessional ? "pr-[160px]" : ""}>{bio}</div>
             {isProfessional ? desktopExperience : desktopObsessions}
           </div>
@@ -234,7 +237,7 @@ export default function AboutPage() {
           <div className="px-2">{staticHeader}</div>
         </div>
 
-        <div className={`flex flex-col gap-6 transition-opacity duration-300 ${fading ? "opacity-50" : "opacity-100"}`}>
+        <div className={`flex flex-col gap-6 transition-opacity duration-150 ${fading ? "opacity-50" : "opacity-100"}`}>
           <div className="px-4">
             <div className="px-2">{bio}</div>
           </div>
