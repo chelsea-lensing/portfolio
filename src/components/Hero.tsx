@@ -6,7 +6,7 @@ export default function Hero() {
           Senior Product Designer
         </p>
         <p className="font-public-sans font-light text-[14px] lg:text-[16px] text-muted text-center leading-[20px] lg:leading-[26px] tracking-[0.4px] w-full">
-          Product designer with 5+ years of experience leading end-to-end design for complex digital products — specializing in research-driven decision making, systems thinking, and shipping polished work that measurably moves the needle. Currently at Patagonia.
+          Product designer with 5+ years of experience leading end-to-end design for complex digital products, specializing in research-driven decision making, systems thinking, and shipping polished work that measurably moves the needle. Currently at Patagonia.
         </p>
       </div>
     </section>
