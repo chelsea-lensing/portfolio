@@ -1,1 +1,1 @@
-export const SHOW_PROVISIONS = false;
+export const SHOW_PROVISIONS = true;

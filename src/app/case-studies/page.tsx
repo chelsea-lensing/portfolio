@@ -105,7 +105,7 @@ export default function CaseStudiesPage() {
           <p className="font-poiret text-[24px] text-accent tracking-[1.5px] leading-normal">
             CASE STUDIES
           </p>
-          <div className="flex gap-2 items-center overflow-x-auto scrollbar-hide">
+          <div className="flex gap-2 items-center overflow-x-auto scrollbar-hide pr-4 lg:pr-0">
             {FILTERS.map((filter) => {
               const isActive = activeFilter === filter;
               return (
