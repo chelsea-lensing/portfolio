@@ -91,20 +91,17 @@ export default function PatagoniaProvisionsPage() {
         <h1 className="font-poiret text-[28px] lg:text-[36px] text-black leading-normal">
           PATAGONIA PROVISIONS INTEGRATION
         </h1>
-        <p className="font-public-sans font-light italic text-[14px] lg:text-[16px] text-accent leading-[26px] tracking-[0.4px]">
-          Live experience launching March 18, 2026
-        </p>
         <p className="font-public-sans font-light text-[14px] lg:text-[16px] text-[#666] leading-[26px] tracking-[0.4px] max-w-[800px]">
           Bringing food into the core Patagonia.com commerce experience — balancing mission-driven storytelling, new product modeling, and cross-functional complexity across an 8-month end-to-end engagement.
         </p>
         <div>
           <a
-            href="https://www.figma.com/proto/zStWb8SIf53O5xl973ltmf/Provisions-Integration?node-id=2012-291254&p=f&viewport=275%2C-138%2C0.13&t=slKAImnNdG9ijJgX-1&scaling=scale-down&content-scaling=fixed&page-id=3%3A5"
+            href="https://www.patagonia.com/provisions/"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1 bg-black text-white font-public-sans font-medium text-[14px] leading-[20px] px-6 py-[10px] rounded-full transition-colors hover:opacity-80"
           >
-            View Prototype
+            View Live Experience
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
               <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
