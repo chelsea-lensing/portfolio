@@ -49,7 +49,7 @@ const JOBS = [
   {
     title: "User Experience Designer (Volunteer)",
     company: "Hack for LA, BallotNav",
-    dates: "2022",
+    dates: "June 2022 – December 2022",
     bullets: [
       "Volunteered as a UX designer and researcher on BallotNav, a web tool helping voters locate election offices and ballot drop boxes across the US.",
       "Conducted user research to inform design improvements that made civic information more accessible and navigable.",
