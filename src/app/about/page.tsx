@@ -59,22 +59,21 @@ const JOBS = [
     ],
   },
   {
-    title: "Fiber & Textile Artist",
-    company: "Self Employed",
-    dates: "June 2019 – March 2022",
+    title: "User Experience Designer (Volunteer)",
+    company: "Hack for LA, BallotNav",
+    dates: "2022",
     bullets: [
-      "Founded and ran a direct-to-consumer e-commerce brand specializing in handmade apparel and fiber art",
-      "Led the end-to-end digital experience, from designing the brand identity and building the website to shaping the user journey and refining the product based on real customer insights",
+      "Volunteered as a UX designer and researcher on BallotNav, a web tool helping voters locate election offices and ballot drop boxes across the US.",
+      "Conducted user research to inform design improvements that made civic information more accessible and navigable.",
     ],
   },
   {
-    title: "Lead Apparel Designer",
-    company: "Lee Jeans",
-    dates: "January 2015 – June 2018",
+    title: "Freelance UX & Web Designer",
+    company: "Self-Employed",
+    dates: "August 2019 – February 2022",
     bullets: [
-      "Led the design of two new contemporary women's collections that opened new market distribution for the brand for the first time in over a decade",
-      "Combined deep user and market research with creative strategy, translating consumer insights, trend forecasting, and performance needs into products that aligned with both brand and business goals",
-      "Collaborated closely with cross-functional teams across retail, wholesale, and international markets to bring concepts to market and drive sales",
+      "Designed, built, and iteratively improved own e-commerce site, owning all UX, content design, information architecture, and product presentation decisions",
+      "Consulted with small business owners to design and launch e-commerce sites and digital storefronts, helping brick-and-mortar clients establish online presence during COVID-19",
     ],
   },
 ];
